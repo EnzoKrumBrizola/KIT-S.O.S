@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido Confirmado! - Casa do Parafuso</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .thankyou-wrapper {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #0f172a;
+            color: #ffffff;
+        }
+        .thankyou-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        .thankyou-icon {
+            font-size: 4rem;
+            color: #22c55e;
+            margin-bottom: 20px;
+        }
+        .thankyou-card h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .thankyou-card p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .info-box {
+            background: #0f172a;
+            border-left: 4px solid var(--laranja-cdp, #f97316);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: left;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+        .btn-wsp-sucesso {
+            display: inline-block;
+            background: #22c55e;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn-wsp-sucesso:hover {
+            background: #16a34a;
+        }
+        .btn-voltar {
+            display: inline-block;
+            margin-top: 15px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-voltar:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content" style="justify-content: center;">
+            <div class="logo">
+                <img src="CDP-LOGO2.png" alt="Casa do Parafuso">
+            </div>
+        </div>
+    </header>
+
+    <main class="thankyou-wrapper">
+        <div class="thankyou-card">
+            <div class="thankyou-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h1>Pedido Confirmado!</h1>
+            <p>Obrigado por comprar com a <strong>Casa do Parafuso</strong>. Seu Kit S.O.S. Mecânica já está sendo separado pela nossa equipe.</p>
+
+            <div class="info-box">
+                <p style="margin-bottom: 8px; font-weight: bold; color: #ffffff;">
+                    <i class="fa-solid fa-truck-fast" style="color: var(--laranja-cdp, #f97316);"></i> Próximos Passos:
+                </p>
+                <ul style="margin: 0; padding-left: 20px; color: #cbd5e1;">
+                    <li>Se você está em <strong>São José dos Pinhais ou Curitiba</strong>, alinharemos o horário da entrega via motoboy/carro direto pelo WhatsApp.</li>
+                    <li>Para envios via <strong>Correios/PAC</strong>, o código de rastreio será enviado no seu e-mail assim que for postado.</li>
+                </ul>
+            </div>
+
+            <a href="https://wa.me/5541988725687?text=Olá!%20Acabei%20de%20comprar%20o%20Kit%20S.O.S%20no%20site%20e%20gostaria%20de%20confirmar%20meu%20pedido." target="_blank" class="btn-wsp-sucesso">
+                <i class="fa-brands fa-whatsapp"></i> Agilizar Entrega no WhatsApp
+            </a>
+
+            <br>
+            <a href="index.html" class="btn-voltar"><i class="fa-solid fa-arrow-left"></i> Voltar para o site</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <img src="CDP-LOGO-BRANCA.png" alt="Logo Casa do Parafuso Branca" class="footer-logo">
+            <p>&copy; 2026 Casa do Parafuso. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
