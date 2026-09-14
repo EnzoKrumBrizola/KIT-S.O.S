@@ -150,7 +150,7 @@
                 <!-- ÁREA DE CÁLCULO DE CEP -->
                 <div class="shipping-calculator" style="background: #1e293b; padding: 15px; border-radius: 8px; margin: 15px 0; border: 1px solid #334155;">
                     <label for="cep-input" style="color: #ffffff; display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.9rem;">
-                        <i class="fa-solid fa-truck" style="color: var(--laranja-cdp);"></i> Calcular Frete e Prazo (PAC):
+                        <i class="fa-solid fa-truck" style="color: var(--laranja-cdp);"></i> Calcular Frete e Prazo:
                     </label>
                     <div style="display: flex; gap: 10px;">
                         <input type="text" id="cep-input" placeholder="00000-000" maxlength="9" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #475569; background: #0f172a; color: white;">
@@ -348,7 +348,7 @@
 
                 } else {
 
-                    resultado.innerHTML = `<i class='fa-solid fa-truck-ramp-box' style='color: var(--laranja-cdp);'></i> <strong>Envio via Correios (PAC):</strong><br><span style='font-size: 0.85rem; color: #cbd5e1;'>Disponível para ${data.localidade} - ${data.uf}. O valor do frete e o prazo oficial dos Correios serão aplicados na tela final de pagamento.</span>`;
+                    resultado.innerHTML = `<i class='fa-solid fa-truck-ramp-box' style='color: var(--laranja-cdp);'></i> <strong>Envio via Transportadora:</strong><br><span style='font-size: 0.85rem; color: #cbd5e1;'>Disponível para ${data.localidade} - ${data.uf}. O valor do frete e o prazo oficial da Transportadora serão aplicados na tela final de pagamento.</span>`;
 
                 }
 
