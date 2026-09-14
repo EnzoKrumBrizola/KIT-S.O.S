@@ -259,57 +259,97 @@
     </footer>
 
     <script>
-        function mudarFoto(elementoClicado, novaJanelaSrc) {
-            document.getElementById('foto-principal').src = novaJanelaSrc;
-            const miniaturas = document.querySelectorAll('.product-galeria-miniaturas img');
-            miniaturas.forEach(img => img.classList.remove('ativa'));
-            elementoClicado.classList.add('ativa');
+    function mudarFoto(elementoClicado, novaJanelaSrc) {
+        document.getElementById('foto-principal').src = novaJanelaSrc;
+        const miniaturas = document.querySelectorAll('.product-galeria-miniaturas img');
+        miniaturas.forEach(img => img.classList.remove('ativa'));
+        elementoClicado.classList.add('ativa');
+    }
+
+    function abrirZoom() {
+        const srcPrincipal = document.getElementById('foto-principal').src;
+        document.getElementById('foto-expandida').src = srcPrincipal;
+        document.getElementById('zoom-modal').style.display = "flex";
+    }
+
+    function fecharZoom() {
+        document.getElementById('zoom-modal').style.display = "none";
+    }
+
+    async function calcularFrete() {
+        const cep = document.getElementById('cep-input').value.replace(/\D/g, '');
+        const resultado = document.getElementById('shipping-result');
+        
+        if (cep.length !== 8) {
+            resultado.style.display = "block";
+            resultado.innerHTML = "<span style='color: #ef4444;'>Por favor, digite um CEP válido com 8 números.</span>";
+            return;
         }
 
-        function abrirZoom() {
-            const srcPrincipal = document.getElementById('foto-principal').src;
-            document.getElementById('foto-expandida').src = srcPrincipal;
-            document.getElementById('zoom-modal').style.display = "flex";
-        }
+        resultado.style.display = "block";
+        resultado.innerHTML = "<i class='fa-solid fa-spinner fa-spin'></i> Calculando frete e prazos...";
 
-        function fecharZoom() {
-            document.getElementById('zoom-modal').style.display = "none";
-        }
+        try {
+            // 1. Verifica se é região de entrega própria/local
+            const responseViaCep = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+            const dataViaCep = await responseViaCep.json();
 
-        async function calcularFrete() {
-            const cep = document.getElementById('cep-input').value.replace(/\D/g, '');
-            const resultado = document.getElementById('shipping-result');
-            
-            if (cep.length !== 8) {
-                resultado.style.display = "block";
-                resultado.innerHTML = "<span style='color: #ef4444;'>Por favor, digite um CEP válido com 8 números.</span>";
+            if (dataViaCep.erro) {
+                resultado.innerHTML = "<span style='color: #ef4444;'>CEP não encontrado. Verifique os números.</span>";
                 return;
             }
 
-            resultado.style.display = "block";
-            resultado.innerHTML = "<i class='fa-solid fa-spinner fa-spin'></i> Verificando região...";
+            const cidade = dataViaCep.localidade.toLowerCase();
 
-            try {
-                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-                const data = await response.json();
-
-                if (data.erro) {
-                    resultado.innerHTML = "<span style='color: #ef4444;'>CEP não encontrado. Verifique os números.</span>";
-                    return;
-                }
-
-                const cidade = data.localidade.toLowerCase();
-
-                if (cidade === "são josé dos pinhais" || cidade === "curitiba") {
-                    resultado.innerHTML = `<span style='color: #22c55e; font-weight: bold;'><i class='fa-solid fa-circle-check'></i> Frete Grátis!</span><br><span style='font-size: 0.85rem; color: #cbd5e1;'>Sua oficina está na nossa área de entrega rápida. Nós levamos o kit até você de carro! Combinamos o horário direto no WhatsApp.</span>`;
-                } else {
-                    resultado.innerHTML = `<i class='fa-solid fa-truck-ramp-box' style='color: var(--laranja-cdp);'></i> <strong>Envio via Correios (PAC):</strong><br><span style='font-size: 0.85rem; color: #cbd5e1;'>Disponível para ${data.localidade} - ${data.uf}. O valor do frete e o prazo oficial dos Correios serão aplicados na tela final de pagamento.</span>`;
-                }
-
-            } catch (error) {
-                resultado.innerHTML = "<span style='color: #ef4444;'>Erro ao conectar com o serviço de CEP. Tente novamente.</span>";
+            // Regra local da loja (Curitiba / SJP)
+            if (cidade === "são josé dos pinhais" || cidade === "curitiba") {
+                resultado.innerHTML = `
+                    <div style="background: #064e3b; padding: 10px; border-radius: 5px; border: 1px solid #059669;">
+                        <span style='color: #34d399; font-weight: bold;'><i class='fa-solid fa-circle-check'></i> Frete Grátis (Entrega Própria)</span><br>
+                        <span style='font-size: 0.85rem; color: #e2e8f0;'>Sua oficina está na nossa região! Entregamos direto na sua bancada. Combinamos o horário pelo WhatsApp.</span>
+                    </div>`;
+                return;
             }
+
+            // 2. Consulta API do Melhor Envio via Backend PHP para outras cidades
+            const resMelhorEnvio = await fetch('calcular-frete.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ postal_code: cep })
+            });
+
+            const opcoesFrete = await resMelhorEnvio.json();
+
+            if (!Array.isArray(opcoesFrete) || opcoesFrete.length === 0) {
+                resultado.innerHTML = "<span style='color: #ef4444;'>Não foi possível calcular o frete para este CEP.</span>";
+                return;
+            }
+
+            // Filtra cotações sem erros
+            const fretesValidos = opcoesFrete.filter(f => !f.error);
+
+            if (fretesValidos.length === 0) {
+                resultado.innerHTML = "<span style='color: #ef4444;'>Nenhum serviço de entrega disponível para este CEP.</span>";
+                return;
+            }
+
+            // Monta a lista de opções de frete calculadas
+            let htmlOpcoes = `<div style="margin-top: 5px; text-align: left;">`;
+            fretesValidos.forEach(f => {
+                htmlOpcoes += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #334155;">
+                        <span><strong>${f.name}</strong> (${f.company.name}):</span>
+                        <span><strong>R$ ${parseFloat(f.price).toFixed(2).replace('.', ',')}</strong> - ${f.delivery_time} dia(s) úteis</span>
+                    </div>`;
+            });
+            htmlOpcoes += `</div>`;
+
+            resultado.innerHTML = htmlOpcoes;
+
+        } catch (error) {
+            resultado.innerHTML = "<span style='color: #ef4444;'>Erro ao conectar com o serviço de frete. Tente novamente.</span>";
         }
-    </script>
+    }
+</script>
 </body>
 </html>
