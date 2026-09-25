@@ -20,7 +20,7 @@ img{max-width:100%;display:block}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 section{padding:72px 0}
 h2{font-size:clamp(30px,4.6vw,44px);margin-bottom:12px}
-.sub{max-width:62ch;margin:0 auto 36px;color:#4a5875}
+.sub{max-width:62ch;margin:0 auto 36px;color:#334155}
 .center{text-align:center}
 :focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:16px;cursor:pointer}
@@ -66,20 +66,23 @@ nav a{text-decoration:none;font-weight:600;color:var(--azul);font-size:15px}nav 
 .pcard i{width:22px;color:var(--laranja);margin-right:6px}
 .conclusao{margin-top:26px;background:rgba(232,133,12,.14);border:1px solid var(--laranja);border-radius:var(--raio);padding:20px 24px;color:#fff;font-size:15px}
 .conclusao i{color:var(--laranja);margin-right:8px}
-/* Conteúdo kits */
+
+/* Conteúdo kits - REVISADO E OTIMIZADO PARA VISIBILIDADE */
 .kitblock{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:26px;margin-bottom:24px;border-top:6px solid var(--azul)}
 .kitblock.destaque{border-color:var(--laranja)}
 .kitblock h3{font-size:24px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .kitblock.destaque h3{color:var(--laranja)}
 .kgrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
-.klista{display:grid;gap:8px}
-.klinha{display:flex;justify-content:space-between;gap:14px;font-size:14.5px;padding:8px 0;border-bottom:1px dashed #e2e8f5}
+.klista{display:grid;gap:6px}
+.klinha{display:flex;justify-content:space-between;gap:14px;font-size:15px;padding:10px 12px;border-bottom:1px dashed #d0d7de;border-radius:6px}
+.klinha:nth-child(even){background:#f8fafc}
 .klinha span:first-child{font-weight:700;color:var(--azul)}
-.klinha span:last-child{color:#4a5875;text-align:right}
+.klinha span:last-child{font-weight:700;color:var(--azul-esc);text-align:right}
 .kfoco{background:var(--gelo);border-radius:var(--raio);padding:18px;text-align:center}
 .kfoco img{max-height:170px;margin:0 auto 12px;object-fit:contain}
 .kfoco h4{font-size:17px;margin-bottom:6px}
-.kfoco p{font-size:14px;color:#4a5875}
+.kfoco p{font-size:14px;color:#1E2B45;font-weight:500}
+
 /* Produtos / compra */
 .pgrid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
 .buycard{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
@@ -87,22 +90,22 @@ nav a{text-decoration:none;font-weight:600;color:var(--azul);font-size:15px}nav 
 .tagdest{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--laranja);color:#fff;padding:5px 16px;border-radius:999px;font-weight:800;font-size:12px;text-transform:uppercase;white-space:nowrap}
 .buycard img{width:100%;height:180px;object-fit:contain;background:var(--gelo);border-radius:10px;padding:10px}
 .buycard h4{font-size:21px;margin:14px 0 6px}
-.buycard .desc{color:#4a5875;font-size:14.5px;min-height:42px}
+.buycard .desc{color:#334155;font-size:14.5px;min-height:42px}
 .preco{background:var(--gelo);border-radius:10px;padding:16px;margin:14px 0;text-align:center;border-top:4px solid var(--azul)}
 .buycard.dest .preco{border-color:var(--laranja)}
 .preco .tag{font-size:12px;font-weight:700;color:var(--laranja-esc)}
 .preco b{display:block;font:800 32px 'Barlow Condensed',sans-serif;color:var(--azul);margin:4px 0}
 .buycard.dest .preco b{color:var(--laranja);font-size:38px}
 .preco .pix{color:var(--verde);font-weight:700;font-size:14px}
-.preco .parc{font-size:13.5px;color:#4a5875;margin-top:4px}
+.preco .parc{font-size:13.5px;color:#334155;margin-top:4px}
 /* Frete */
 .frete{background:var(--gelo);border-radius:var(--raio);padding:24px;margin-top:30px;max-width:600px;margin-left:auto;margin-right:auto;border:1px solid #dbe3f1}
 .frete label{font-weight:700;color:var(--azul);display:block;margin-bottom:10px}
 .frete-row{display:flex;gap:10px}
 .frete-row input{flex:1;padding:12px 14px;border-radius:8px;border:2px solid #cfd9ec;font:inherit}
 .frete-row input:focus{border-color:var(--laranja);outline:0}
-#shipping-result{margin-top:12px;font-size:14.5px;color:#4a5875;display:none}
-.seguranca{margin-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;font-size:14.5px;color:#4a5875}
+#shipping-result{margin-top:12px;font-size:14.5px;color:#1E2B45;display:none}
+.seguranca{margin-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;font-size:14.5px;color:#1E2B45;font-weight:600}
 .seguranca i{margin-right:6px}
 /* Depoimentos */
 .aval{background:var(--azul);color:#fff}
@@ -122,7 +125,7 @@ nav a{text-decoration:none;font-weight:600;color:var(--azul);font-size:15px}nav 
 .faqitem{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:20px}
 .faqitem h4{font-size:17px;color:var(--azul);margin-bottom:8px;display:flex;gap:8px;align-items:flex-start}
 .faqitem h4 i{color:var(--laranja);margin-top:3px}
-.faqitem p{font-size:14.5px;color:#4a5875}
+.faqitem p{font-size:14.5px;color:#334155}
 /* Contato */
 .contato .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
 .cinfo{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:28px;border-top:6px solid var(--azul)}
@@ -385,7 +388,7 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
   <p><strong>Endereço:</strong> Rua Joinville, 2508 - Bairro São Pedro</p>
   <p>São José dos Pinhais / PR - CEP: 83020-000</p>
   <p><strong>WhatsApp / Vendas:</strong> (41) 98872-5687</p>
-  <p style="font-size:13.5px;color:#4a5875">CNPJ: 43.707.158/0002-90</p>
+  <p style="font-size:13.5px;color:#334155">CNPJ: 43.707.158/0002-90</p>
   <p style="margin-top:14px"><i class="fa-solid fa-store"></i> Venha conhecer de perto nosso setor completo de parafusos!</p>
   <a class="btn btn-o" href="https://wa.me/5541988725687" target="_blank" rel="noopener" style="margin-top:16px"><i class="fa-brands fa-whatsapp"></i>Chamar no WhatsApp</a>
  </div>
