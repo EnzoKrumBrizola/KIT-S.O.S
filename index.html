@@ -1,399 +1,433 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit S.O.S. Oficina - Casa do Parafuso</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kit S.O.S. Mecânica | A Casa do Parafuso</title>
+<meta name="description" content="Kit S.O.S. Mecânica da Casa do Parafuso: parafuso certo na bancada em 10 segundos. Kits 6mm, 8mm e Completo.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--azul:#0E3A82;--azul-esc:#08224F;--laranja:#E8850C;--laranja-esc:#C96F00;--branco:#fff;--gelo:#F3F6FB;--texto:#1E2B45;--raio:14px;--verde:#1DA34E}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--branco:#fff;--gelo:#F3F6FB;--texto:#1E2B45}}
+:root[data-theme="dark"]{--branco:#fff;--gelo:#F3F6FB;--texto:#1E2B45}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(120px + env(safe-area-inset-top,0px))}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--texto);background:var(--branco);line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;line-height:1.1;color:var(--azul)}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(30px,4.6vw,44px);margin-bottom:12px}
+.sub{max-width:62ch;margin:0 auto 36px;color:#4a5875}
+.center{text-align:center}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:16px;cursor:pointer}
+.btn-o{background:var(--laranja);color:#fff}.btn-o:hover{background:var(--laranja-esc)}
+.btn-a{background:var(--azul);color:#fff}.btn-a:hover{background:var(--azul-esc)}
+.btn-v{background:var(--verde);color:#fff}.btn-v:hover{background:#178a42}
+.btn-l{border-color:#fff;color:#fff;background:transparent}.btn-l:hover{background:#fff;color:var(--azul)}
+.btn-out{border-color:var(--azul);color:var(--azul);background:transparent;padding:11px 22px}.btn-out:hover{background:var(--azul);color:#fff}
+.btn-full{width:100%}
+/* Top bar */
+.topbar{background:var(--azul-esc);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:9px 14px}
+.topbar i{color:var(--laranja);margin-right:6px}
+/* Cabeçalho */
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:4px solid var(--laranja);box-shadow:0 2px 14px rgba(8,34,79,.12)}
+.bar{display:flex;align-items:center;gap:20px;height:76px}
+.bar .logo{display:flex;align-items:center;text-decoration:none}
+.bar .logo img{height:50px;width:auto}
+nav{margin-left:auto;display:flex;gap:24px;align-items:center}
+nav a{text-decoration:none;font-weight:600;color:var(--azul);font-size:15px}nav a:hover{color:var(--laranja)}
+.menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--azul);cursor:pointer;margin-left:auto}
+/* Hero */
+.hero{background:linear-gradient(105deg,rgba(8,34,79,.96) 35%,rgba(14,58,130,.75)),url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="%230E3A82"/></svg>') center/cover;color:#fff;padding:80px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.badge-top{display:inline-flex;align-items:center;gap:8px;background:rgba(232,133,12,.18);border:1px solid var(--laranja);color:#ffcf94;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:18px}
+.hero h1{color:#fff;font-size:clamp(38px,6vw,60px);font-weight:800;max-width:16ch}
+.hero h1 span{color:var(--laranja)}
+.hero p{font-size:18px;max-width:52ch;margin:18px 0 28px;color:#dbe6fa}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-img{background:#fff;border-radius:var(--raio);padding:18px;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.hero-img img{width:100%;aspect-ratio:1/1;object-fit:contain}
+/* Prejuízo */
+.prejuizo{background:var(--azul-esc);color:#fff}
+.prejuizo h2{color:#fff;text-align:center}
+.prejuizo .sub{color:#cfdcf5;text-align:center}
+.prejuizo .sub strong{color:#ffcf94}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
+.pcard{background:#fff;color:var(--texto);border-radius:var(--raio);padding:26px;border-top:6px solid}
+.pcard.ruim{border-color:#D64545}
+.pcard.bom{border-color:var(--verde)}
+.pcard h3{font-size:22px;margin-bottom:14px}
+.pcard.ruim h3{color:#D64545}.pcard.bom h3{color:var(--verde)}
+.pcard ul{list-style:none;display:grid;gap:10px;font-size:15px}
+.pcard i{width:22px;color:var(--laranja);margin-right:6px}
+.conclusao{margin-top:26px;background:rgba(232,133,12,.14);border:1px solid var(--laranja);border-radius:var(--raio);padding:20px 24px;color:#fff;font-size:15px}
+.conclusao i{color:var(--laranja);margin-right:8px}
+/* Conteúdo kits */
+.kitblock{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:26px;margin-bottom:24px;border-top:6px solid var(--azul)}
+.kitblock.destaque{border-color:var(--laranja)}
+.kitblock h3{font-size:24px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.kitblock.destaque h3{color:var(--laranja)}
+.kgrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
+.klista{display:grid;gap:8px}
+.klinha{display:flex;justify-content:space-between;gap:14px;font-size:14.5px;padding:8px 0;border-bottom:1px dashed #e2e8f5}
+.klinha span:first-child{font-weight:700;color:var(--azul)}
+.klinha span:last-child{color:#4a5875;text-align:right}
+.kfoco{background:var(--gelo);border-radius:var(--raio);padding:18px;text-align:center}
+.kfoco img{max-height:170px;margin:0 auto 12px;object-fit:contain}
+.kfoco h4{font-size:17px;margin-bottom:6px}
+.kfoco p{font-size:14px;color:#4a5875}
+/* Produtos / compra */
+.pgrid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.buycard{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.buycard.dest{border:2px solid var(--laranja);box-shadow:0 12px 30px rgba(232,133,12,.18)}
+.tagdest{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--laranja);color:#fff;padding:5px 16px;border-radius:999px;font-weight:800;font-size:12px;text-transform:uppercase;white-space:nowrap}
+.buycard img{width:100%;height:180px;object-fit:contain;background:var(--gelo);border-radius:10px;padding:10px}
+.buycard h4{font-size:21px;margin:14px 0 6px}
+.buycard .desc{color:#4a5875;font-size:14.5px;min-height:42px}
+.preco{background:var(--gelo);border-radius:10px;padding:16px;margin:14px 0;text-align:center;border-top:4px solid var(--azul)}
+.buycard.dest .preco{border-color:var(--laranja)}
+.preco .tag{font-size:12px;font-weight:700;color:var(--laranja-esc)}
+.preco b{display:block;font:800 32px 'Barlow Condensed',sans-serif;color:var(--azul);margin:4px 0}
+.buycard.dest .preco b{color:var(--laranja);font-size:38px}
+.preco .pix{color:var(--verde);font-weight:700;font-size:14px}
+.preco .parc{font-size:13.5px;color:#4a5875;margin-top:4px}
+/* Frete */
+.frete{background:var(--gelo);border-radius:var(--raio);padding:24px;margin-top:30px;max-width:600px;margin-left:auto;margin-right:auto;border:1px solid #dbe3f1}
+.frete label{font-weight:700;color:var(--azul);display:block;margin-bottom:10px}
+.frete-row{display:flex;gap:10px}
+.frete-row input{flex:1;padding:12px 14px;border-radius:8px;border:2px solid #cfd9ec;font:inherit}
+.frete-row input:focus{border-color:var(--laranja);outline:0}
+#shipping-result{margin-top:12px;font-size:14.5px;color:#4a5875;display:none}
+.seguranca{margin-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;font-size:14.5px;color:#4a5875}
+.seguranca i{margin-right:6px}
+/* Depoimentos */
+.aval{background:var(--azul);color:#fff}
+.aval h2{color:#fff;text-align:center}
+.aval .sub{text-align:center;color:#dbe6fa}
+.revgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:10px}
+.rev{background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px}
+.rev .head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.rev .av{width:42px;height:42px;border-radius:50%;background:var(--laranja);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.stars{color:#FFC533}
+/* Garantia */
+.garantia{background:var(--gelo)}
+.gbox{display:flex;gap:26px;align-items:center;background:#fff;border-radius:var(--raio);padding:30px;border-bottom:4px solid var(--laranja)}
+.gbox i{font-size:44px;color:var(--laranja);flex:none}
+/* FAQ */
+.faqgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.faqitem{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:20px}
+.faqitem h4{font-size:17px;color:var(--azul);margin-bottom:8px;display:flex;gap:8px;align-items:flex-start}
+.faqitem h4 i{color:var(--laranja);margin-top:3px}
+.faqitem p{font-size:14.5px;color:#4a5875}
+/* Contato */
+.contato .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
+.cinfo{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:28px;border-top:6px solid var(--azul)}
+.cinfo p{margin:6px 0;font-size:15px}
+.cinfo i{color:var(--laranja);margin-right:8px;width:18px}
+.clogo{background:var(--azul);border-radius:var(--raio);display:grid;place-items:center;color:#fff;padding:28px;text-align:center}
+.clogo img{height:78px;width:auto;margin:0 auto 14px;filter:brightness(0) invert(1)}
+/* Rodapé */
+footer{background:var(--azul-esc);color:#cfdcf5;padding:30px 0;font-size:15px;text-align:center}
+footer img{height:44px;width:auto;margin:0 auto 10px}
+.zap{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:32px;box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none}
+@media(max-width:900px){
+ .menu-btn{display:block}
+ nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px;gap:16px;border-bottom:4px solid var(--laranja)}
+ nav.aberto{display:flex}
+ .hero .wrap,.pgrid,.kgrid,.contato .wrap{grid-template-columns:1fr}
+ .hero-img{order:-1}
+ section{padding:52px 0}.hero{padding:56px 0 70px}
+ .frete-row{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <p><i class="fa-solid fa-rocket"></i> PROMOÇÃO DE LANÇAMENTO: FRETE GRÁTIS ATÉ 30 KM DA NOSSA LOJA PEDRO MORO!</p>
+<div class="topbar"><i class="fa-solid fa-rocket"></i>PROMOÇÃO DE LANÇAMENTO: FRETE GRÁTIS ATÉ 30 KM DA LOJA PEDRO MORO</div>
+
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#topo"><img src="CDP-LOGO2.png" alt="A Casa do Parafuso"></a>
+  <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  <nav id="menu">
+   <a href="#inicio">Início</a><a href="#calculo">Prejuízo Zero</a><a href="#conteudo">O que vem no kit</a>
+   <a href="#depoimentos">Quem usa</a><a href="#faq">Dúvidas</a><a href="#contato">Endereço</a>
+   <a class="btn btn-o" href="#produto"><i class="fa-solid fa-toolbox"></i>Garantir meu kit</a>
+  </nav>
+ </div>
+</header>
+
+<main id="topo">
+<section id="inicio" class="hero"><div class="wrap">
+ <div>
+  <span class="badge-top"><i class="fa-solid fa-fire"></i>O socorro definitivo da sua oficina</span>
+  <h1>Pare de perder horas de trabalho por falta de <span>parafusos</span></h1>
+  <p>Não pare mais o elevador hidráulico ou o serviço do cliente para ir buscar peças básicas na rua. Mantenha a produtividade máxima, entregue mais rápido e aumente o faturamento diário da sua mecânica.</p>
+  <div class="cta">
+   <a class="btn btn-o" href="#produto"><i class="fa-solid fa-cart-shopping"></i>Comprar kit agora</a>
+   <a class="btn btn-l" href="#calculo"><i class="fa-solid fa-calculator"></i>Ver cálculo de lucro</a>
+  </div>
+ </div>
+ <div class="hero-img"><img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo"></div>
+</div></section>
+
+<section id="calculo" class="prejuizo"><div class="wrap">
+ <h2>Cada minuto fora da oficina é dinheiro jogado fora</h2>
+ <p class="sub">Segundo dados do SEBRAE, uma oficina mecânica média fatura cerca de <strong>R$ 40.000,00 por mês</strong> com base em 220 horas úteis. Isso bota o valor da sua hora trabalhada em <strong>R$ 180,00</strong>!</p>
+ <div class="pgrid">
+  <div class="pcard ruim">
+   <h3><i class="fa-solid fa-triangle-exclamation"></i> Rotina sem o kit</h3>
+   <ul>
+    <li><i class="fa-solid fa-triangle-exclamation"></i>Falta 1 parafuso ou porca travante no meio da montagem</li>
+    <li><i class="fa-solid fa-person-walking-arrow-right"></i>Mecânico para o serviço e se desloca até a autopeças</li>
+    <li><i class="fa-solid fa-circle-xmark"></i><strong>Resultado:</strong> 1 hora perdida = R$ 180,00 de prejuízo</li>
+    <li><i class="fa-solid fa-car-burst"></i>Carro ocupando pátio e cliente esperando além do prazo</li>
+   </ul>
+  </div>
+  <div class="pcard bom">
+   <h3><i class="fa-solid fa-circle-check"></i> Rotina com o Kit S.O.S.</h3>
+   <ul>
+    <li><i class="fa-solid fa-wrench"></i>Falta o parafuso na hora do aperto final da peça</li>
+    <li><i class="fa-solid fa-box-open"></i>Você abre a maleta organizadora e pega a peça exata em 10s</li>
+    <li><i class="fa-solid fa-circle-check"></i><strong>Resultado:</strong> serviço sem interrupções = R$ 180 poupados</li>
+    <li><i class="fa-solid fa-gauge-high"></i>Giro rápido de veículos e cliente impressionado com a velocidade</li>
+   </ul>
+  </div>
+ </div>
+ <p class="conclusao"><i class="fa-solid fa-calculator"></i><strong>Matemática clara:</strong> se o kit evitar que você saia da oficina apenas 5 vezes, ele já se pagou por completo. Daí em diante é lucro puro na bancada.</p>
+</div></section>
+
+<section id="conteudo"><div class="wrap">
+ <h2 class="center">Conheça os 3 kits S.O.S. disponíveis</h2>
+ <p class="sub center">Veja o que vem dentro de cada maleta antes de escolher o ideal para o seu trabalho.</p>
+
+ <div class="kitblock destaque">
+  <h3><i class="fa-solid fa-boxes-packing"></i>1. Kit S.O.S. Mecânica COMPLETO — 340 peças (6mm e 8mm)</h3>
+  <div class="kgrid">
+   <div class="klista">
+    <div class="klinha"><span>Parafusos flangeados M6 e M8</span><span>88 un. (M6: 16–35mm | M8: 20–50mm)</span></div>
+    <div class="klinha"><span>Porcas M6 e M8 variadas</span><span>80 un. (flangeadas CH 10/13 e nylon auto-travantes)</span></div>
+    <div class="klinha"><span>Arruelas técnicas M6 e M8</span><span>103 un. (lisas industriais, pressão, aba larga)</span></div>
+    <div class="klinha"><span>Chaves biela vazadas</span><span>2 un. (10mm e 13mm)</span></div>
+    <div class="klinha"><span>Soquetes magnéticos de impacto</span><span>2 un. de fixação rápida (10mm e 13mm)</span></div>
+    <div class="klinha"><span>Lubrificante</span><span>2 sprays de 300ml</span></div>
+    <div class="klinha"><span>Maletas organizadoras</span><span>2 maletas com 14 divisórias cada</span></div>
+   </div>
+   <div class="kfoco"><img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo">
+    <h4><i class="fa-solid fa-certificate" style="color:var(--laranja)"></i> Solução total para bancada</h4>
+    <p>Cobre 100% das necessidades diárias em M6 e M8, com organização máxima e fim do desperdício de tempo.</p>
+   </div>
+  </div>
+ </div>
+
+ <div class="kitblock">
+  <h3><i class="fa-solid fa-box"></i>2. Kit S.O.S. Mecânica 6mm — 174 peças</h3>
+  <div class="kgrid">
+   <div class="klista">
+    <div class="klinha"><span>Parafusos flangeados M6</span><span>50 un. (M6x16, 20, 25, 30, 35)</span></div>
+    <div class="klinha"><span>Porcas M6</span><span>40 un. (20 flangeadas CH10 + 20 auto-travantes nylon)</span></div>
+    <div class="klinha"><span>Arruelas técnicas M6</span><span>60 un. (10 aba larga, 25 lisas, 25 pressão)</span></div>
+    <div class="klinha"><span>Chave biela vazada</span><span>1 un. (10mm)</span></div>
+    <div class="klinha"><span>Soquete magnético</span><span>1 un. (10mm — encaixe 1/4")</span></div>
+    <div class="klinha"><span>Lubrificante + maleta</span><span>1 spray 300ml + maleta (14 divisórias)</span></div>
+   </div>
+   <div class="kfoco"><img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm">
+    <h4><i class="fa-solid fa-wrench" style="color:var(--azul)"></i> Foco em M6 / chave 10mm</h4>
+    <p>Ideal para lataria, paralamas, tampas, suportes e acabamentos mecânicos gerais.</p>
+   </div>
+  </div>
+ </div>
+
+ <div class="kitblock">
+  <h3><i class="fa-solid fa-box"></i>3. Kit S.O.S. Mecânica 8mm — 166 peças</h3>
+  <div class="kgrid">
+   <div class="klista">
+    <div class="klinha"><span>Parafusos flangeados M8</span><span>38 un. (M8x20, 25, 30, 40, 50)</span></div>
+    <div class="klinha"><span>Porcas M8</span><span>40 un. (20 flangeadas CH13 + 20 auto-travantes nylon)</span></div>
+    <div class="klinha"><span>Arruelas técnicas M8</span><span>58 un. (8 aba larga, 25 lisas, 25 pressão)</span></div>
+    <div class="klinha"><span>Chave biela vazada</span><span>1 un. (13mm)</span></div>
+    <div class="klinha"><span>Soquete magnético</span><span>1 un. (13mm — encaixe 1/4")</span></div>
+    <div class="klinha"><span>Lubrificante + maleta</span><span>1 spray 300ml + maleta (14 divisórias)</span></div>
+   </div>
+   <div class="kfoco"><img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm">
+    <h4><i class="fa-solid fa-gears" style="color:var(--verde)"></i> Foco em M8 / chave 13mm</h4>
+    <p>Perfeito para fixação pesada, suportes de motor, suspensão, coletores e agregados.</p>
+   </div>
+  </div>
+ </div>
+</div></section>
+
+<section id="produto" style="background:var(--gelo)"><div class="wrap">
+ <h2 class="center">Escolha a opção ideal para sua oficina</h2>
+ <p class="sub center">Selecione o kit ideal para o porte do seu trabalho ou garanta o combo completo com o maior desconto.</p>
+
+ <div class="pgrid3">
+  <div class="buycard">
+   <div>
+    <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm">
+    <h4>Kit S.O.S. Mecânica 6mm</h4>
+    <p class="desc">Ideal para reparos leves e fixações gerais M6 (chave 10mm). Contém 174 peças.</p>
+    <div class="preco">
+     <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M6</span>
+     <b>R$ 257,30</b>
+     <span class="pix">À VISTA NO PIX</span>
+     <p class="parc">ou 6x de R$ 48,73 no cartão (total R$ 292,39)</p>
     </div>
+   </div>
+   <div>
+    <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 6mm</a>
+    <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Dúvidas no WhatsApp</a>
+   </div>
+  </div>
 
-    <header class="header">
-        <div class="container header-content">
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-            
-            <label for="menu-toggle" class="menu-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
-            <div class="logo">
-                <img src="CDP-LOGO2.png" alt="Casa do Parafuso">
-            </div>
-
-            <nav class="nav">
-                <a href="#inicio">Início</a>
-                <a href="#calculo">Prejuízo Zero</a>
-                <a href="#conteudo">O que vem nos Kits</a>
-                <a href="#depoimentos">Quem Usa</a>
-                <a href="#faq">Dúvidas</a>
-                <a href="#contato">Endereço</a>
-                <a href="#produto" class="btn-header">Garantir Meu Kit</a>
-            </nav>
-        </div>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="badge-urgente"><i class="fa-solid fa-fire"></i> O Socorro Definitivo da sua Oficina</span>
-                <h1>Pare de perder horas de trabalho por falta de <span>parafusos</span></h1>
-                <p>Não pare mais o elevador hidráulico ou o serviço do seu cliente para ir buscar peças básicas na rua. Mantenha a produtividade máxima, entregue mais rápido e aumente o faturamento diário da sua mecânica.</p>
-                <div class="hero-buttons">
-                    <a href="#produto" class="btn-cta">Comprar Kit Agora</a>
-                    <a href="#calculo" class="btn-secondary">Ver Cálculo de Lucro</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo">
-            </div>
-        </div>
-    </section>
-
-    <section id="calculo" class="prejuizo-section">
-        <div class="container">
-            <h2 class="section-title-light">Cada minuto fora da oficina é dinheiro jogado fora</h2>
-            <p class="section-subtitle">Segundo dados do SEBRAE, uma oficina mecânica média fatura cerca de <strong>R$ 40.000,00 por mês</strong> com base em 220 horas úteis. Isso bota o valor da sua hora trabalhada em <strong>R$ 180,00</strong>!</p>
-            
-            <div class="prejuizo-grid">
-                <div class="prejuizo-card alert">
-                    <h3>Rotina sem o Kit (Prejuízo Oculto)</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-triangle-exclamation"></i> Falta 1 parafuso ou porca travante no meio da montagem.</li>
-                        <li><i class="fa-solid fa-person-walking-arrow-right"></i> Mecânico para o serviço e se desloca até a autopeças.</li>
-                        <li><i class="fa-solid fa-circle-xmark"></i> <strong>Resultado:</strong> 1 hora perdida no trânsito/balcão = <strong>R$ 180,00 de prejuízo</strong>.</li>
-                        <li><i class="fa-solid fa-car-burst"></i> Carro ocupando espaço no pátio e cliente esperando além do prazo.</li>
-                    </ul>
-                </div>
-                <div class="prejuizo-card sucesso">
-                    <h3>Rotina com o Kit S.O.S. (Lucro Máximo)</h3>
-                    <ul>
-                        <li><i class="fa-solid fa-wrench"></i> Falta o parafuso na hora do aperto final da peça.</li>
-                        <li><i class="fa-solid fa-box-open"></i> Você abre a maleta organizadora e pega a peça exata em 10 segundos.</li>
-                        <li><i class="fa-solid fa-circle-check"></i> <strong>Resultado:</strong> Serviço concluído sem interrupções = <strong>R$ 180,00 poupados</strong>.</li>
-                        <li><i class="fa-solid fa-gauge-high"></i> Giro rápido de veículos no pátio e cliente impressionado com a velocidade.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="conclusao-box">
-                <p><i class="fa-solid fa-calculator"></i> <strong>Matemática Clara:</strong> Se o Kit evitar que você saia da oficina apenas 5 vezes, ele já se pagou por completo. Daí para frente, é puro lucro e produtividade na sua bancada!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO O QUE VEM NOS KITS (DIVIDIDA NOS 3 KITS) -->
-    <section id="conteudo" class="conteudo-section">
-        <div class="container">
-            <h2 class="section-title">Conheça os 3 Kits S.O.S. disponíveis!</h2>
-            <p class="section-subtitle" style="color: #cbd5e1;">Veja o que vem dentro de cada maleta antes de escolher o ideal para o seu trabalho!</p>
-
-            <!-- 1. KIT COMPLETO -->
-            <div class="conteudo-block" style="margin-bottom: 50px; background: #1e293b; padding: 25px; border-radius: 12px; border: 2px solid var(--laranja-cdp);">
-                <h3 style="color: var(--laranja-cdp); font-size: 1.5rem; margin-bottom: 15px;"><i class="fa-solid fa-boxes-packing"></i> 1. Kit S.O.S. Mecânica COMPLETO (340 Peças - 6mm e 8mm)</h3>
-                <div class="conteudo-grid">
-                    <div class="conteudo-lista">
-                        <div class="item-linha"><span>Parafusos Flangeados M6 e M8</span> <span>88 unidades (Medidas M6: 16mm a 35mm | Medidas M8: 20mm a 50mm)</span></div>
-                        <div class="item-linha"><span>Porcas M6 e M8 Variadas</span> <span>80 unidades (Flangeadas CH 10/13 e Nylon Auto-Travantes)</span></div>
-                        <div class="item-linha"><span>Arruelas Técnicas M6 e M8</span> <span>103 unidades (Lisas Industriais, Pressão e Aba Larga)</span></div>
-                        <div class="item-linha"><span>Chaves Biela Vazadas</span> <span>02 unidades (Medidas: 10mm e 13mm)</span></div>
-                        <div class="item-linha"><span>Soquetes Magnéticos de Impacto</span> <span>02 unidades de fixação rápida (10mm e 13mm)</span></div>
-                        <div class="item-linha"><span>Lubrificante </span> <span>02 sprays de 300ml</span></div>
-                        <div class="item-linha"><span>Maletas Organizadoras</span> <span>02 maletas plásticas com 14 divisórias cada</span></div>
-                    </div>
-                    <div class="conteudo-foco">
-                        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo">
-                        <div class="foco-texto">
-                            <h4><i class="fa-solid fa-certificate" style="color: var(--laranja-cdp);"></i> Solução Total para Bancada</h4>
-                            <p>Cobre 100% das necessidades diárias em parafusos M6 e M8, garantindo organização máxima e fim do desperdício de tempo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. KIT 6MM -->
-            <div class="conteudo-block" style="margin-bottom: 50px; background: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid #334155;">
-                <h3 style="color: #38bdf8; font-size: 1.4rem; margin-bottom: 15px;"><i class="fa-solid fa-box"></i> 2. Kit S.O.S. Mecânica 6mm (174 Peças)</h3>
-                <div class="conteudo-grid">
-                    <div class="conteudo-lista">
-                        <div class="item-linha"><span>Parafusos Flangeados M6</span> <span>50 unidades (M6x16, M6x20, M6x25, M6x30, M6x35)</span></div>
-                        <div class="item-linha"><span>Porcas M6</span> <span>40 unidades (20 Flangeadas CH 10 + 20 Auto-Travantes Nylon)</span></div>
-                        <div class="item-linha"><span>Arruelas Técnicas M6</span> <span>60 unidades (10 Aba Larga, 25 Lisas, 25 Pressão)</span></div>
-                        <div class="item-linha"><span>Chave Biela Vazada</span> <span>01 unidade (10mm)</span></div>
-                        <div class="item-linha"><span>Soquete Magnético</span> <span>01 unidade (10mm - Encaixe 1/4")</span></div>
-                        <div class="item-linha"><span> Lubrificante + Maleta</span> <span>01 spray 300ml + 01 Maleta Organizadora (14 divisórias)</span></div>
-                    </div>
-                    <div class="conteudo-foco">
-                        <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm">
-                        <div class="foco-texto">
-                            <h4><i class="fa-solid fa-wrench" style="color: #38bdf8;"></i> Foco em M6 / Chave 10mm</h4>
-                            <p>Ideal para alinhamento de lataria, paralamas, tampas, suportes e acabamentos mecânicos gerais.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. KIT 8MM -->
-            <div class="conteudo-block" style="background: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid #334155;">
-                <h3 style="color: #22c55e; font-size: 1.4rem; margin-bottom: 15px;"><i class="fa-solid fa-box"></i> 3. Kit S.O.S. Mecânica 8mm (166 Peças)</h3>
-                <div class="conteudo-grid">
-                    <div class="conteudo-lista">
-                        <div class="item-linha"><span>Parafusos Flangeados M8</span> <span>38 unidades (M8x20, M8x25, M8x30, M8x40, M8x50)</span></div>
-                        <div class="item-linha"><span>Porcas M8</span> <span>40 unidades (20 Flangeadas CH 13 + 20 Auto-Travantes Nylon)</span></div>
-                        <div class="item-linha"><span>Arruelas Técnicas M8</span> <span>58 unidades (8 Aba Larga, 25 Lisas, 25 Pressão)</span></div>
-                        <div class="item-linha"><span>Chave Biela Vazada</span> <span>01 unidade (13mm)</span></div>
-                        <div class="item-linha"><span>Soquete Magnético</span> <span>01 unidade (13mm - Encaixe 1/4")</span></div>
-                        <div class="item-linha"><span> Lubrificante + Maleta</span> <span>01 spray 300ml + 01 Maleta Organizadora (14 divisórias)</span></div>
-                    </div>
-                    <div class="conteudo-foco">
-                        <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm">
-                        <div class="foco-texto">
-                            <h4><i class="fa-solid fa-gears" style="color: #22c55e;"></i> Foco em M8 / Chave 13mm</h4>
-                            <p>Perfeito para fixação pesada, suportes de motor, suspensão, coletores e agregados.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE PRODUTOS E COMPRA DOS 3 KITS -->
-    <section id="produto" class="product-section">
-        <div class="container">
-            <h2 class="section-title" style="color: #ffffff; text-align: center; margin-bottom: 10px;">Escolha a opção ideal para sua oficina</h2>
-            <p class="section-subtitle" style="text-align: center; margin-bottom: 40px; color: #cbd5e1;">Selecione o kit ideal para o porte do seu trabalho ou garanta o combo completo com o maior desconto.</p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-
-                <!-- CARD 1: KIT 6MM -->
-                <div style="background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" style="width: 100%; height: 200px; object-fit: contain; background: #0f172a; border-radius: 8px; padding: 10px;">
-                        <h3 style="color: #ffffff; font-size: 1.3rem; margin: 15px 0 5px 0;">Kit S.O.S. Mecânica 6mm</h3>
-                        <p style="color: #94a3b8; font-size: 0.9rem; min-height: 40px;">Ideal para reparos leves e fixações gerais M6 (Chave 10mm). Contém 174 peças.</p>
-                        
-                        <div class="price-box" style="margin: 15px 0; padding: 15px; background: #0f172a; border-radius: 8px;">
-                            <span class="discount-badge" style="font-size: 0.75rem;"><i class="fa-solid fa-bolt"></i> OFERTA M6</span>
-                            <h3 class="price-value" style="font-size: 1.8rem; margin: 5px 0;">R$ 257,30</h3>
-                            <p style="color: #22c55e; font-size: 0.9rem; font-weight: bold; margin: 0;">À VISTA NO PIX</p>
-                            <p style="font-size: 0.9rem; color: #ffffff; margin-top: 5px;">
-                                ou <strong>6x de R$ 48,73</strong> no cartão<br>
-                                <span style="font-size: 0.75rem; color: #cbd5e1;">(Total: R$ 292,39)</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn-cta buy-btn" style="width: 100%; text-align: center; padding: 12px; background: #22c55e; margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 6mm</a>
-                        <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm" target="_blank" class="btn-secondary" style="display: block; text-align: center; padding: 10px; font-size: 0.85rem;"><i class="fa-brands fa-whatsapp"></i> Dúvidas no WhatsApp</a>
-                    </div>
-                </div>
-
-                <!-- CARD 2: KIT COMPLETO (DESTAQUE) -->
-                <div style="background: #1e293b; border-radius: 12px; padding: 20px; border: 2px solid var(--laranja-cdp); display: flex; flex-direction: column; justify-content: space-between; position: relative;">
-                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--laranja-cdp); color: white; padding: 4px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">
-                        Mais Vendido / Recomendo
-                    </div>
-                    <div>
-                        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" style="width: 100%; height: 200px; object-fit: contain; background: #0f172a; border-radius: 8px; padding: 10px; margin-top: 10px;">
-                        <h3 style="color: var(--laranja-cdp); font-size: 1.4rem; margin: 15px 0 5px 0;">Kit S.O.S. Mecânica COMPLETO</h3>
-                        <p style="color: #94a3b8; font-size: 0.9rem; min-height: 40px;">Solução total 6mm + 8mm (Chaves 10mm e 13mm). Contém 340 peças e 2 maletas.</p>
-                        
-                        <div class="price-box" style="margin: 15px 0; padding: 15px; background: #0f172a; border-radius: 8px; border: 1px solid var(--laranja-cdp);">
-                            <span class="discount-badge" style="font-size: 0.75rem;"><i class="fa-solid fa-fire"></i> COMBO MAIOR ECONOMIA</span>
-                            <h3 class="price-value" style="font-size: 2rem; margin: 5px 0; color: var(--laranja-cdp);">R$ 622,39</h3>
-                            <p style="color: #22c55e; font-size: 0.95rem; font-weight: bold; margin: 0;">À VISTA NO PIX</p>
-                            <p style="font-size: 0.95rem; color: #ffffff; margin-top: 5px;">
-                                ou <strong>6x de R$ 117,88</strong> no cartão<br>
-                                <span style="font-size: 0.75rem; color: #cbd5e1;">(Total: R$ 707,26)</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn-cta buy-btn" style="width: 100%; text-align: center; padding: 12px; background: var(--laranja-cdp); margin-bottom: 8px; font-size: 1rem;"><i class="fa-solid fa-cart-shopping"></i> Comprar Combo Completo</a>
-                        <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" class="btn-secondary" style="display: block; text-align: center; padding: 10px; font-size: 0.85rem;"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-                    </div>
-                </div>
-
-                <!-- CARD 3: KIT 8MM -->
-                <div style="background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid #334155; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" style="width: 100%; height: 200px; object-fit: contain; background: #0f172a; border-radius: 8px; padding: 10px;">
-                        <h3 style="color: #ffffff; font-size: 1.3rem; margin: 15px 0 5px 0;">Kit S.O.S. Mecânica 8mm</h3>
-                        <p style="color: #94a3b8; font-size: 0.9rem; min-height: 40px;">Indicado para fixações reforçadas e estrutura M8 (Chave 13mm). Contém 166 peças.</p>
-                        
-                        <div class="price-box" style="margin: 15px 0; padding: 15px; background: #0f172a; border-radius: 8px;">
-                            <span class="discount-badge" style="font-size: 0.75rem;"><i class="fa-solid fa-bolt"></i> OFERTA M8</span>
-                            <h3 class="price-value" style="font-size: 1.8rem; margin: 5px 0;">R$ 365,09</h3>
-                            <p style="color: #22c55e; font-size: 0.9rem; font-weight: bold; margin: 0;">À VISTA NO PIX</p>
-                            <p style="font-size: 0.9rem; color: #ffffff; margin-top: 5px;">
-                                ou <strong>6x de R$ 69,14</strong> no cartão<br>
-                                <span style="font-size: 0.75rem; color: #cbd5e1;">(Total: R$ 414,87)</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn-cta buy-btn" style="width: 100%; text-align: center; padding: 12px; background: #22c55e; margin-bottom: 8px; font-size: 0.95rem;"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 8mm</a>
-                        <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" class="btn-secondary" style="display: block; text-align: center; padding: 10px; font-size: 0.85rem;"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CÁLCULO DE CEP DEPOIS DAS OPÇÕES -->
-            <div class="shipping-calculator" style="background: #1e293b; padding: 20px; border-radius: 12px; margin-top: 30px; border: 1px solid #334155; max-width: 600px; margin-left: auto; margin-right: auto;">
-                <label for="cep-input" style="color: #ffffff; display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem;">
-                    <i class="fa-solid fa-truck" style="color: var(--laranja-cdp);"></i> Calcular Frete e Prazo de Entrega:
-                </label>
-                <div style="display: flex; gap: 10px;">
-                    <input type="text" id="cep-input" placeholder="00000-000" maxlength="9" style="flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #475569; background: #0f172a; color: white;">
-                    <button onclick="calcularFrete()" style="background: var(--laranja-cdp); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Calcular</button>
-                </div>
-                <div id="shipping-result" style="margin-top: 10px; font-size: 0.9rem; color: #cbd5e1; display: none;"></div>
-            </div>
-
-            <div class="seguranca-icones" style="margin-top: 20px; text-align: center; display: flex; justify-content: center; gap: 20px;">
-                <span><i class="fa-solid fa-lock" style="color: #22c55e;"></i> Compra 100% Segura</span>
-                <span><i class="fa-solid fa-file-invoice-dollar" style="color: var(--laranja-cdp);"></i> Enviamos Nota Fiscal</span>
-            </div>
-        </div>
-    </section>
-
-    <div id="zoom-modal" class="zoom-modal" onclick="fecharZoom()">
-        <span class="zoom-close" onclick="fecharZoom()">&times;</span>
-        <img class="zoom-content" id="foto-expandida" alt="Imagem Expandida do Kit">
+  <div class="buycard dest">
+   <span class="tagdest">Mais vendido</span>
+   <div>
+    <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" style="margin-top:8px">
+    <h4>Kit S.O.S. Mecânica COMPLETO</h4>
+    <p class="desc">Solução total 6mm + 8mm (chaves 10mm e 13mm). Contém 340 peças e 2 maletas.</p>
+    <div class="preco">
+     <span class="tag"><i class="fa-solid fa-fire"></i> COMBO MAIOR ECONOMIA</span>
+     <b>R$ 622,39</b>
+     <span class="pix">À VISTA NO PIX</span>
+     <p class="parc">ou 6x de R$ 117,88 no cartão (total R$ 707,26)</p>
     </div>
+   </div>
+   <div>
+    <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Combo Completo</a>
+    <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
+   </div>
+  </div>
 
-    <section id="depoimentos" class="depoimentos-section">
-        <div class="container">
-            <h2 class="section-title" style="color: var(--azul-cdp);">O que dizem os donos de oficina</h2>
-            <div class="depoimentos-grid">
-                <div class="depoimento-card">
-                    <div class="estrelas-review">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p><i class="fa-solid fa-quote-left" style="color: #94a3b8; margin-right: 5px;"></i>Esse kit salvou o serviço. Antes, qualquer parafuso que quebrava na desmontagem fazia o mecânico sumir por 40 minutos para ir comprar na rua. Agora o parafuso tá na bancada."</p>
-                    <h4>Carlos R. - Oficina Multimarcas</h4>
-                </div>
-                <div class="depoimento-card">
-                    <div class="estrelas-review">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p><i class="fa-solid fa-quote-left" style="color: #94a3b8; margin-right: 5px;"></i>O jogo de porcas travantes e arruelas resolve quase tudo de imprevisto na hora de montar suspensão. O investimento se pagou logo nas duas primeiras semanas."</p>
-                    <h4>Marcos A. - Centro Automotivo</h4>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="buycard">
+   <div>
+    <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm">
+    <h4>Kit S.O.S. Mecânica 8mm</h4>
+    <p class="desc">Indicado para fixações reforçadas e estrutura M8 (chave 13mm). Contém 166 peças.</p>
+    <div class="preco">
+     <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M8</span>
+     <b>R$ 365,09</b>
+     <span class="pix">À VISTA NO PIX</span>
+     <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
+    </div>
+   </div>
+   <div>
+    <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 8mm</a>
+    <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
+   </div>
+  </div>
+ </div>
 
-    <section class="garantia-section">
-        <div class="container garantia-box">
-            <div class="garantia-badge"><i class="fa-solid fa-shield-halved" style="color: var(--laranja-cdp);"></i></div>
-            <div class="garantia-texto">
-                <h3>Garantia de Satisfação e Qualidade</h3>
-                <p>Todos os nossos parafusos seguem padrões rígidos de força e resistência para aguentar o trabalho pesado da oficina. Compre o kit, use no seu dia a dia e veja o tempo que você vai economizar. Se tiver qualquer dúvida, nossa equipe ajuda você direto da loja.</p>
-            </div>
-        </div>
-    </section>
+ <div class="frete">
+  <label for="cep-input"><i class="fa-solid fa-truck" style="color:var(--laranja)"></i> Calcular frete e prazo de entrega</label>
+  <div class="frete-row">
+   <input id="cep-input" type="text" placeholder="00000-000" maxlength="9">
+   <button class="btn btn-o" onclick="calcularFrete()">Calcular</button>
+  </div>
+  <div id="shipping-result"></div>
+ </div>
 
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2 class="section-title" style="color: var(--azul-cdp);">Perguntas Frequentes</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4><i class="fa-solid fa-circle-question" style="color: var(--laranja-cdp);"></i> Quais os tamanhos e tipos exatos que vêm no kit?</h4>
-                    <p>Você pode escolher o Kit 6mm (focado na chave 10mm), o Kit 8mm (focado na chave 13mm) ou o Kit Completo com os dois. Todos acompanham parafusos flangeados, porcas normais, porcas travantes, arruelas, chaves biela, soquetes magnéticos e .</p>
-                </div>
-                <div class="faq-item">
-                    <h4><i class="fa-solid fa-circle-question" style="color: var(--laranja-cdp);"></i> Como funciona a entrega gratuita?</h4>
-                    <p>Se a sua oficina estiver até 30 km da nossa Loja no Pedro Moro, a entrega é grátis. Se for mais longe, enviamos rápido por motoboy ou transportadora.</p>
-                </div>
-                <div class="faq-item">
-                    <h4><i class="fa-solid fa-circle-question" style="color: var(--laranja-cdp);"></i> Vocês emitem Nota Fiscal para CNPJ de Oficina?</h4>
-                    <p>Sim. Todas as vendas acompanham a Nota Fiscal certinha, seja no seu nome (CPF) ou no nome da oficina (CNPJ).</p>
-                </div>
-                <div class="faq-item">
-                    <h4><i class="fa-solid fa-circle-question" style="color: var(--laranja-cdp);"></i> Posso comprar mais parafusos quando os do kit acabarem?</h4>
-                    <p>Com certeza. Essa é a melhor parte! Quando um tamanho de parafuso ou porca acabar, é só mandar mensagem no nosso WhatsApp que vendemos a reposição para deixar sua maleta cheia de novo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+ <div class="seguranca">
+  <span><i class="fa-solid fa-lock" style="color:var(--verde)"></i> Compra 100% segura</span>
+  <span><i class="fa-solid fa-file-invoice-dollar" style="color:var(--laranja)"></i> Enviamos nota fiscal</span>
+ </div>
+</div></section>
 
-    <section id="contato" class="contact-section">
-        <div class="container contact-grid">
-            <div class="contact-info">
-                <h3><i class="fa-solid fa-location-dot"></i> Visite Nossa Loja</h3>
-                <p><strong>Endereço:</strong> Rua Joinville, N. 2508 - Bairro São Pedro</p>
-                <p>São José dos Pinhais / PR - CEP: 83020-000</p>
-                <p><strong>WhatsApp / Vendas:</strong> (41) 98872-5687</p>
-                <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 5px;">CNPJ Oficial: 43.707.158/0002-90</p>
-                <p class="obs-entrega"><i class="fa-solid fa-store"></i> Venha conhecer de perto nosso setor completo de Parafusos!</p>
-            </div>
-            <div class="contact-logo-box">
-                <img src="CDP-LOGO2.png" alt="Logomarca Casa do Parafuso" class="clean-logo">
-                <p>Parafusos e Ferramentas de Qualidade</p>
-            </div>
-        </div>
-    </section>
+<section id="depoimentos" class="aval"><div class="wrap">
+ <h2>O que dizem os donos de oficina</h2>
+ <p class="sub">Feedback real de clientes que já usam o Kit S.O.S. no dia a dia</p>
+ <div class="revgrid">
+  <article class="rev">
+   <div class="head"><span class="av">C</span><b>Carlos R. — Oficina Multimarcas</b></div>
+   <div class="stars">★★★★★</div>
+   <p>Esse kit salvou o serviço. Antes, qualquer parafuso que quebrava na desmontagem fazia o mecânico sumir por 40 minutos para ir comprar na rua. Agora o parafuso tá na bancada.</p>
+  </article>
+  <article class="rev">
+   <div class="head"><span class="av">M</span><b>Marcos A. — Centro Automotivo</b></div>
+   <div class="stars">★★★★★</div>
+   <p>O jogo de porcas travantes e arruelas resolve quase tudo de imprevisto na hora de montar suspensão. O investimento se pagou logo nas duas primeiras semanas.</p>
+  </article>
+ </div>
+</div></section>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <img src="CDP-LOGO-BRANCA.png" alt="Logo Casa do Parafuso Branca" class="footer-logo">
-            <p>&copy; 2026 Casa do Parafuso. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+<section class="garantia"><div class="wrap">
+ <div class="gbox">
+  <i class="fa-solid fa-shield-halved"></i>
+  <div>
+   <h3>Garantia de satisfação e qualidade</h3>
+   <p>Todos os nossos parafusos seguem padrões rígidos de força e resistência para aguentar o trabalho pesado da oficina. Compre o kit, use no seu dia a dia e veja o tempo que você vai economizar. Se tiver qualquer dúvida, nossa equipe ajuda você direto da loja.</p>
+  </div>
+ </div>
+</div></section>
 
-    <script>
-        function abrirZoom() {
-            const srcPrincipal = document.getElementById('foto-principal').src;
-            document.getElementById('foto-expandida').src = srcPrincipal;
-            document.getElementById('zoom-modal').style.display = "flex";
-        }
+<section id="faq"><div class="wrap">
+ <h2 class="center">Perguntas frequentes</h2>
+ <div class="faqgrid">
+  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Quais os tamanhos e tipos exatos que vêm no kit?</h4>
+   <p>Você pode escolher o Kit 6mm (chave 10mm), o Kit 8mm (chave 13mm) ou o Kit Completo com os dois. Todos acompanham parafusos flangeados, porcas normais, porcas travantes, arruelas, chaves biela e soquetes magnéticos.</p></div>
+  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Como funciona a entrega gratuita?</h4>
+   <p>Se a sua oficina estiver até 30 km da nossa loja no Pedro Moro, a entrega é grátis. Se for mais longe, enviamos rápido por motoboy ou transportadora.</p></div>
+  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Vocês emitem nota fiscal para CNPJ de oficina?</h4>
+   <p>Sim. Todas as vendas acompanham a nota fiscal certinha, seja no seu nome (CPF) ou no nome da oficina (CNPJ).</p></div>
+  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Posso comprar mais parafusos quando os do kit acabarem?</h4>
+   <p>Com certeza. Quando um tamanho de parafuso ou porca acabar, é só mandar mensagem no nosso WhatsApp que vendemos a reposição para deixar sua maleta cheia de novo.</p></div>
+ </div>
+</div></section>
 
-        function fecharZoom() {
-            document.getElementById('zoom-modal').style.display = "none";
-        }
+<section id="contato"><div class="wrap contato">
+ <div class="cinfo">
+  <h3><i class="fa-solid fa-location-dot"></i> Visite nossa loja</h3>
+  <p><strong>Endereço:</strong> Rua Joinville, 2508 - Bairro São Pedro</p>
+  <p>São José dos Pinhais / PR - CEP: 83020-000</p>
+  <p><strong>WhatsApp / Vendas:</strong> (41) 98872-5687</p>
+  <p style="font-size:13.5px;color:#4a5875">CNPJ: 43.707.158/0002-90</p>
+  <p style="margin-top:14px"><i class="fa-solid fa-store"></i> Venha conhecer de perto nosso setor completo de parafusos!</p>
+  <a class="btn btn-o" href="https://wa.me/5541988725687" target="_blank" rel="noopener" style="margin-top:16px"><i class="fa-brands fa-whatsapp"></i>Chamar no WhatsApp</a>
+ </div>
+ <div class="clogo">
+  <img src="CDP-LOGO.png" alt="A Casa do Parafuso">
+  <p>Parafusos e ferramentas de qualidade</p>
+ </div>
+</div></section>
+</main>
 
-        async function calcularFrete() {
-            const cep = document.getElementById('cep-input').value.replace(/\D/g, '');
-            const resultado = document.getElementById('shipping-result');
-            
-            if (cep.length !== 8) {
-                resultado.style.display = "block";
-                resultado.innerHTML = "<span style='color: #ef4444;'>Por favor, digite um CEP válido com 8 números.</span>";
-                return;
-            }
+<footer>
+ <div class="wrap">
+  <img src="CDP-LOGO-BRANCA.png" alt="A Casa do Parafuso">
+  <p>© 2026 A Casa do Parafuso. Todos os direitos reservados.</p>
+ </div>
+</footer>
 
-            resultado.style.display = "block";
-            resultado.innerHTML = "<i class='fa-solid fa-spinner fa-spin'></i> Verificando região...";
+<a class="zap" href="https://wa.me/5541988725687" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-            try {
-                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-                const data = await response.json();
+<script>
+const mb=document.querySelector(".menu-btn"),mn=document.getElementById("menu");
+mb.onclick=()=>mb.setAttribute("aria-expanded",mn.classList.toggle("aberto"));
+mn.addEventListener("click",e=>{if(e.target.closest("a"))mn.classList.remove("aberto")});
 
-                if (data.erro) {
-                    resultado.innerHTML = "<span style='color: #ef4444;'>CEP não encontrado. Verifique os números.</span>";
-                    return;
-                }
-
-                const cidade = data.localidade.toLowerCase();
-
-                if (cidade === "são josé dos pinhais" || cidade === "curitiba") {
-                    resultado.innerHTML = `<span style='color: #22c55e; font-weight: bold;'><i class='fa-solid fa-circle-check'></i> Frete Grátis!</span><br><span style='font-size: 0.85rem; color: #cbd5e1;'>Sua oficina está na nossa área de entrega rápida. Nós levamos o kit até você de carro! Combinamos o horário direto no WhatsApp.</span>`;
-                } else {
-                    resultado.innerHTML = `<i class='fa-solid fa-truck-ramp-box' style='color: var(--laranja-cdp);'></i> <strong>Envio via Transportadora:</strong><br><span style='font-size: 0.85rem; color: #cbd5e1;'>Disponível para ${data.localidade} - ${data.uf}. O valor do frete e o prazo oficial da Transportadora serão aplicados na tela final de pagamento.</span>`;
-                }
-
-            } catch (error) {
-                resultado.innerHTML = "<span style='color: #ef4444;'>Erro ao conectar com o serviço de CEP. Tente novamente.</span>";
-            }
-        }
-    </script>
+async function calcularFrete(){
+ const cep=document.getElementById('cep-input').value.replace(/\D/g,'');
+ const r=document.getElementById('shipping-result');
+ if(cep.length!==8){r.style.display="block";r.innerHTML="<span style='color:#D64545'>Digite um CEP válido com 8 números.</span>";return}
+ r.style.display="block";
+ r.innerHTML="<i class='fa-solid fa-spinner fa-spin'></i> Verificando região...";
+ try{
+  const res=await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+  const data=await res.json();
+  if(data.erro){r.innerHTML="<span style='color:#D64545'>CEP não encontrado. Verifique os números.</span>";return}
+  const cidade=data.localidade.toLowerCase();
+  if(cidade==="são josé dos pinhais"||cidade==="curitiba"){
+   r.innerHTML=`<span style='color:var(--verde);font-weight:700'><i class='fa-solid fa-circle-check'></i> Frete grátis!</span><br><span>Sua oficina está na nossa área de entrega rápida. Combinamos o horário direto no WhatsApp.</span>`;
+  }else{
+   r.innerHTML=`<i class='fa-solid fa-truck-ramp-box' style='color:var(--laranja)'></i> <strong>Envio via transportadora:</strong><br><span>Disponível para ${data.localidade} - ${data.uf}. O valor do frete e o prazo serão aplicados na tela final de pagamento.</span>`;
+  }
+ }catch(e){r.innerHTML="<span style='color:#D64545'>Erro ao conectar com o serviço de CEP. Tente novamente.</span>"}
+}
+</script>
 </body>
 </html>
