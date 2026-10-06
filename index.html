@@ -5,432 +5,2502 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kit S.O.S. Mecânica | A Casa do Parafuso</title>
 <meta name="description" content="Kit S.O.S. Mecânica da Casa do Parafuso: parafuso certo na bancada em 10 segundos. Kits 6mm, 8mm e Completo.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
-:root{--azul:#0E3A82;--azul-esc:#08224F;--laranja:#E8850C;--laranja-esc:#C96F00;--branco:#fff;--gelo:#F3F6FB;--texto:#1E2B45;--raio:14px;--verde:#1DA34E}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--branco:#fff;--gelo:#F3F6FB;--texto:#1E2B45}}
-:root[data-theme="dark"]{--branco:#fff;--gelo:#F3F6FB;--texto:#1E2B45}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:calc(120px + env(safe-area-inset-top,0px))}
-body{font-family:Barlow,system-ui,sans-serif;color:var(--texto);background:var(--branco);line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-h1,h2,h3,h4{font-family:'Barlow Condensed',sans-serif;line-height:1.1;color:var(--azul)}
-img{max-width:100%;display:block}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-section{padding:72px 0}
-h2{font-size:clamp(30px,4.6vw,44px);margin-bottom:12px}
-.sub{max-width:62ch;margin:0 auto 36px;color:#334155}
-.center{text-align:center}
-:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:16px;cursor:pointer}
-.btn-o{background:var(--laranja);color:#fff}.btn-o:hover{background:var(--laranja-esc)}
-.btn-a{background:var(--azul);color:#fff}.btn-a:hover{background:var(--azul-esc)}
-.btn-v{background:var(--verde);color:#fff}.btn-v:hover{background:#178a42}
-.btn-l{border-color:#fff;color:#fff;background:transparent}.btn-l:hover{background:#fff;color:var(--azul)}
-.btn-out{border-color:var(--azul);color:var(--azul);background:transparent;padding:11px 22px}.btn-out:hover{background:var(--azul);color:#fff}
-.btn-full{width:100%}
-/* Top bar */
-.topbar{background:var(--azul-esc);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:9px 14px}
-.topbar i{color:var(--laranja);margin-right:6px}
-/* Cabeçalho */
-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:4px solid var(--laranja);box-shadow:0 2px 14px rgba(8,34,79,.12)}
-.bar{display:flex;align-items:center;gap:20px;height:76px}
-.bar .logo{display:flex;align-items:center;text-decoration:none}
-.bar .logo img{height:50px;width:auto}
-nav{margin-left:auto;display:flex;gap:24px;align-items:center}
-nav a{text-decoration:none;font-weight:600;color:var(--azul);font-size:15px}nav a:hover{color:var(--laranja)}
-.menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--azul);cursor:pointer;margin-left:auto}
-/* Hero */
-.hero{background:linear-gradient(105deg,rgba(8,34,79,.96) 35%,rgba(14,58,130,.75)),url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="%230E3A82"/></svg>') center/cover;color:#fff;padding:80px 0 96px}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
-.badge-top{display:inline-flex;align-items:center;gap:8px;background:rgba(232,133,12,.18);border:1px solid var(--laranja);color:#ffcf94;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:18px}
-.hero h1{color:#fff;font-size:clamp(38px,6vw,60px);font-weight:800;max-width:16ch}
-.hero h1 span{color:var(--laranja)}
-.hero p{font-size:18px;max-width:52ch;margin:18px 0 28px;color:#dbe6fa}
-.hero .cta{display:flex;flex-wrap:wrap;gap:14px}
-.hero-img{background:#fff;border-radius:var(--raio);padding:18px;box-shadow:0 18px 40px rgba(0,0,0,.3)}
-.hero-img img{width:100%;aspect-ratio:1/1;object-fit:contain}
-/* Prejuízo */
-.prejuizo{background:var(--azul-esc);color:#fff}
-.prejuizo h2{color:#fff;text-align:center}
-.prejuizo .sub{color:#cfdcf5;text-align:center}
-.prejuizo .sub strong{color:#ffcf94}
-.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
-.pcard{background:#fff;color:var(--texto);border-radius:var(--raio);padding:26px;border-top:6px solid}
-.pcard.ruim{border-color:#D64545}
-.pcard.bom{border-color:var(--verde)}
-.pcard h3{font-size:22px;margin-bottom:14px}
-.pcard.ruim h3{color:#D64545}.pcard.bom h3{color:var(--verde)}
-.pcard ul{list-style:none;display:grid;gap:10px;font-size:15px}
-.pcard i{width:22px;color:var(--laranja);margin-right:6px}
-.conclusao{margin-top:26px;background:rgba(232,133,12,.14);border:1px solid var(--laranja);border-radius:var(--raio);padding:20px 24px;color:#fff;font-size:15px}
-.conclusao i{color:var(--laranja);margin-right:8px}
-
-/* Conteúdo kits - REVISADO E OTIMIZADO PARA VISIBILIDADE */
-.kitblock{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:26px;margin-bottom:24px;border-top:6px solid var(--azul)}
-.kitblock.destaque{border-color:var(--laranja)}
-.kitblock h3{font-size:24px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.kitblock.destaque h3{color:var(--laranja)}
-.kgrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
-.klista{display:grid;gap:6px}
-.klinha{display:flex;justify-content:space-between;gap:14px;font-size:15px;padding:10px 12px;border-bottom:1px dashed #d0d7de;border-radius:6px}
-.klinha:nth-child(even){background:#f8fafc}
-.klinha span:first-child{font-weight:700;color:var(--azul)}
-.klinha span:last-child{font-weight:700;color:var(--azul-esc);text-align:right}
-.kfoco{background:var(--gelo);border-radius:var(--raio);padding:18px;text-align:center}
-.kfoco img{max-height:170px;margin:0 auto 12px;object-fit:contain}
-.kfoco h4{font-size:17px;margin-bottom:6px}
-.kfoco p{font-size:14px;color:#1E2B45;font-weight:500}
-
-/* Produtos / compra */
-.pgrid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
-.buycard{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
-.buycard.dest{border:2px solid var(--laranja);box-shadow:0 12px 30px rgba(232,133,12,.18)}
-.tagdest{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--laranja);color:#fff;padding:5px 16px;border-radius:999px;font-weight:800;font-size:12px;text-transform:uppercase;white-space:nowrap}
-.buycard img{width:100%;height:180px;object-fit:contain;background:var(--gelo);border-radius:10px;padding:10px}
-.buycard h4{font-size:21px;margin:14px 0 6px}
-.buycard .desc{color:#334155;font-size:14.5px;min-height:42px}
-.preco{background:var(--gelo);border-radius:10px;padding:16px;margin:14px 0;text-align:center;border-top:4px solid var(--azul)}
-.buycard.dest .preco{border-color:var(--laranja)}
-.preco .tag{font-size:12px;font-weight:700;color:var(--laranja-esc)}
-.preco b{display:block;font:800 32px 'Barlow Condensed',sans-serif;color:var(--azul);margin:4px 0}
-.buycard.dest .preco b{color:var(--laranja);font-size:38px}
-.preco .pix{color:var(--verde);font-weight:700;font-size:14px}
-.preco .parc{font-size:13.5px;color:#334155;margin-top:4px}
-/* Frete */
-.frete{background:var(--gelo);border-radius:var(--raio);padding:24px;margin-top:30px;max-width:600px;margin-left:auto;margin-right:auto;border:1px solid #dbe3f1}
-.frete label{font-weight:700;color:var(--azul);display:block;margin-bottom:10px}
-.frete-row{display:flex;gap:10px}
-.frete-row input{flex:1;padding:12px 14px;border-radius:8px;border:2px solid #cfd9ec;font:inherit}
-.frete-row input:focus{border-color:var(--laranja);outline:0}
-#shipping-result{margin-top:12px;font-size:14.5px;color:#1E2B45;display:none}
-.seguranca{margin-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;font-size:14.5px;color:#1E2B45;font-weight:600}
-.seguranca i{margin-right:6px}
-/* Depoimentos */
-.aval{background:var(--azul);color:#fff}
-.aval h2{color:#fff;text-align:center}
-.aval .sub{text-align:center;color:#dbe6fa}
-.revgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:10px}
-.rev{background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px}
-.rev .head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.rev .av{width:42px;height:42px;border-radius:50%;background:var(--laranja);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
-.stars{color:#FFC533}
-/* Garantia */
-.garantia{background:var(--gelo)}
-.gbox{display:flex;gap:26px;align-items:center;background:#fff;border-radius:var(--raio);padding:30px;border-bottom:4px solid var(--laranja)}
-.gbox i{font-size:44px;color:var(--laranja);flex:none}
-/* FAQ */
-.faqgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
-.faqitem{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:20px}
-.faqitem h4{font-size:17px;color:var(--azul);margin-bottom:8px;display:flex;gap:8px;align-items:flex-start}
-.faqitem h4 i{color:var(--laranja);margin-top:3px}
-.faqitem p{font-size:14.5px;color:#334155}
-/* Contato */
-.contato .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
-.cinfo{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:28px;border-top:6px solid var(--azul)}
-.cinfo p{margin:6px 0;font-size:15px}
-.cinfo i{color:var(--laranja);margin-right:8px;width:18px}
-.clogo{background:var(--azul);border-radius:var(--raio);display:grid;place-items:center;color:#fff;padding:28px;text-align:center}
-.clogo img{height:78px;width:auto;margin:0 auto 14px;filter:brightness(0) invert(1)}
-/* Rodapé */
-footer{background:var(--azul-esc);color:#cfdcf5;padding:30px 0;font-size:15px;text-align:center}
-footer img{height:44px;width:auto;margin:0 auto 10px}
-.zap{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:32px;box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none}
-@media(max-width:900px){
- .menu-btn{display:block}
- nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px;gap:16px;border-bottom:4px solid var(--laranja)}
- nav.aberto{display:flex}
- .hero .wrap,.pgrid,.kgrid,.contato .wrap{grid-template-columns:1fr}
- .hero-img{order:-1}
- section{padding:52px 0}.hero{padding:56px 0 70px}
- .frete-row{flex-direction:column}
+:root{
+  --azul:#0E3A82;
+  --azul-esc:#08224F;
+  --laranja:#E8850C;
+  --laranja-esc:#C96F00;
+  --branco:#fff;
+  --gelo:#F3F6FB;
+  --texto:#1E2B45;
+  --raio:14px;
+  --verde:#1DA34E
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --branco:#fff;
+    --gelo:#F3F6FB;
+    --texto:#1E2B45
+  }
+}
+
+:root[data-theme="dark"]{
+  --branco:#fff;
+  --gelo:#F3F6FB;
+  --texto:#1E2B45
+}
+
+*{
+  box-sizing:border-box;
+  margin:0
+}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(120px + env(safe-area-inset-top,0px))
+}
+
+body{
+  font-family:Barlow,system-ui,sans-serif;
+  color:var(--texto);
+  background:var(--branco);
+  line-height:1.6;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px)
+}
+
+h1,h2,h3,h4{
+  font-family:'Barlow Condensed',sans-serif;
+  line-height:1.1;
+  color:var(--azul)
+}
+
+img{
+  max-width:100%;
+  display:block
+}
+
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 20px
+}
+
+section{
+  padding:72px 0
+}
+
+h2{
+  font-size:clamp(30px,4.6vw,44px);
+  margin-bottom:12px
+}
+
+.sub{
+  max-width:62ch;
+  margin:0 auto 36px;
+  color:#334155
+}
+
+.center{
+  text-align:center
+}
+
+:focus-visible{
+  outline:3px solid var(--laranja);
+  outline-offset:3px
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 26px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  border:2px solid transparent;
+  transition:.2s;
+  font-size:16px;
+  cursor:pointer
+}
+
+.btn-o{
+  background:var(--laranja);
+  color:#fff
+}
+
+.btn-o:hover{
+  background:var(--laranja-esc)
+}
+
+.btn-a{
+  background:var(--azul);
+  color:#fff
+}
+
+.btn-a:hover{
+  background:var(--azul-esc)
+}
+
+.btn-v{
+  background:var(--verde);
+  color:#fff
+}
+
+.btn-v:hover{
+  background:#178a42
+}
+
+.btn-l{
+  border-color:#fff;
+  color:#fff;
+  background:transparent
+}
+
+.btn-l:hover{
+  background:#fff;
+  color:var(--azul)
+}
+
+.btn-out{
+  border-color:var(--azul);
+  color:var(--azul);
+  background:transparent;
+  padding:11px 22px
+}
+
+.btn-out:hover{
+  background:var(--azul);
+  color:#fff
+}
+
+.btn-full{
+  width:100%
+}
+
+/* Top bar */
+
+.topbar{
+  background:var(--azul-esc);
+  color:#fff;
+  text-align:center;
+  font-size:14px;
+  font-weight:600;
+  padding:9px 14px
+}
+
+.topbar i{
+  color:var(--laranja);
+  margin-right:6px
+}
+
+/* Cabeçalho */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:#fff;
+  border-bottom:4px solid var(--laranja);
+  box-shadow:0 2px 14px rgba(8,34,79,.12)
+}
+
+.bar{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  height:76px
+}
+
+.bar .logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none
+}
+
+.bar .logo img{
+  height:50px;
+  width:auto
+}
+
+nav{
+  margin-left:auto;
+  display:flex;
+  gap:24px;
+  align-items:center
+}
+
+nav a{
+  text-decoration:none;
+  font-weight:600;
+  color:var(--azul);
+  font-size:15px
+}
+
+nav a:hover{
+  color:var(--laranja)
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:0;
+  font-size:26px;
+  color:var(--azul);
+  cursor:pointer;
+  margin-left:auto
+}
+
+/* Hero */
+
+.hero{
+  background:
+    linear-gradient(105deg,rgba(8,34,79,.96) 35%,rgba(14,58,130,.75)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="%230E3A82"/></svg>')
+    center/cover;
+  color:#fff;
+  padding:80px 0 96px
+}
+
+.hero .wrap{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:40px;
+  align-items:center
+}
+
+.badge-top{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(232,133,12,.18);
+  border:1px solid var(--laranja);
+  color:#ffcf94;
+  padding:8px 16px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:18px
+}
+
+.hero h1{
+  color:#fff;
+  font-size:clamp(38px,6vw,60px);
+  font-weight:800;
+  max-width:16ch
+}
+
+.hero h1 span{
+  color:var(--laranja)
+}
+
+.hero p{
+  font-size:18px;
+  max-width:52ch;
+  margin:18px 0 28px;
+  color:#dbe6fa
+}
+
+.hero .cta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px
+}
+
+.hero-img{
+  background:#fff;
+  border-radius:var(--raio);
+  padding:18px;
+  box-shadow:0 18px 40px rgba(0,0,0,.3)
+}
+
+.hero-img img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:contain
+}
+
+/* Prejuízo */
+
+.prejuizo{
+  background:var(--azul-esc);
+  color:#fff
+}
+
+.prejuizo h2{
+  color:#fff;
+  text-align:center
+}
+
+.prejuizo .sub{
+  color:#cfdcf5;
+  text-align:center
+}
+
+.prejuizo .sub strong{
+  color:#ffcf94
+}
+
+.pgrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin-top:20px
+}
+
+.pcard{
+  background:#fff;
+  color:var(--texto);
+  border-radius:var(--raio);
+  padding:26px;
+  border-top:6px solid
+}
+
+.pcard.ruim{
+  border-color:#D64545
+}
+
+.pcard.bom{
+  border-color:var(--verde)
+}
+
+.pcard h3{
+  font-size:22px;
+  margin-bottom:14px
+}
+
+.pcard.ruim h3{
+  color:#D64545
+}
+
+.pcard.bom h3{
+  color:var(--verde)
+}
+
+.pcard ul{
+  list-style:none;
+  display:grid;
+  gap:10px;
+  font-size:15px
+}
+
+.pcard i{
+  width:22px;
+  color:var(--laranja);
+  margin-right:6px
+}
+
+.conclusao{
+  margin-top:26px;
+  background:rgba(232,133,12,.14);
+  border:1px solid var(--laranja);
+  border-radius:var(--raio);
+  padding:20px 24px;
+  color:#fff;
+  font-size:15px
+}
+
+.conclusao i{
+  color:var(--laranja);
+  margin-right:8px
+}
+
+/* Conteúdo kits */
+
+.kitblock{
+  background:#fff;
+  border:1px solid #dbe3f1;
+  border-radius:var(--raio);
+  padding:26px;
+  margin-bottom:24px;
+  border-top:6px solid var(--azul)
+}
+
+.kitblock.destaque{
+  border-color:var(--laranja)
+}
+
+.kitblock h3{
+  font-size:24px;
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.kitblock.destaque h3{
+  color:var(--laranja)
+}
+
+.kgrid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:28px;
+  align-items:center
+}
+
+.klista{
+  display:grid;
+  gap:6px
+}
+
+.klinha{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  font-size:15px;
+  padding:10px 12px;
+  border-bottom:1px dashed #d0d7de;
+  border-radius:6px
+}
+
+.klinha:nth-child(even){
+  background:#f8fafc
+}
+
+.klinha span:first-child{
+  font-weight:700;
+  color:var(--azul)
+}
+
+.klinha span:last-child{
+  font-weight:700;
+  color:var(--azul-esc);
+  text-align:right
+}
+
+.kfoco{
+  background:var(--gelo);
+  border-radius:var(--raio);
+  padding:18px;
+  text-align:center
+}
+
+.kfoco img{
+  max-height:170px;
+  margin:0 auto 12px;
+  object-fit:contain
+}
+
+.kfoco h4{
+  font-size:17px;
+  margin-bottom:6px
+}
+
+.kfoco p{
+  font-size:14px;
+  color:#1E2B45;
+  font-weight:500
+}
+
+/* Produtos */
+
+.pgrid3{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:22px
+}
+
+.buycard{
+  background:#fff;
+  border:1px solid #dbe3f1;
+  border-radius:var(--raio);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative
+}
+
+.buycard.dest{
+  border:2px solid var(--laranja);
+  box-shadow:0 12px 30px rgba(232,133,12,.18)
+}
+
+.tagdest{
+  position:absolute;
+  top:-13px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--laranja);
+  color:#fff;
+  padding:5px 16px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:12px;
+  text-transform:uppercase;
+  white-space:nowrap
+}
+
+.buycard img{
+  width:100%;
+  height:180px;
+  object-fit:contain;
+  background:var(--gelo);
+  border-radius:10px;
+  padding:10px
+}
+
+.buycard h4{
+  font-size:21px;
+  margin:14px 0 6px
+}
+
+.buycard .desc{
+  color:#334155;
+  font-size:14.5px;
+  min-height:42px
+}
+
+.preco{
+  background:var(--gelo);
+  border-radius:10px;
+  padding:16px;
+  margin:14px 0;
+  text-align:center;
+  border-top:4px solid var(--azul)
+}
+
+.buycard.dest .preco{
+  border-color:var(--laranja)
+}
+
+.preco .tag{
+  font-size:12px;
+  font-weight:700;
+  color:var(--laranja-esc)
+}
+
+.preco b{
+  display:block;
+  font:800 32px 'Barlow Condensed',sans-serif;
+  color:var(--azul);
+  margin:4px 0
+}
+
+.buycard.dest .preco b{
+  color:var(--laranja);
+  font-size:38px
+}
+
+.preco .pix{
+  color:var(--verde);
+  font-weight:700;
+  font-size:14px
+}
+
+.preco .parc{
+  font-size:13.5px;
+  color:#334155;
+  margin-top:4px
+}
+
+/* Frete */
+
+.frete{
+  background:var(--gelo);
+  border-radius:var(--raio);
+  padding:24px;
+  margin-top:30px;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  border:1px solid #dbe3f1
+}
+
+.frete label{
+  font-weight:700;
+  color:var(--azul);
+  display:block;
+  margin-bottom:10px
+}
+
+.frete-row{
+  display:flex;
+  gap:10px
+}
+
+.frete-row input{
+  flex:1;
+  padding:12px 14px;
+  border-radius:8px;
+  border:2px solid #cfd9ec;
+  font:inherit
+}
+
+.frete-row input:focus{
+  border-color:var(--laranja);
+  outline:0
+}
+
+#shipping-result{
+  margin-top:12px;
+  font-size:14.5px;
+  color:#1E2B45;
+  display:none
+}
+
+.seguranca{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  gap:26px;
+  flex-wrap:wrap;
+  font-size:14.5px;
+  color:#1E2B45;
+  font-weight:600
+}
+
+.seguranca i{
+  margin-right:6px
+}
+
+/* Depoimentos */
+
+.aval{
+  background:var(--azul);
+  color:#fff
+}
+
+.aval h2{
+  color:#fff;
+  text-align:center
+}
+
+.aval .sub{
+  text-align:center;
+  color:#dbe6fa
+}
+
+.revgrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+  margin-top:10px
+}
+
+.rev{
+  background:#fff;
+  color:var(--texto);
+  border-radius:var(--raio);
+  padding:22px
+}
+
+.rev .head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:8px
+}
+
+.rev .av{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--laranja);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:700;
+  flex:none
+}
+
+.stars{
+  color:#FFC533
+}
+
+/* Garantia */
+
+.garantia{
+  background:var(--gelo)
+}
+
+.gbox{
+  display:flex;
+  gap:26px;
+  align-items:center;
+  background:#fff;
+  border-radius:var(--raio);
+  padding:30px;
+  border-bottom:4px solid var(--laranja)
+}
+
+.gbox i{
+  font-size:44px;
+  color:var(--laranja);
+  flex:none
+}
+
+/* FAQ */
+
+.faqgrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:20px
+}
+
+.faqitem{
+  background:#fff;
+  border:1px solid #dbe3f1;
+  border-radius:var(--raio);
+  padding:20px
+}
+
+.faqitem h4{
+  font-size:17px;
+  color:var(--azul);
+  margin-bottom:8px;
+  display:flex;
+  gap:8px;
+  align-items:flex-start
+}
+
+.faqitem h4 i{
+  color:var(--laranja);
+  margin-top:3px
+}
+
+.faqitem p{
+  font-size:14.5px;
+  color:#334155
+}
+
+/* Contato */
+
+.contato .wrap{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:30px
+}
+
+.cinfo{
+  background:#fff;
+  border:1px solid #dbe3f1;
+  border-radius:var(--raio);
+  padding:28px;
+  border-top:6px solid var(--azul)
+}
+
+.cinfo p{
+  margin:6px 0;
+  font-size:15px
+}
+
+.cinfo i{
+  color:var(--laranja);
+  margin-right:8px;
+  width:18px
+}
+
+.clogo{
+  background:var(--azul);
+  border-radius:var(--raio);
+  display:grid;
+  place-items:center;
+  color:#fff;
+  padding:28px;
+  text-align:center
+}
+
+.clogo img{
+  height:78px;
+  width:auto;
+  margin:0 auto 14px;
+  filter:brightness(0) invert(1)
+}
+
+/* Rodapé */
+
+footer{
+  background:var(--azul-esc);
+  color:#cfdcf5;
+  padding:30px 0;
+  font-size:15px;
+  text-align:center
+}
+
+footer img{
+  height:44px;
+  width:auto;
+  margin:0 auto 10px
+}
+
+.zap{
+  position:fixed;
+  right:18px;
+  bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  z-index:60;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:32px;
+  box-shadow:0 6px 18px rgba(0,0,0,.3);
+  text-decoration:none
+}
+
+/* ========================================
+   VISUALIZADOR / LIGHTBOX DAS IMAGENS
+   ======================================== */
+
+.kit-zoomable{
+  cursor:zoom-in;
+  transition:transform .2s ease,filter .2s ease
+}
+
+.kit-zoomable:hover{
+  filter:brightness(1.03)
+}
+
+.kit-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  background:rgba(5,14,31,.88);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+  opacity:0;
+  transition:opacity .22s ease
+}
+
+.kit-lightbox.aberto{
+  display:flex;
+  opacity:1
+}
+
+.kit-lightbox-inner{
+  position:relative;
+  width:min(1100px,94vw);
+  height:min(88vh,850px);
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.kit-lightbox-stage{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:18px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 24px 80px rgba(0,0,0,.45);
+  touch-action:none;
+  user-select:none
+}
+
+.kit-lightbox-stage img{
+  max-width:92%;
+  max-height:88%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  transform:translate(0,0) scale(1);
+  transform-origin:center center;
+  cursor:grab;
+  will-change:transform
+}
+
+.kit-lightbox-stage img.arrastando{
+  cursor:grabbing
+}
+
+.kit-lightbox-close{
+  position:absolute;
+  top:-15px;
+  right:-15px;
+  width:46px;
+  height:46px;
+  border:0;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  color:var(--azul-esc);
+  font-size:21px;
+  cursor:pointer;
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
+  transition:.2s;
+  z-index:3
+}
+
+.kit-lightbox-close:hover{
+  background:var(--laranja);
+  color:#fff;
+  transform:scale(1.06)
+}
+
+.kit-lightbox-controls{
+  position:absolute;
+  left:50%;
+  bottom:-18px;
+  transform:translateX(-50%);
+  display:flex;
+  gap:8px;
+  padding:8px;
+  border-radius:999px;
+  background:rgba(8,34,79,.96);
+  box-shadow:0 8px 28px rgba(0,0,0,.3);
+  z-index:3
+}
+
+.kit-lightbox-controls button{
+  width:40px;
+  height:40px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  font-size:16px;
+  display:grid;
+  place-items:center;
+  transition:.2s
+}
+
+.kit-lightbox-controls button:hover{
+  background:var(--laranja);
+  border-color:var(--laranja)
+}
+
+.kit-lightbox-hint{
+  position:absolute;
+  top:14px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#fff;
+  background:rgba(8,34,79,.82);
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  pointer-events:none;
+  white-space:nowrap
+}
+
+body.lightbox-aberto{
+  overflow:hidden
+}
+
+@media(max-width:900px){
+  .menu-btn{
+    display:block
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:#fff;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:20px;
+    gap:16px;
+    border-bottom:4px solid var(--laranja)
+  }
+
+  nav.aberto{
+    display:flex
+  }
+
+  .hero .wrap,
+  .pgrid,
+  .kgrid,
+  .contato .wrap{
+    grid-template-columns:1fr
+  }
+
+  .hero-img{
+    order:-1
+  }
+
+  section{
+    padding:52px 0
+  }
+
+  .hero{
+    padding:56px 0 70px
+  }
+
+  .frete-row{
+    flex-direction:column
+  }
+}
+
+@media(max-width:700px){
+  .kit-lightbox{
+    padding:14px
+  }
+
+  .kit-lightbox-inner{
+    width:96vw;
+    height:82vh
+  }
+
+  .kit-lightbox-stage{
+    border-radius:14px
+  }
+
+  .kit-lightbox-close{
+    top:-9px;
+    right:-6px;
+    width:42px;
+    height:42px
+  }
+
+  .kit-lightbox-controls{
+    bottom:-12px
+  }
+
+  .kit-lightbox-hint{
+    top:9px;
+    font-size:11px
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{
+    scroll-behavior:auto
+  }
+
+  .kit-lightbox{
+    transition:none
+  }
+}
 </style>
 </head>
+
 <body>
 
-<div class="topbar"><i class="fa-solid fa-rocket"></i>PROMOÇÃO DE LANÇAMENTO: FRETE GRÁTIS ATÉ 30 KM DA LOJA PEDRO MORO</div>
+<div class="topbar">
+  <i class="fa-solid fa-rocket"></i>
+  PROMOÇÃO DE LANÇAMENTO: FRETE GRÁTIS ATÉ 30 KM DA LOJA PEDRO MORO
+</div>
 
 <header>
- <div class="wrap bar">
-  <a class="logo" href="#topo"><img src="CDP-LOGO2.png" alt="A Casa do Parafuso"></a>
-  <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-  <nav id="menu">
-   <a href="#inicio">Início</a><a href="#calculo">Prejuízo Zero</a><a href="#conteudo">O que vem no kit</a>
-   <a href="#depoimentos">Quem usa</a><a href="#faq">Dúvidas</a><a href="#contato">Endereço</a>
-   <a class="btn btn-o" href="#produto"><i class="fa-solid fa-toolbox"></i>Garantir meu kit</a>
-  </nav>
- </div>
+  <div class="wrap bar">
+
+    <a class="logo" href="#topo">
+      <img src="CDP-LOGO2.png" alt="A Casa do Parafuso">
+    </a>
+
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="menu">
+      <a href="#inicio">Início</a>
+      <a href="#calculo">Prejuízo Zero</a>
+      <a href="#conteudo">O que vem no kit</a>
+      <a href="#depoimentos">Quem usa</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#contato">Endereço</a>
+
+      <a class="btn btn-o" href="#produto">
+        <i class="fa-solid fa-toolbox"></i>
+        Garantir meu kit
+      </a>
+    </nav>
+
+  </div>
 </header>
 
 <main id="topo">
-<section id="inicio" class="hero"><div class="wrap">
- <div>
-  <span class="badge-top"><i class="fa-solid fa-fire"></i>O socorro definitivo da sua oficina</span>
-  <h1>Pare de perder horas de trabalho por falta de <span>parafusos</span></h1>
-  <p>Não pare mais o elevador hidráulico ou o serviço do cliente para ir buscar peças básicas na rua. Mantenha a produtividade máxima, entregue mais rápido e aumente o faturamento diário da sua mecânica.</p>
-  <div class="cta">
-   <a class="btn btn-o" href="#produto"><i class="fa-solid fa-cart-shopping"></i>Comprar kit agora</a>
-   <a class="btn btn-l" href="#calculo"><i class="fa-solid fa-calculator"></i>Ver cálculo de lucro</a>
-  </div>
- </div>
- <div class="hero-img"><img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo"></div>
-</div></section>
 
-<section id="calculo" class="prejuizo"><div class="wrap">
- <h2>Cada minuto fora da oficina é dinheiro jogado fora</h2>
- <p class="sub">Segundo dados do SEBRAE, uma oficina mecânica média fatura cerca de <strong>R$ 40.000,00 por mês</strong> com base em 220 horas úteis. Isso bota o valor da sua hora trabalhada em <strong>R$ 180,00</strong>!</p>
- <div class="pgrid">
-  <div class="pcard ruim">
-   <h3><i class="fa-solid fa-triangle-exclamation"></i> Rotina sem o kit</h3>
-   <ul>
-    <li><i class="fa-solid fa-triangle-exclamation"></i>Falta 1 parafuso ou porca travante no meio da montagem</li>
-    <li><i class="fa-solid fa-person-walking-arrow-right"></i>Mecânico para o serviço e se desloca até a autopeças</li>
-    <li><i class="fa-solid fa-circle-xmark"></i><strong>Resultado:</strong> 1 hora perdida = R$ 180,00 de prejuízo</li>
-    <li><i class="fa-solid fa-car-burst"></i>Carro ocupando pátio e cliente esperando além do prazo</li>
-   </ul>
-  </div>
-  <div class="pcard bom">
-   <h3><i class="fa-solid fa-circle-check"></i> Rotina com o Kit S.O.S.</h3>
-   <ul>
-    <li><i class="fa-solid fa-wrench"></i>Falta o parafuso na hora do aperto final da peça</li>
-    <li><i class="fa-solid fa-box-open"></i>Você abre a maleta organizadora e pega a peça exata em 10s</li>
-    <li><i class="fa-solid fa-circle-check"></i><strong>Resultado:</strong> serviço sem interrupções = R$ 180 poupados</li>
-    <li><i class="fa-solid fa-gauge-high"></i>Giro rápido de veículos e cliente impressionado com a velocidade</li>
-   </ul>
-  </div>
- </div>
- <p class="conclusao"><i class="fa-solid fa-calculator"></i><strong>Matemática clara:</strong> se o kit evitar que você saia da oficina apenas 5 vezes, ele já se pagou por completo. Daí em diante é lucro puro na bancada.</p>
-</div></section>
+<section id="inicio" class="hero">
+  <div class="wrap">
 
-<section id="conteudo"><div class="wrap">
- <h2 class="center">Conheça os 3 kits S.O.S. disponíveis</h2>
- <p class="sub center">Veja o que vem dentro de cada maleta antes de escolher o ideal para o seu trabalho.</p>
+    <div>
 
- <div class="kitblock destaque">
-  <h3><i class="fa-solid fa-boxes-packing"></i>1. Kit S.O.S. Mecânica COMPLETO — 340 peças (6mm e 8mm)</h3>
-  <div class="kgrid">
-   <div class="klista">
-    <div class="klinha"><span>Parafusos flangeados M6 e M8</span><span>88 un. (M6: 16–35mm | M8: 20–50mm)</span></div>
-    <div class="klinha"><span>Porcas M6 e M8 variadas</span><span>80 un. (flangeadas CH 10/13 e nylon auto-travantes)</span></div>
-    <div class="klinha"><span>Arruelas técnicas M6 e M8</span><span>103 un. (lisas industriais, pressão, aba larga)</span></div>
-    <div class="klinha"><span>Chaves biela vazadas</span><span>2 un. (10mm e 13mm)</span></div>
-    <div class="klinha"><span>Soquetes magnéticos de impacto</span><span>2 un. de fixação rápida (10mm e 13mm)</span></div>
-    <div class="klinha"><span>Lubrificante</span><span>2 sprays de 300ml</span></div>
-    <div class="klinha"><span>Maletas organizadoras</span><span>2 maletas com 14 divisórias cada</span></div>
-   </div>
-   <div class="kfoco"><img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo">
-    <h4><i class="fa-solid fa-certificate" style="color:var(--laranja)"></i> Solução total para bancada</h4>
-    <p>Cobre 100% das necessidades diárias em M6 e M8, com organização máxima e fim do desperdício de tempo.</p>
-   </div>
-  </div>
- </div>
+      <span class="badge-top">
+        <i class="fa-solid fa-fire"></i>
+        O socorro definitivo da sua oficina
+      </span>
 
- <div class="kitblock">
-  <h3><i class="fa-solid fa-box"></i>2. Kit S.O.S. Mecânica 6mm — 174 peças</h3>
-  <div class="kgrid">
-   <div class="klista">
-    <div class="klinha"><span>Parafusos flangeados M6</span><span>50 un. (M6x16, 20, 25, 30, 35)</span></div>
-    <div class="klinha"><span>Porcas M6</span><span>40 un. (20 flangeadas CH10 + 20 auto-travantes nylon)</span></div>
-    <div class="klinha"><span>Arruelas técnicas M6</span><span>60 un. (10 aba larga, 25 lisas, 25 pressão)</span></div>
-    <div class="klinha"><span>Chave biela vazada</span><span>1 un. (10mm)</span></div>
-    <div class="klinha"><span>Soquete magnético</span><span>1 un. (10mm — encaixe 1/4")</span></div>
-    <div class="klinha"><span>Lubrificante + maleta</span><span>1 spray 300ml + maleta (14 divisórias)</span></div>
-   </div>
-   <div class="kfoco"><img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm">
-    <h4><i class="fa-solid fa-wrench" style="color:var(--azul)"></i> Foco em M6 / chave 10mm</h4>
-    <p>Ideal para lataria, paralamas, tampas, suportes e acabamentos mecânicos gerais.</p>
-   </div>
-  </div>
- </div>
+      <h1>
+        Pare de perder horas de trabalho por falta de
+        <span>parafusos</span>
+      </h1>
 
- <div class="kitblock">
-  <h3><i class="fa-solid fa-box"></i>3. Kit S.O.S. Mecânica 8mm — 166 peças</h3>
-  <div class="kgrid">
-   <div class="klista">
-    <div class="klinha"><span>Parafusos flangeados M8</span><span>38 un. (M8x20, 25, 30, 40, 50)</span></div>
-    <div class="klinha"><span>Porcas M8</span><span>40 un. (20 flangeadas CH13 + 20 auto-travantes nylon)</span></div>
-    <div class="klinha"><span>Arruelas técnicas M8</span><span>58 un. (8 aba larga, 25 lisas, 25 pressão)</span></div>
-    <div class="klinha"><span>Chave biela vazada</span><span>1 un. (13mm)</span></div>
-    <div class="klinha"><span>Soquete magnético</span><span>1 un. (13mm — encaixe 1/4")</span></div>
-    <div class="klinha"><span>Lubrificante + maleta</span><span>1 spray 300ml + maleta (14 divisórias)</span></div>
-   </div>
-   <div class="kfoco"><img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm">
-    <h4><i class="fa-solid fa-gears" style="color:var(--verde)"></i> Foco em M8 / chave 13mm</h4>
-    <p>Perfeito para fixação pesada, suportes de motor, suspensão, coletores e agregados.</p>
-   </div>
-  </div>
- </div>
-</div></section>
+      <p>
+        Não pare mais o elevador hidráulico ou o serviço do cliente para ir buscar
+        peças básicas na rua. Mantenha a produtividade máxima, entregue mais rápido
+        e aumente o faturamento diário da sua mecânica.
+      </p>
 
-<section id="produto" style="background:var(--gelo)"><div class="wrap">
- <h2 class="center">Escolha a opção ideal para sua oficina</h2>
- <p class="sub center">Selecione o kit ideal para o porte do seu trabalho ou garanta o combo completo com o maior desconto.</p>
+      <div class="cta">
+        <a class="btn btn-o" href="#produto">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Comprar kit agora
+        </a>
 
- <div class="pgrid3">
-  <div class="buycard">
-   <div>
-    <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm">
-    <h4>Kit S.O.S. Mecânica 6mm</h4>
-    <p class="desc">Ideal para reparos leves e fixações gerais M6 (chave 10mm). Contém 174 peças.</p>
-    <div class="preco">
-     <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M6</span>
-     <b>R$ 257,30</b>
-     <span class="pix">À VISTA NO PIX</span>
-     <p class="parc">ou 6x de R$ 48,73 no cartão (total R$ 292,39)</p>
+        <a class="btn btn-l" href="#calculo">
+          <i class="fa-solid fa-calculator"></i>
+          Ver cálculo de lucro
+        </a>
+      </div>
+
     </div>
-   </div>
-   <div>
-    <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 6mm</a>
-    <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Dúvidas no WhatsApp</a>
-   </div>
-  </div>
 
-  <div class="buycard dest">
-   <span class="tagdest">Mais vendido</span>
-   <div>
-    <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" style="margin-top:8px">
-    <h4>Kit S.O.S. Mecânica COMPLETO</h4>
-    <p class="desc">Solução total 6mm + 8mm (chaves 10mm e 13mm). Contém 340 peças e 2 maletas.</p>
-    <div class="preco">
-     <span class="tag"><i class="fa-solid fa-fire"></i> COMBO MAIOR ECONOMIA</span>
-     <b>R$ 622,39</b>
-     <span class="pix">À VISTA NO PIX</span>
-     <p class="parc">ou 6x de R$ 117,88 no cartão (total R$ 707,26)</p>
+    <div class="hero-img">
+      <img
+        src="KIT-COMPLETO.png"
+        alt="Kit S.O.S. Mecânica Completo"
+        class="kit-zoomable"
+      >
     </div>
-   </div>
-   <div>
-    <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Combo Completo</a>
-    <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-   </div>
-  </div>
 
-  <div class="buycard">
-   <div>
-    <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm">
-    <h4>Kit S.O.S. Mecânica 8mm</h4>
-    <p class="desc">Indicado para fixações reforçadas e estrutura M8 (chave 13mm). Contém 166 peças.</p>
-    <div class="preco">
-     <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M8</span>
-     <b>R$ 365,09</b>
-     <span class="pix">À VISTA NO PIX</span>
-     <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
+  </div>
+</section>
+
+<section id="calculo" class="prejuizo">
+  <div class="wrap">
+
+    <h2>
+      Cada minuto fora da oficina é dinheiro jogado fora
+    </h2>
+
+    <p class="sub">
+      Segundo dados do SEBRAE, uma oficina mecânica média fatura cerca de
+      <strong>R$ 40.000,00 por mês</strong> com base em 220 horas úteis.
+      Isso bota o valor da sua hora trabalhada em <strong>R$ 180,00</strong>!
+    </p>
+
+    <div class="pgrid">
+
+      <div class="pcard ruim">
+
+        <h3>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          Rotina sem o kit
+        </h3>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            Falta 1 parafuso ou porca travante no meio da montagem
+          </li>
+
+          <li>
+            <i class="fa-solid fa-person-walking-arrow-right"></i>
+            Mecânico para o serviço e se desloca até a autopeças
+          </li>
+
+          <li>
+            <i class="fa-solid fa-circle-xmark"></i>
+            <strong>Resultado:</strong> 1 hora perdida = R$ 180,00 de prejuízo
+          </li>
+
+          <li>
+            <i class="fa-solid fa-car-burst"></i>
+            Carro ocupando pátio e cliente esperando além do prazo
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="pcard bom">
+
+        <h3>
+          <i class="fa-solid fa-circle-check"></i>
+          Rotina com o Kit S.O.S.
+        </h3>
+
+        <ul>
+          <li>
+            <i class="fa-solid fa-wrench"></i>
+            Falta o parafuso na hora do aperto final da peça
+          </li>
+
+          <li>
+            <i class="fa-solid fa-box-open"></i>
+            Você abre a maleta organizadora e pega a peça exata em 10s
+          </li>
+
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <strong>Resultado:</strong> serviço sem interrupções = R$ 180 poupados
+          </li>
+
+          <li>
+            <i class="fa-solid fa-gauge-high"></i>
+            Giro rápido de veículos e cliente impressionado com a velocidade
+          </li>
+        </ul>
+
+      </div>
+
     </div>
-   </div>
-   <div>
-    <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 8mm</a>
-    <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-   </div>
+
+    <p class="conclusao">
+      <i class="fa-solid fa-calculator"></i>
+      <strong>Matemática clara:</strong>
+      se o kit evitar que você saia da oficina apenas 5 vezes,
+      ele já se pagou por completo. Daí em diante é lucro puro na bancada.
+    </p>
+
   </div>
- </div>
+</section>
 
- <div class="frete">
-  <label for="cep-input"><i class="fa-solid fa-truck" style="color:var(--laranja)"></i> Calcular frete e prazo de entrega</label>
-  <div class="frete-row">
-   <input id="cep-input" type="text" placeholder="00000-000" maxlength="9">
-   <button class="btn btn-o" onclick="calcularFrete()">Calcular</button>
+<section id="conteudo">
+  <div class="wrap">
+
+    <h2 class="center">
+      Conheça os 3 kits S.O.S. disponíveis
+    </h2>
+
+    <p class="sub center">
+      Veja o que vem dentro de cada maleta antes de escolher o ideal para o seu trabalho.
+    </p>
+
+    <div class="kitblock destaque">
+
+      <h3>
+        <i class="fa-solid fa-boxes-packing"></i>
+        1. Kit S.O.S. Mecânica COMPLETO — 340 peças (6mm e 8mm)
+      </h3>
+
+      <div class="kgrid">
+
+        <div class="klista">
+
+          <div class="klinha">
+            <span>Parafusos flangeados M6 e M8</span>
+            <span>88 un. (M6: 16–35mm | M8: 20–50mm)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Porcas M6 e M8 variadas</span>
+            <span>80 un. (flangeadas CH 10/13 e nylon auto-travantes)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Arruelas técnicas M6 e M8</span>
+            <span>103 un. (lisas industriais, pressão, aba larga)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Chaves biela vazadas</span>
+            <span>2 un. (10mm e 13mm)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Soquetes magnéticos de impacto</span>
+            <span>2 un. de fixação rápida (10mm e 13mm)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Lubrificante</span>
+            <span>2 sprays de 300ml</span>
+          </div>
+
+          <div class="klinha">
+            <span>Maletas organizadoras</span>
+            <span>2 maletas com 14 divisórias cada</span>
+          </div>
+
+        </div>
+
+        <div class="kfoco">
+
+          <img
+            src="KIT-COMPLETO.png"
+            alt="Kit S.O.S. Mecânica Completo"
+            class="kit-zoomable"
+          >
+
+          <h4>
+            <i class="fa-solid fa-certificate" style="color:var(--laranja)"></i>
+            Solução total para bancada
+          </h4>
+
+          <p>
+            Cobre 100% das necessidades diárias em M6 e M8,
+            com organização máxima e fim do desperdício de tempo.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="kitblock">
+
+      <h3>
+        <i class="fa-solid fa-box"></i>
+        2. Kit S.O.S. Mecânica 6mm — 174 peças
+      </h3>
+
+      <div class="kgrid">
+
+        <div class="klista">
+
+          <div class="klinha">
+            <span>Parafusos flangeados M6</span>
+            <span>50 un. (M6x16, 20, 25, 30, 35)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Porcas M6</span>
+            <span>40 un. (20 flangeadas CH10 + 20 auto-travantes nylon)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Arruelas técnicas M6</span>
+            <span>60 un. (10 aba larga, 25 lisas, 25 pressão)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Chave biela vazada</span>
+            <span>1 un. (10mm)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Soquete magnético</span>
+            <span>1 un. (10mm — encaixe 1/4")</span>
+          </div>
+
+          <div class="klinha">
+            <span>Lubrificante + maleta</span>
+            <span>1 spray 300ml + maleta (14 divisórias)</span>
+          </div>
+
+        </div>
+
+        <div class="kfoco">
+
+          <img
+            src="KIT-MALETA-V.png"
+            alt="Kit S.O.S. Mecânica 6mm"
+            class="kit-zoomable"
+          >
+
+          <h4>
+            <i class="fa-solid fa-wrench" style="color:var(--azul)"></i>
+            Foco em M6 / chave 10mm
+          </h4>
+
+          <p>
+            Ideal para lataria, paralamas, tampas, suportes e acabamentos mecânicos gerais.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="kitblock">
+
+      <h3>
+        <i class="fa-solid fa-box"></i>
+        3. Kit S.O.S. Mecânica 8mm — 166 peças
+      </h3>
+
+      <div class="kgrid">
+
+        <div class="klista">
+
+          <div class="klinha">
+            <span>Parafusos flangeados M8</span>
+            <span>38 un. (M8x20, 25, 30, 40, 50)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Porcas M8</span>
+            <span>40 un. (20 flangeadas CH13 + 20 auto-travantes nylon)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Arruelas técnicas M8</span>
+            <span>58 un. (8 aba larga, 25 lisas, 25 pressão)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Chave biela vazada</span>
+            <span>1 un. (13mm)</span>
+          </div>
+
+          <div class="klinha">
+            <span>Soquete magnético</span>
+            <span>1 un. (13mm — encaixe 1/4")</span>
+          </div>
+
+          <div class="klinha">
+            <span>Lubrificante + maleta</span>
+            <span>1 spray 300ml + maleta (14 divisórias)</span>
+          </div>
+
+        </div>
+
+        <div class="kfoco">
+
+          <img
+            src="KIT-MALETA-A.png"
+            alt="Kit S.O.S. Mecânica 8mm"
+            class="kit-zoomable"
+          >
+
+          <h4>
+            <i class="fa-solid fa-gears" style="color:var(--verde)"></i>
+            Foco em M8 / chave 13mm
+          </h4>
+
+          <p>
+            Perfeito para fixação pesada, suportes de motor, suspensão,
+            coletores e agregados.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
   </div>
-  <div id="shipping-result"></div>
- </div>
+</section>
 
- <div class="seguranca">
-  <span><i class="fa-solid fa-lock" style="color:var(--verde)"></i> Compra 100% segura</span>
-  <span><i class="fa-solid fa-file-invoice-dollar" style="color:var(--laranja)"></i> Enviamos nota fiscal</span>
- </div>
-</div></section>
+<section id="produto" style="background:var(--gelo)">
+  <div class="wrap">
 
-<section id="depoimentos" class="aval"><div class="wrap">
- <h2>O que dizem os donos de oficina</h2>
- <p class="sub">Feedback real de clientes que já usam o Kit S.O.S. no dia a dia</p>
- <div class="revgrid">
-  <article class="rev">
-   <div class="head"><span class="av">C</span><b>Carlos R. — Oficina Multimarcas</b></div>
-   <div class="stars">★★★★★</div>
-   <p>Esse kit salvou o serviço. Antes, qualquer parafuso que quebrava na desmontagem fazia o mecânico sumir por 40 minutos para ir comprar na rua. Agora o parafuso tá na bancada.</p>
-  </article>
-  <article class="rev">
-   <div class="head"><span class="av">M</span><b>Marcos A. — Centro Automotivo</b></div>
-   <div class="stars">★★★★★</div>
-   <p>O jogo de porcas travantes e arruelas resolve quase tudo de imprevisto na hora de montar suspensão. O investimento se pagou logo nas duas primeiras semanas.</p>
-  </article>
- </div>
-</div></section>
+    <h2 class="center">
+      Escolha a opção ideal para sua oficina
+    </h2>
 
-<section class="garantia"><div class="wrap">
- <div class="gbox">
-  <i class="fa-solid fa-shield-halved"></i>
-  <div>
-   <h3>Garantia de satisfação e qualidade</h3>
-   <p>Todos os nossos parafusos seguem padrões rígidos de força e resistência para aguentar o trabalho pesado da oficina. Compre o kit, use no seu dia a dia e veja o tempo que você vai economizar. Se tiver qualquer dúvida, nossa equipe ajuda você direto da loja.</p>
+    <p class="sub center">
+      Selecione o kit ideal para o porte do seu trabalho ou garanta
+      o combo completo com o maior desconto.
+    </p>
+
+    <div class="pgrid3">
+
+      <div class="buycard">
+
+        <div>
+
+          <img
+            src="KIT-MALETA-V.png"
+            alt="Kit S.O.S. Mecânica 6mm"
+            class="kit-zoomable"
+          >
+
+          <h4>Kit S.O.S. Mecânica 6mm</h4>
+
+          <p class="desc">
+            Ideal para reparos leves e fixações gerais M6 (chave 10mm).
+            Contém 174 peças.
+          </p>
+
+          <div class="preco">
+            <span class="tag">
+              <i class="fa-solid fa-bolt"></i>
+              OFERTA M6
+            </span>
+
+            <b>R$ 257,30</b>
+
+            <span class="pix">À VISTA NO PIX</span>
+
+            <p class="parc">
+              ou 6x de R$ 48,73 no cartão (total R$ 292,39)
+            </p>
+          </div>
+
+        </div>
+
+        <div>
+
+          <a
+            href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B"
+            class="btn btn-v btn-full"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            Comprar Kit 6mm
+          </a>
+
+          <a
+            href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-out btn-full"
+            style="margin-top:8px"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Dúvidas no WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="buycard dest">
+
+        <span class="tagdest">Mais vendido</span>
+
+        <div>
+
+          <img
+            src="KIT-COMPLETO.png"
+            alt="Kit S.O.S. Mecânica Completo"
+            class="kit-zoomable"
+            style="margin-top:8px"
+          >
+
+          <h4>Kit S.O.S. Mecânica COMPLETO</h4>
+
+          <p class="desc">
+            Solução total 6mm + 8mm (chaves 10mm e 13mm).
+            Contém 340 peças e 2 maletas.
+          </p>
+
+          <div class="preco">
+
+            <span class="tag">
+              <i class="fa-solid fa-fire"></i>
+              COMBO MAIOR ECONOMIA
+            </span>
+
+            <b>R$ 622,39</b>
+
+            <span class="pix">À VISTA NO PIX</span>
+
+            <p class="parc">
+              ou 6x de R$ 117,88 no cartão (total R$ 707,26)
+            </p>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <a
+            href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6"
+            class="btn btn-o btn-full"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            Comprar Combo Completo
+          </a>
+
+          <a
+            href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-out btn-full"
+            style="margin-top:8px"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Pedir pelo WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="buycard">
+
+        <div>
+
+          <img
+            src="KIT-MALETA-A.png"
+            alt="Kit S.O.S. Mecânica 8mm"
+            class="kit-zoomable"
+          >
+
+          <h4>Kit S.O.S. Mecânica 8mm</h4>
+
+          <p class="desc">
+            Indicado para fixações reforçadas e estrutura M8 (chave 13mm).
+            Contém 166 peças.
+          </p>
+
+          <div class="preco">
+
+            <span class="tag">
+              <i class="fa-solid fa-bolt"></i>
+              OFERTA M8
+            </span>
+
+            <b>R$ 365,09</b>
+
+            <span class="pix">À VISTA NO PIX</span>
+
+            <p class="parc">
+              ou 6x de R$ 69,14 no cartão (total R$ 414,87)
+            </p>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <a
+            href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ"
+            class="btn btn-v btn-full"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            Comprar Kit 8mm
+          </a>
+
+          <a
+            href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-out btn-full"
+            style="margin-top:8px"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            Pedir pelo WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="frete">
+
+      <label for="cep-input">
+        <i class="fa-solid fa-truck" style="color:var(--laranja)"></i>
+        Calcular frete e prazo de entrega
+      </label>
+
+      <div class="frete-row">
+
+        <input
+          id="cep-input"
+          type="text"
+          placeholder="00000-000"
+          maxlength="9"
+        >
+
+        <button class="btn btn-o" onclick="calcularFrete()">
+          Calcular
+        </button>
+
+      </div>
+
+      <div id="shipping-result"></div>
+
+    </div>
+
+    <div class="seguranca">
+
+      <span>
+        <i class="fa-solid fa-lock" style="color:var(--verde)"></i>
+        Compra 100% segura
+      </span>
+
+      <span>
+        <i class="fa-solid fa-file-invoice-dollar" style="color:var(--laranja)"></i>
+        Enviamos nota fiscal
+      </span>
+
+    </div>
+
   </div>
- </div>
-</div></section>
+</section>
 
-<section id="faq"><div class="wrap">
- <h2 class="center">Perguntas frequentes</h2>
- <div class="faqgrid">
-  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Quais os tamanhos e tipos exatos que vêm no kit?</h4>
-   <p>Você pode escolher o Kit 6mm (chave 10mm), o Kit 8mm (chave 13mm) ou o Kit Completo com os dois. Todos acompanham parafusos flangeados, porcas normais, porcas travantes, arruelas, chaves biela e soquetes magnéticos.</p></div>
-  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Como funciona a entrega gratuita?</h4>
-   <p>Se a sua oficina estiver até 30 km da nossa loja no Pedro Moro, a entrega é grátis. Se for mais longe, enviamos rápido por motoboy ou transportadora.</p></div>
-  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Vocês emitem nota fiscal para CNPJ de oficina?</h4>
-   <p>Sim. Todas as vendas acompanham a nota fiscal certinha, seja no seu nome (CPF) ou no nome da oficina (CNPJ).</p></div>
-  <div class="faqitem"><h4><i class="fa-solid fa-circle-question"></i>Posso comprar mais parafusos quando os do kit acabarem?</h4>
-   <p>Com certeza. Quando um tamanho de parafuso ou porca acabar, é só mandar mensagem no nosso WhatsApp que vendemos a reposição para deixar sua maleta cheia de novo.</p></div>
- </div>
-</div></section>
+<section id="depoimentos" class="aval">
+  <div class="wrap">
 
-<section id="contato"><div class="wrap contato">
- <div class="cinfo">
-  <h3><i class="fa-solid fa-location-dot"></i> Visite nossa loja</h3>
-  <p><strong>Endereço:</strong> Rua Joinville, 2508 - Bairro São Pedro</p>
-  <p>São José dos Pinhais / PR - CEP: 83020-000</p>
-  <p><strong>WhatsApp / Vendas:</strong> (41) 98872-5687</p>
-  <p style="font-size:13.5px;color:#334155">CNPJ: 43.707.158/0002-90</p>
-  <p style="margin-top:14px"><i class="fa-solid fa-store"></i> Venha conhecer de perto nosso setor completo de parafusos!</p>
-  <a class="btn btn-o" href="https://wa.me/5541988725687" target="_blank" rel="noopener" style="margin-top:16px"><i class="fa-brands fa-whatsapp"></i>Chamar no WhatsApp</a>
- </div>
- <div class="clogo">
-  <img src="CDP-LOGO.png" alt="A Casa do Parafuso">
-  <p>Parafusos e ferramentas de qualidade</p>
- </div>
-</div></section>
+    <h2>O que dizem os donos de oficina</h2>
+
+    <p class="sub">
+      Feedback real de clientes que já usam o Kit S.O.S. no dia a dia
+    </p>
+
+    <div class="revgrid">
+
+      <article class="rev">
+
+        <div class="head">
+          <span class="av">C</span>
+          <b>Carlos R. — Oficina Multimarcas</b>
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          Esse kit salvou o serviço. Antes, qualquer parafuso que quebrava
+          na desmontagem fazia o mecânico sumir por 40 minutos para ir
+          comprar na rua. Agora o parafuso tá na bancada.
+        </p>
+
+      </article>
+
+      <article class="rev">
+
+        <div class="head">
+          <span class="av">M</span>
+          <b>Marcos A. — Centro Automotivo</b>
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+          O jogo de porcas travantes e arruelas resolve quase tudo de
+          imprevisto na hora de montar suspensão. O investimento se pagou
+          logo nas duas primeiras semanas.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="garantia">
+  <div class="wrap">
+
+    <div class="gbox">
+
+      <i class="fa-solid fa-shield-halved"></i>
+
+      <div>
+
+        <h3>Garantia de satisfação e qualidade</h3>
+
+        <p>
+          Todos os nossos parafusos seguem padrões rígidos de força e resistência
+          para aguentar o trabalho pesado da oficina. Compre o kit, use no seu
+          dia a dia e veja o tempo que você vai economizar. Se tiver qualquer
+          dúvida, nossa equipe ajuda você direto da loja.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+
+    <h2 class="center">Perguntas frequentes</h2>
+
+    <div class="faqgrid">
+
+      <div class="faqitem">
+
+        <h4>
+          <i class="fa-solid fa-circle-question"></i>
+          Quais os tamanhos e tipos exatos que vêm no kit?
+        </h4>
+
+        <p>
+          Você pode escolher o Kit 6mm (chave 10mm), o Kit 8mm (chave 13mm)
+          ou o Kit Completo com os dois. Todos acompanham parafusos flangeados,
+          porcas normais, porcas travantes, arruelas, chaves biela e soquetes magnéticos.
+        </p>
+
+      </div>
+
+      <div class="faqitem">
+
+        <h4>
+          <i class="fa-solid fa-circle-question"></i>
+          Como funciona a entrega gratuita?
+        </h4>
+
+        <p>
+          Se a sua oficina estiver até 30 km da nossa loja no Pedro Moro,
+          a entrega é grátis. Se for mais longe, enviamos rápido por motoboy
+          ou transportadora.
+        </p>
+
+      </div>
+
+      <div class="faqitem">
+
+        <h4>
+          <i class="fa-solid fa-circle-question"></i>
+          Vocês emitem nota fiscal para CNPJ de oficina?
+        </h4>
+
+        <p>
+          Sim. Todas as vendas acompanham a nota fiscal certinha,
+          seja no seu nome (CPF) ou no nome da oficina (CNPJ).
+        </p>
+
+      </div>
+
+      <div class="faqitem">
+
+        <h4>
+          <i class="fa-solid fa-circle-question"></i>
+          Posso comprar mais parafusos quando os do kit acabarem?
+        </h4>
+
+        <p>
+          Com certeza. Quando um tamanho de parafuso ou porca acabar,
+          é só mandar mensagem no nosso WhatsApp que vendemos a reposição
+          para deixar sua maleta cheia de novo.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap contato">
+
+    <div class="cinfo">
+
+      <h3>
+        <i class="fa-solid fa-location-dot"></i>
+        Visite nossa loja
+      </h3>
+
+      <p>
+        <strong>Endereço:</strong>
+        Rua Joinville, 2508 - Bairro São Pedro
+      </p>
+
+      <p>
+        São José dos Pinhais / PR - CEP: 83020-000
+      </p>
+
+      <p>
+        <strong>WhatsApp / Vendas:</strong>
+        (41) 98872-5687
+      </p>
+
+      <p style="font-size:13.5px;color:#334155">
+        CNPJ: 43.707.158/0002-90
+      </p>
+
+      <p style="margin-top:14px">
+        <i class="fa-solid fa-store"></i>
+        Venha conhecer de perto nosso setor completo de parafusos!
+      </p>
+
+      <a
+        class="btn btn-o"
+        href="https://wa.me/5541988725687"
+        target="_blank"
+        rel="noopener"
+        style="margin-top:16px"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Chamar no WhatsApp
+      </a>
+
+    </div>
+
+    <div class="clogo">
+
+      <img
+        src="CDP-LOGO.png"
+        alt="A Casa do Parafuso"
+      >
+
+      <p>Parafusos e ferramentas de qualidade</p>
+
+    </div>
+
+  </div>
+</section>
+
 </main>
 
 <footer>
- <div class="wrap">
-  <img src="CDP-LOGO-BRANCA.png" alt="A Casa do Parafuso">
-  <p>© 2026 A Casa do Parafuso. Todos os direitos reservados.</p>
- </div>
+
+  <div class="wrap">
+
+    <img
+      src="CDP-LOGO-BRANCA.png"
+      alt="A Casa do Parafuso"
+    >
+
+    <p>
+      © 2026 A Casa do Parafuso. Todos os direitos reservados.
+    </p>
+
+  </div>
+
 </footer>
 
-<a class="zap" href="https://wa.me/5541988725687" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<!-- ========================================
+     VISUALIZADOR AMPLIADO
+     ======================================== -->
+
+<div
+  class="kit-lightbox"
+  id="kit-lightbox"
+  aria-hidden="true"
+>
+
+  <div
+    class="kit-lightbox-inner"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visualização ampliada do kit"
+  >
+
+    <button
+      class="kit-lightbox-close"
+      id="kit-lightbox-close"
+      type="button"
+      aria-label="Fechar imagem"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="kit-lightbox-hint">
+      Clique e arraste para mover • use a roda do mouse para zoom
+    </div>
+
+    <div
+      class="kit-lightbox-stage"
+      id="kit-lightbox-stage"
+    >
+
+      <img
+        id="kit-lightbox-img"
+        src=""
+        alt=""
+      >
+
+    </div>
+
+    <div
+      class="kit-lightbox-controls"
+      aria-label="Controles de zoom"
+    >
+
+      <button
+        id="kit-zoom-out"
+        type="button"
+        aria-label="Diminuir zoom"
+      >
+        <i class="fa-solid fa-minus"></i>
+      </button>
+
+      <button
+        id="kit-zoom-reset"
+        type="button"
+        aria-label="Restaurar zoom"
+      >
+        <i class="fa-solid fa-arrows-to-dot"></i>
+      </button>
+
+      <button
+        id="kit-zoom-in"
+        type="button"
+        aria-label="Aumentar zoom"
+      >
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<a
+  class="zap"
+  href="https://wa.me/5541988725687"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chamar no WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <script>
-const mb=document.querySelector(".menu-btn"),mn=document.getElementById("menu");
-mb.onclick=()=>mb.setAttribute("aria-expanded",mn.classList.toggle("aberto"));
-mn.addEventListener("click",e=>{if(e.target.closest("a"))mn.classList.remove("aberto")});
+
+const mb = document.querySelector(".menu-btn");
+const mn = document.getElementById("menu");
+
+mb.onclick = () =>
+  mb.setAttribute(
+    "aria-expanded",
+    mn.classList.toggle("aberto")
+  );
+
+mn.addEventListener("click", e => {
+  if(e.target.closest("a"))
+    mn.classList.remove("aberto");
+});
+
+
+/* ========================================
+   CÁLCULO DE FRETE
+   ======================================== */
 
 async function calcularFrete(){
- const cep=document.getElementById('cep-input').value.replace(/\D/g,'');
- const r=document.getElementById('shipping-result');
- if(cep.length!==8){r.style.display="block";r.innerHTML="<span style='color:#D64545'>Digite um CEP válido com 8 números.</span>";return}
- r.style.display="block";
- r.innerHTML="<i class='fa-solid fa-spinner fa-spin'></i> Verificando região...";
- try{
-  const res=await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-  const data=await res.json();
-  if(data.erro){r.innerHTML="<span style='color:#D64545'>CEP não encontrado. Verifique os números.</span>";return}
-  const cidade=data.localidade.toLowerCase();
-  if(cidade==="são josé dos pinhais"||cidade==="curitiba"){
-   r.innerHTML=`<span style='color:var(--verde);font-weight:700'><i class='fa-solid fa-circle-check'></i> Frete grátis!</span><br><span>Sua oficina está na nossa área de entrega rápida. Combinamos o horário direto no WhatsApp.</span>`;
-  }else{
-   r.innerHTML=`<i class='fa-solid fa-truck-ramp-box' style='color:var(--laranja)'></i> <strong>Envio via transportadora:</strong><br><span>Disponível para ${data.localidade} - ${data.uf}. O valor do frete e o prazo serão aplicados na tela final de pagamento.</span>`;
+
+  const cep =
+    document
+      .getElementById('cep-input')
+      .value
+      .replace(/\D/g,'');
+
+  const r =
+    document.getElementById('shipping-result');
+
+  if(cep.length !== 8){
+
+    r.style.display = "block";
+
+    r.innerHTML =
+      "<span style='color:#D64545'>" +
+      "Digite um CEP válido com 8 números." +
+      "</span>";
+
+    return;
   }
- }catch(e){r.innerHTML="<span style='color:#D64545'>Erro ao conectar com o serviço de CEP. Tente novamente.</span>"}
+
+  r.style.display = "block";
+
+  r.innerHTML =
+    "<i class='fa-solid fa-spinner fa-spin'></i> " +
+    "Verificando região...";
+
+  try{
+
+    const res =
+      await fetch(
+        `https://viacep.com.br/ws/${cep}/json/`
+      );
+
+    const data =
+      await res.json();
+
+    if(data.erro){
+
+      r.innerHTML =
+        "<span style='color:#D64545'>" +
+        "CEP não encontrado. Verifique os números." +
+        "</span>";
+
+      return;
+    }
+
+    const cidade =
+      data.localidade.toLowerCase();
+
+    if(
+      cidade === "são josé dos pinhais" ||
+      cidade === "curitiba"
+    ){
+
+      r.innerHTML =
+        `<span style='color:var(--verde);font-weight:700'>
+          <i class='fa-solid fa-circle-check'></i>
+          Frete grátis!
+        </span>
+        <br>
+        <span>
+          Sua oficina está na nossa área de entrega rápida.
+          Combinamos o horário direto no WhatsApp.
+        </span>`;
+
+    }else{
+
+      r.innerHTML =
+        `<i class='fa-solid fa-truck-ramp-box'
+          style='color:var(--laranja)'></i>
+
+        <strong>Envio via transportadora:</strong>
+
+        <br>
+
+        <span>
+          Disponível para ${data.localidade} - ${data.uf}.
+          O valor do frete e o prazo serão aplicados
+          na tela final de pagamento.
+        </span>`;
+
+    }
+
+  }catch(e){
+
+    r.innerHTML =
+      "<span style='color:#D64545'>" +
+      "Erro ao conectar com o serviço de CEP. " +
+      "Tente novamente." +
+      "</span>";
+
+  }
+
 }
+
+
+/* ========================================
+   VISUALIZADOR DAS IMAGENS DO KIT
+   ======================================== */
+
+(function(){
+
+  const box =
+    document.getElementById("kit-lightbox");
+
+  const stage =
+    document.getElementById("kit-lightbox-stage");
+
+  const view =
+    document.getElementById("kit-lightbox-img");
+
+  const close =
+    document.getElementById("kit-lightbox-close");
+
+  const zoomIn =
+    document.getElementById("kit-zoom-in");
+
+  const zoomOut =
+    document.getElementById("kit-zoom-out");
+
+  const zoomReset =
+    document.getElementById("kit-zoom-reset");
+
+  const thumbs =
+    document.querySelectorAll(".kit-zoomable");
+
+
+  if(
+    !box ||
+    !stage ||
+    !view ||
+    !thumbs.length
+  )
+    return;
+
+
+  let scale = 1;
+  let x = 0;
+  let y = 0;
+
+  let dragging = false;
+
+  let startX = 0;
+  let startY = 0;
+
+  const minScale = 1;
+  const maxScale = 4;
+  const step = .25;
+
+
+  function render(){
+
+    view.style.transform =
+      `translate(${x}px, ${y}px) scale(${scale})`;
+
+  }
+
+
+  function resetZoom(){
+
+    scale = 1;
+    x = 0;
+    y = 0;
+
+    render();
+
+  }
+
+
+  function setZoom(next,cx,cy){
+
+    const old = scale;
+
+    scale =
+      Math.max(
+        minScale,
+        Math.min(maxScale,next)
+      );
+
+
+    if(scale === 1){
+
+      x = 0;
+      y = 0;
+
+    }else if(
+      cx !== undefined &&
+      cy !== undefined
+    ){
+
+      const rect =
+        stage.getBoundingClientRect();
+
+      const px =
+        cx -
+        (rect.left + rect.width / 2);
+
+      const py =
+        cy -
+        (rect.top + rect.height / 2);
+
+      const factor =
+        scale / old;
+
+      x =
+        px -
+        (px - x) * factor;
+
+      y =
+        py -
+        (py - y) * factor;
+
+    }
+
+    render();
+
+  }
+
+
+  function open(src,alt){
+
+    view.src = src;
+
+    view.alt =
+      alt ||
+      "Imagem ampliada do Kit S.O.S. Mecânica";
+
+    resetZoom();
+
+    box.classList.add("aberto");
+
+    box.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.classList.add(
+      "lightbox-aberto"
+    );
+
+  }
+
+
+  function shut(){
+
+    box.classList.remove("aberto");
+
+    box.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "lightbox-aberto"
+    );
+
+    setTimeout(() => {
+
+      if(!box.classList.contains("aberto"))
+        view.src = "";
+
+    },180);
+
+  }
+
+
+  /* Clique nas imagens */
+
+  thumbs.forEach(img => {
+
+    img.addEventListener(
+      "click",
+      () => {
+
+        open(
+          img.currentSrc || img.src,
+          img.alt
+        );
+
+      }
+    );
+
+  });
+
+
+  /* Fechar no X */
+
+  close.addEventListener(
+    "click",
+    shut
+  );
+
+
+  /* Fechar clicando fora */
+
+  box.addEventListener(
+    "click",
+    e => {
+
+      if(
+        e.target === box ||
+        e.target === stage
+      ){
+
+        shut();
+
+      }
+
+    }
+  );
+
+
+  /* Botões de zoom */
+
+  zoomIn.addEventListener(
+    "click",
+    () => setZoom(scale + step)
+  );
+
+  zoomOut.addEventListener(
+    "click",
+    () => setZoom(scale - step)
+  );
+
+  zoomReset.addEventListener(
+    "click",
+    resetZoom
+  );
+
+
+  /* Zoom pela roda do mouse */
+
+  stage.addEventListener(
+    "wheel",
+    e => {
+
+      e.preventDefault();
+
+      setZoom(
+        scale +
+        (e.deltaY < 0 ? step : -step),
+        e.clientX,
+        e.clientY
+      );
+
+    },
+    {passive:false}
+  );
+
+
+  /* Arrastar imagem ampliada */
+
+  view.addEventListener(
+    "pointerdown",
+    e => {
+
+      if(scale <= 1)
+        return;
+
+      dragging = true;
+
+      view.classList.add(
+        "arrastando"
+      );
+
+      view.setPointerCapture(
+        e.pointerId
+      );
+
+      startX =
+        e.clientX - x;
+
+      startY =
+        e.clientY - y;
+
+    }
+  );
+
+
+  view.addEventListener(
+    "pointermove",
+    e => {
+
+      if(!dragging)
+        return;
+
+      x =
+        e.clientX - startX;
+
+      y =
+        e.clientY - startY;
+
+      render();
+
+    }
+  );
+
+
+  function stopDrag(){
+
+    dragging = false;
+
+    view.classList.remove(
+      "arrastando"
+    );
+
+  }
+
+
+  view.addEventListener(
+    "pointerup",
+    stopDrag
+  );
+
+  view.addEventListener(
+    "pointercancel",
+    stopDrag
+  );
+
+
+  view.addEventListener(
+    "pointerleave",
+    () => {
+
+      if(!dragging)
+        view.classList.remove(
+          "arrastando"
+        );
+
+    }
+  );
+
+
+  /* Teclado */
+
+  document.addEventListener(
+    "keydown",
+    e => {
+
+      if(
+        !box.classList.contains("aberto")
+      )
+        return;
+
+      if(e.key === "Escape")
+        shut();
+
+      if(
+        e.key === "+" ||
+        e.key === "="
+      )
+        setZoom(scale + step);
+
+      if(e.key === "-")
+        setZoom(scale - step);
+
+      if(e.key === "0")
+        resetZoom();
+
+    }
+  );
+
+})();
+
 </script>
+
 </body>
 </html>
