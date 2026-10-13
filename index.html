@@ -14,15 +14,16 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Product","name":"Kit S.O.S. Mecânica","brand":{"@type":"Brand","name":"A Casa do Parafuso"},"description":"Kit de parafusos flangeados, porcas, arruelas, chaves biela e soquetes magnéticos em maleta organizadora, para oficinas mecânicas.","image":"https://acasadoparafuso.com.br/KIT-S.O.S/KIT-COMPLETO.png","offers":{"@type":"AggregateOffer","priceCurrency":"BRL","lowPrice":"257.30","highPrice":"622.39","offerCount":"3","availability":"https://schema.org/InStock"}}
 </script>
+<script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-:root{--azul:#0E3A82;--azul-esc:#08224F;--laranja:#E8850C;--laranja-esc:#C96F00;--gelo:#F3F6FB;--texto:#1E2B45;--raio:14px;--verde:#1DA34E}
+:root{--azul:#0E3A82;--azul-esc:#08224F;--laranja:#E8850C;--laranja-esc:#C96F00;--gelo:#F3F6FB;--texto:#1E2B45;--raio:14px;--verde:#1DA34E;--sbar-h:0px}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:calc(120px + env(safe-area-inset-top,0px))}
-body{font-family:Barlow,system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(100px + env(safe-area-inset-top,0px))}
+body{font-family:Barlow,system-ui,sans-serif;color:var(--texto);background:#fff;line-height:1.6;padding-top:env(safe-area-inset-top,0px)}
 h1,h2,h3,h4{font-family:"Barlow Condensed",sans-serif;line-height:1.1;color:var(--azul)}
 img{max-width:100%;display:block}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
@@ -31,7 +32,7 @@ h2{font-size:clamp(30px,4.6vw,44px);margin-bottom:12px}
 .sub{max-width:62ch;margin:0 auto 36px;color:#334155}
 .center{text-align:center}
 :focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:16px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:16px;cursor:pointer;font-family:inherit;line-height:1.25;text-align:center}
 .btn-o{background:var(--laranja);color:#fff}.btn-o:hover{background:var(--laranja-esc)}
 .btn-v{background:var(--verde);color:#fff}.btn-v:hover{background:#178a42}
 .btn-l{border-color:#fff;color:#fff;background:transparent}.btn-l:hover{background:#fff;color:var(--azul)}
@@ -46,51 +47,92 @@ nav{margin-left:auto;display:flex;gap:24px;align-items:center}
 nav a:not(.btn){text-decoration:none;font-weight:600;color:var(--azul);font-size:15px}
 nav a:not(.btn):hover{color:var(--laranja)}
 .menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--azul);cursor:pointer;margin-left:auto}
-.hero{background:linear-gradient(105deg,var(--azul-esc) 35%,var(--azul));color:#fff;padding:80px 0 96px}
+
+/* HERO */
+.hero{background:linear-gradient(105deg,var(--azul-esc) 35%,var(--azul));color:#fff;padding:64px 0 76px}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .badge-top{display:inline-flex;align-items:center;gap:8px;background:rgba(232,133,12,.18);border:1px solid var(--laranja);color:#ffcf94;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:18px}
-.hero h1{color:#fff;font-size:clamp(38px,6vw,60px);font-weight:800;max-width:16ch}
+.hero h1{color:#fff;font-size:clamp(40px,6vw,64px);font-weight:800;max-width:15ch}
 .hero h1 span{color:var(--laranja)}
-.hero p{font-size:18px;max-width:52ch;margin:18px 0 28px;color:#dbe6fa}
+.hero p.lead{font-size:18px;max-width:54ch;margin:18px 0 20px;color:#dbe6fa}
+.hero-preco{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:22px;color:#dbe6fa;font-weight:600}
+.hero-preco b{font:800 46px/1 "Barlow Condensed",sans-serif;color:#fff}
+.hero-preco em{font-style:normal;font-size:15px}
 .cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-quote{margin-top:24px;padding-left:14px;border-left:4px solid var(--laranja);font-size:15px;color:#dbe6fa;max-width:52ch}
+.hero-quote .stars{display:block;margin-bottom:2px}
 .hero-img,.kfoco{background:var(--azul);border-radius:var(--raio);padding:18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
-.hero-img{box-shadow:0 18px 40px rgba(0,0,0,.3),inset 0 0 0 1px rgba(255,255,255,.14)}
+.hero-img{box-shadow:0 18px 40px rgba(0,0,0,.3),inset 0 0 0 1px rgba(255,255,255,.14);position:relative}
 .hero-img img{width:100%;aspect-ratio:1/1;object-fit:contain}
-.passos{background:var(--gelo);padding:28px 0;border-bottom:1px solid #dbe3f1}
-.passos .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.passo{display:flex;gap:14px;align-items:center;font-weight:600;color:var(--azul-esc);font-size:15px;line-height:1.35}
-.passo i{flex:none;width:46px;height:46px;border-radius:50%;background:var(--laranja);color:#fff;display:grid;place-items:center;font-size:19px}
+.chip{position:absolute;left:14px;bottom:14px;background:var(--laranja);color:#fff;font-weight:800;border-radius:999px;padding:7px 14px;font-size:14px;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+
+/* CONFIANÇA */
+.confianca{background:var(--gelo);padding:20px 0;border-bottom:1px solid #dbe3f1}
+.confianca .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.conf{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--azul-esc);font-size:14.5px;line-height:1.3}
+.conf i{flex:none;width:42px;height:42px;border-radius:50%;background:var(--laranja);color:#fff;display:grid;place-items:center;font-size:17px}
+.conf small{display:block;font-weight:500;color:#475569;font-size:13px}
+
+/* PREJUÍZO + CALCULADORA */
 .prejuizo{background:var(--azul-esc);color:#fff}
 .prejuizo h2{color:#fff;text-align:center}
 .prejuizo .sub{color:#cfdcf5;text-align:center}
-.prejuizo .sub strong{color:#ffcf94}
-.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
-.pcard{background:#fff;color:var(--texto);border-radius:var(--raio);padding:26px;border-top:6px solid}
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;background:#fff;color:var(--texto);border-radius:var(--raio);padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.field{margin-bottom:20px}
+.field .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.field label,.field .lbl{font-weight:700;color:var(--azul);font-size:15px;line-height:1.3}
+.field output{font:800 24px "Barlow Condensed",sans-serif;color:var(--laranja-esc);white-space:nowrap}
+.field input[type=range]{width:100%;accent-color:var(--laranja);height:28px;cursor:pointer}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{display:block;text-align:center;border:2px solid #cfd9ec;border-radius:10px;padding:9px 6px;font-weight:700;font-size:14px;color:var(--azul);cursor:pointer;line-height:1.2;transition:.15s}
+.seg label small{display:block;font-weight:600;color:#475569;font-size:12.5px}
+.seg input:checked+label{border-color:var(--laranja);background:#fff4e5}
+.seg input:focus-visible+label{outline:3px solid var(--laranja);outline-offset:2px}
+.calc-out{background:var(--azul-esc);color:#fff;border-radius:12px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.calc-out .big small{display:block;color:#cfdcf5;font-weight:600}
+.calc-out .big b{display:block;font:800 clamp(44px,7vw,60px)/1 "Barlow Condensed",sans-serif;color:#ffcf94}
+.calc-out .big span{font-size:14px;color:#cfdcf5}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini div{background:rgba(255,255,255,.08);border-radius:10px;padding:10px 12px}
+.mini small{display:block;color:#cfdcf5;font-size:12.5px}
+.mini b{font:800 24px "Barlow Condensed",sans-serif}
+.pago{background:rgba(232,133,12,.16);border:1px solid var(--laranja);border-radius:10px;padding:12px 14px;font-size:15px}
+.pago strong{color:#ffcf94}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+.pcard{background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px 24px;border-top:6px solid}
 .pcard.ruim{border-color:#D64545}.pcard.bom{border-color:var(--verde)}
-.pcard h3{font-size:22px;margin-bottom:14px}
+.pcard h3{font-size:22px;margin-bottom:12px}
 .pcard.ruim h3{color:#D64545}.pcard.bom h3{color:var(--verde)}
-.pcard ul{list-style:none;padding:0;display:grid;gap:10px;font-size:15px}
+.pcard ul{list-style:none;padding:0;display:grid;gap:9px;font-size:15px}
 .pcard li i{width:22px;color:var(--laranja);margin-right:6px}
-.conclusao{margin-top:26px;background:rgba(232,133,12,.14);border:1px solid var(--laranja);border-radius:var(--raio);padding:20px 24px;color:#fff;font-size:15px}
-.conclusao i{color:var(--laranja);margin-right:8px}
-.kitblock{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:26px;margin-bottom:24px;border-top:6px solid var(--azul)}
-.kitblock.destaque{border-color:var(--laranja)}
-.kitblock h3{font-size:24px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.kitblock.destaque h3{color:var(--laranja)}
-.kgrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
-.klista{display:grid;gap:6px}
-.klinha{display:flex;justify-content:space-between;gap:14px;font-size:15px;padding:10px 12px;border-bottom:1px dashed #d0d7de;border-radius:6px}
-.klinha:nth-child(even){background:#f8fafc}
-.klinha span:first-child{font-weight:700;color:var(--azul)}
-.klinha span:last-child{font-weight:700;color:var(--azul-esc);text-align:right}
-.kfoco{text-align:center}
-.kfoco img{max-height:170px;width:100%;margin:0 auto 12px;object-fit:contain}
-.kfoco h4{font-size:17px;margin-bottom:6px;color:#fff}
-.kfoco p{font-size:14px;color:#dbe6fa;font-weight:500}
-.pgrid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+
+/* QUIZ */
+.quiz{background:#fff;border:2px solid var(--azul);border-radius:var(--raio);padding:26px;max-width:760px;margin:0 auto 40px;box-shadow:0 12px 30px rgba(14,58,130,.12)}
+.quiz h3{font-size:28px;margin-bottom:4px}
+.quiz .qsub{color:#475569;font-size:15px;margin-bottom:14px}
+.qprog{height:8px;background:#e3e9f5;border-radius:99px;overflow:hidden;margin-bottom:18px}
+.qprog i{display:block;height:100%;width:0;background:var(--laranja);transition:width .3s}
+.qq{font:700 24px "Barlow Condensed",sans-serif;color:var(--azul-esc);margin-bottom:12px}
+.qopts{display:grid;gap:10px}
+.qopt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;background:var(--gelo);border:2px solid #cfd9ec;border-radius:12px;padding:14px 16px;font:600 16px Barlow,sans-serif;color:var(--azul-esc);cursor:pointer;transition:.15s}
+.qopt i{color:var(--laranja);width:22px;text-align:center}
+.qopt:hover{border-color:var(--laranja);background:#fff4e5;transform:translateX(3px)}
+.qres{text-align:center}
+.qres .ok{color:var(--verde);font-weight:800}
+.qres h4{font-size:32px;margin:6px 0}
+.qres p{color:#334155;max-width:52ch;margin:0 auto 14px}
+.qres .qprice{font:800 40px "Barlow Condensed",sans-serif;color:var(--laranja);display:block}
+.qres .qacts{display:grid;gap:10px;max-width:420px;margin:14px auto 0}
+.qback{background:none;border:0;color:#475569;text-decoration:underline;cursor:pointer;margin-top:10px;font:inherit;font-size:14px}
+
+/* COMPRA */
 .buycard{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
 .buycard.dest{border:2px solid var(--laranja);box-shadow:0 12px 30px rgba(232,133,12,.18)}
+.buycard.rec{outline:4px solid var(--verde);outline-offset:3px}
+.buycard.rec::after{content:"Recomendado para você";position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);background:var(--verde);color:#fff;padding:5px 16px;border-radius:999px;font-weight:800;font-size:12px;white-space:nowrap}
 .tagdest{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--laranja);color:#fff;padding:5px 16px;border-radius:999px;font-weight:800;font-size:12px;text-transform:uppercase;white-space:nowrap}
+.pgrid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
 .buycard img{width:100%;height:180px;object-fit:contain;background:var(--azul);border-radius:10px;padding:10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
 .buycard h4{font-size:21px;margin:14px 0 6px}
 .buycard .desc{color:#334155;font-size:14.5px;min-height:42px}
@@ -101,14 +143,36 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .buycard.dest .preco b{color:var(--laranja);font-size:38px}
 .preco .pix{color:var(--verde);font-weight:700;font-size:14px}
 .preco .parc{font-size:13.5px;color:#334155;margin-top:4px}
-.frete{background:var(--gelo);border-radius:var(--raio);padding:24px;margin:30px auto 0;max-width:600px;border:1px solid #dbe3f1}
+.frete{background:var(--gelo);border-radius:var(--raio);padding:24px;margin:40px auto 0;max-width:600px;border:1px solid #dbe3f1}
 .frete label{font-weight:700;color:var(--azul);display:block;margin-bottom:10px}
 .frete-row{display:flex;gap:10px}
-.frete-row input{flex:1;padding:12px 14px;border-radius:8px;border:2px solid #cfd9ec;font:inherit}
+.frete-row input{flex:1;padding:12px 14px;border-radius:8px;border:2px solid #cfd9ec;font:inherit;min-width:0}
 .frete-row input:focus{border-color:var(--laranja);outline:0}
 #shipping-result{margin-top:12px;font-size:14.5px;display:none}
 .seguranca{margin-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;font-size:14.5px;font-weight:600}
 .seguranca i{margin-right:6px}
+
+/* DETALHES (ACORDEÃO) */
+.acc{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);margin-bottom:14px;border-left:6px solid var(--azul);overflow:hidden}
+.acc.destaque{border-left-color:var(--laranja)}
+.acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:18px 20px;font:700 22px "Barlow Condensed",sans-serif;color:var(--azul)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .chev{margin-left:auto;transition:transform .2s;color:var(--laranja)}
+.acc[open] summary .chev{transform:rotate(180deg)}
+.acc summary small{font:600 14px Barlow,sans-serif;color:#475569;display:block}
+.acc .kgrid{padding:0 20px 22px}
+.kgrid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center}
+.klista{display:grid;gap:6px}
+.klinha{display:flex;justify-content:space-between;gap:14px;font-size:15px;padding:10px 12px;border-bottom:1px dashed #d0d7de;border-radius:6px}
+.klinha:nth-child(even){background:#f8fafc}
+.klinha span:first-child{font-weight:700;color:var(--azul)}
+.klinha span:last-child{font-weight:700;color:var(--azul-esc);text-align:right}
+.kfoco{text-align:center}
+.kfoco img{max-height:170px;width:100%;margin:0 auto 12px;object-fit:contain}
+.kfoco h4{font-size:17px;margin-bottom:6px;color:#fff}
+.kfoco p{font-size:14px;color:#dbe6fa;font-weight:500}
+
+/* DEPOIMENTOS, GARANTIA, FAQ, CONTATO */
 .aval{background:var(--azul);color:#fff}
 .aval h2{color:#fff;text-align:center}
 .aval .sub{text-align:center;color:#dbe6fa}
@@ -132,10 +196,31 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .cinfo i{color:var(--laranja);margin-right:8px;width:18px}
 .clogo{background:var(--azul);border-radius:var(--raio);display:grid;place-items:center;color:#fff;padding:28px;text-align:center}
 .clogo img{height:78px;width:auto;margin:0 auto 14px;filter:brightness(0) invert(1)}
-footer{background:var(--azul-esc);color:#cfdcf5;padding:30px 0;font-size:15px;text-align:center}
+footer{background:var(--azul-esc);color:#cfdcf5;padding:30px 0 calc(100px + env(safe-area-inset-bottom,0px));font-size:15px;text-align:center}
 footer img{height:44px;width:auto;margin:0 auto 10px}
-.zap{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:32px;box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none}
-.mbar{display:none}
+
+/* WHATSAPP, BARRA FIXA, AJUDA */
+.zap{position:fixed;right:18px;bottom:calc(18px + var(--sbar-h) + env(safe-area-inset-bottom,0px));z-index:60;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:32px;box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none;transition:bottom .25s}
+.sbar{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;align-items:center;justify-content:center;gap:22px;padding:10px 18px calc(10px + env(safe-area-inset-bottom,0px));background:var(--azul-esc);border-top:3px solid var(--laranja);color:#fff;line-height:1.2;transform:translateY(110%);transition:transform .3s;visibility:hidden}
+.sbar.on{transform:none;visibility:visible}
+.sbar .sinfo{font-size:14px;color:#cfdcf5}
+.sbar .sinfo b{font:800 26px "Barlow Condensed",sans-serif;color:#ffcf94;margin:0 4px}
+.sbar .btn{padding:11px 22px;font-size:15px;white-space:nowrap}
+.ajuda{position:fixed;left:18px;bottom:calc(18px + var(--sbar-h) + env(safe-area-inset-bottom,0px));z-index:65;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:var(--raio);border-top:6px solid var(--laranja);padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:none}
+.ajuda.on{display:block;animation:sobe .35s ease-out}
+.ajuda h4{font-size:24px;margin-bottom:4px;padding-right:28px}
+.ajuda p{font-size:14.5px;color:#334155;margin-bottom:12px}
+.ajuda .acts{display:grid;gap:8px}
+.ajuda .btn{padding:11px 16px;font-size:15px}
+.ajuda .x{position:absolute;top:8px;right:8px;width:34px;height:34px;border:0;background:none;font-size:18px;color:#64748b;cursor:pointer;border-radius:50%}
+.ajuda .x:hover{background:var(--gelo)}
+@keyframes sobe{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+
+/* ENTRADA SUAVE (só a primeira dobra de cada bloco de compra) */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.js .rv.in{opacity:1;transform:none}
+
+/* LUPA E LIGHTBOX */
 .kit-zoomable{cursor:zoom-in}
 .kit-lupa{position:fixed;left:0;top:0;width:190px;height:190px;border-radius:50%;border:4px solid var(--laranja);background-color:var(--azul);background-repeat:no-repeat;box-shadow:0 12px 32px rgba(0,0,0,.4),inset 0 0 0 2px rgba(255,255,255,.25);pointer-events:none;opacity:0;transform:scale(.85);transition:opacity .15s,transform .15s;z-index:70}
 .kit-lupa.visivel{opacity:1;transform:scale(1)}
@@ -150,25 +235,39 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
 .kit-lightbox-controls button{width:40px;height:40px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:transparent;color:#fff;cursor:pointer}
 .kit-lightbox-controls button:hover{background:var(--laranja);border-color:var(--laranja)}
 body.lightbox-aberto{overflow:hidden}
+
 @media (max-width:900px){
 .menu-btn{display:block}
 nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px;gap:16px;border-bottom:4px solid var(--laranja)}
 nav.aberto{display:flex}
-.hero .wrap,.pgrid,.kgrid,.contato,.passos .wrap{grid-template-columns:1fr}
-.hero-img{order:-1}
-section{padding:52px 0}
-.hero{padding:56px 0 70px}
+.hero .wrap,.pgrid,.kgrid,.contato,.calc{grid-template-columns:1fr}
+.confianca .wrap{grid-template-columns:1fr 1fr}
+section{padding:48px 0}
+/* MOBILE: o título vem primeiro e a imagem fica depois do botão */
+.hero{padding:34px 0 44px}
+.hero .wrap{gap:26px}
+.hero-img{order:0;padding:12px}
+.hero-img img{aspect-ratio:auto;max-height:230px}
+.hero h1{max-width:none}
+.hero p.lead{font-size:16.5px;margin:14px 0 16px}
+.hero-preco b{font-size:42px}
+.cta .btn{width:100%}
 .frete-row{flex-direction:column}
 .gbox{flex-direction:column;text-align:center}
-body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
-.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--azul-esc);border-top:3px solid var(--laranja);color:#fff;font-size:13px;line-height:1.2}
-.mbar b{display:block;font:800 22px "Barlow Condensed",sans-serif;color:#ffcf94}
-.mbar .btn{padding:11px 18px;font-size:15px}
-.zap{bottom:calc(86px + env(safe-area-inset-bottom,0px));width:52px;height:52px;font-size:28px}
+.zap{width:52px;height:52px;font-size:28px}
+.sbar{justify-content:space-between;gap:12px;padding-left:14px;padding-right:14px}
+.sbar .sinfo{font-size:12.5px}
+.sbar .sinfo b{display:block;margin:0;font-size:24px}
+.sbar .sinfo span.hide-m{display:none}
+.ajuda{left:12px;right:12px;width:auto}
+.quiz{padding:20px 16px}
+.calc{padding:20px 16px}
+.klinha{flex-direction:column;gap:2px}
+.klinha span:last-child{text-align:left}
 }
-@media (max-width:700px){.kit-lightbox{padding:14px}.kit-lightbox-inner{width:96vw;height:82vh}}
+@media (max-width:420px){.confianca .wrap{gap:12px}.conf{font-size:13px}.conf i{width:36px;height:36px;font-size:15px}}
 @media (hover:none),(pointer:coarse){.kit-lupa{display:none}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.kit-lupa{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.kit-lupa,.js .rv,.sbar,.zap,.qprog i{transition:none}.ajuda.on{animation:none}.js .rv{opacity:1;transform:none}}
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -187,12 +286,11 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
     <a class="logo" href="#topo"><img src="CDP-LOGO2.png" alt="A Casa do Parafuso"></a>
     <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <nav id="menu">
-      <a href="#inicio">Início</a>
-      <a href="#calculo">Prejuízo Zero</a>
+      <a href="#calculo">Quanto eu perco</a>
+      <a href="#produto">Kits e preços</a>
       <a href="#conteudo">O que vem no kit</a>
       <a href="#depoimentos">Quem usa</a>
       <a href="#faq">Dúvidas</a>
-      <a href="#contato">Endereço</a>
       <a class="btn btn-o" href="#produto"><i class="fa-solid fa-toolbox"></i> Garantir meu kit</a>
     </nav>
   </div>
@@ -200,66 +298,217 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 
 <main id="topo">
 
+<!-- 1. HERO: no celular o texto aparece primeiro, a imagem vem depois -->
 <section id="inicio" class="hero">
   <div class="wrap">
     <div>
       <span class="badge-top"><i class="fa-solid fa-fire"></i> O socorro definitivo da sua oficina</span>
-      <h1>Pare de perder horas de trabalho por falta de <span>parafusos</span></h1>
-      <p>Chega de parar o elevador e o serviço do cliente para correr atrás de uma peça básica. Com o Kit S.O.S. o parafuso certo já está na bancada: você entrega mais rápido e atende mais carros por dia.</p>
-      <div class="cta">
-        <a class="btn btn-o" href="#produto"><i class="fa-solid fa-cart-shopping"></i> Escolher meu kit</a>
-        <a class="btn btn-l" href="#calculo"><i class="fa-solid fa-calculator"></i> Ver quanto eu economizo</a>
+      <h1>Pare de perder <span>R$ 180 por hora</span> por falta de parafuso</h1>
+      <p class="lead">Carro no elevador, falta uma peça e o mecânico sai correndo atrás dela. Numa oficina que fatura R$ 40 mil por mês, cada hora parada custa cerca de R$ 180. Com o Kit S.O.S., a peça certa está na bancada em 10 segundos.</p>
+      <div class="hero-preco">
+        <span>A partir de</span> <b>R$ 257,30</b> <em>no Pix, ou 6x no cartão</em>
       </div>
+      <div class="cta">
+        <a class="btn btn-o" href="#produto" data-track="hero_ver_kits"><i class="fa-solid fa-cart-shopping"></i> Ver kits e preços</a>
+        <a class="btn btn-l" href="#quiz" data-track="hero_quiz"><i class="fa-solid fa-circle-question"></i> Qual kit é o meu? (30 segundos)</a>
+      </div>
+      <!-- Quando tiver fotos reais de oficinas ou prints de clientes, coloque aqui, ao lado da frase abaixo. -->
+      <p class="hero-quote"><span class="stars" aria-label="5 estrelas">★★★★★</span>"Agora o parafuso tá na bancada." <br><strong>Carlos R., Oficina Multimarcas</strong></p>
     </div>
     <div class="hero-img">
-      <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable">
+      <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" fetchpriority="high" decoding="async">
+      <span class="chip"><i class="fa-solid fa-stopwatch"></i> Peça na mão em 10 s</span>
     </div>
   </div>
 </section>
 
-<div class="passos">
+<!-- 2. FAIXA DE CONFIANÇA -->
+<div class="confianca">
   <div class="wrap">
-    <div class="passo"><i class="fa-solid fa-hand-pointer"></i> 1. Escolha o kit: 6mm, 8mm ou Completo</div>
-    <div class="passo"><i class="fa-solid fa-qrcode"></i> 2. Pague no Pix ou parcele em até 6x no cartão</div>
-    <div class="passo"><i class="fa-solid fa-truck-fast"></i> 3. Receba na oficina, com nota fiscal</div>
+    <div class="conf"><i class="fa-solid fa-file-invoice-dollar"></i><span>Nota fiscal<small>CPF ou CNPJ</small></span></div>
+    <div class="conf"><i class="fa-solid fa-truck-fast"></i><span>Frete grátis<small>até 30 km da loja</small></span></div>
+    <div class="conf"><i class="fa-solid fa-credit-card"></i><span>Pix ou 6x<small>no cartão</small></span></div>
+    <div class="conf"><i class="fa-brands fa-whatsapp"></i><span>Atendimento<small>direto no WhatsApp</small></span></div>
   </div>
 </div>
 
+<!-- 4. CALCULADORA -->
 <section id="calculo" class="prejuizo">
   <div class="wrap">
-    <h2>Cada minuto fora da oficina é dinheiro jogado fora</h2>
-    <p class="sub">Faça a conta com um exemplo: uma oficina que fatura cerca de <strong>R$ 40.000,00 por mês</strong> em 220 horas úteis ganha, em média, <strong>R$ 180,00 por hora</strong>. Cada hora parada é esse dinheiro que deixou de entrar.</p>
+    <h2>Quanto a sua oficina perde esperando peça?</h2>
+    <p class="sub">Mexa nos controles com a sua realidade e veja a conta fechar.</p>
+
+    <div class="calc">
+      <div>
+        <div class="field">
+          <div class="row"><label for="fat">Quanto a oficina fatura por mês?</label><output id="fat-o" for="fat">R$ 40.000</output></div>
+          <input id="fat" type="range" min="10000" max="200000" step="5000" value="40000">
+        </div>
+        <div class="field">
+          <div class="row"><label for="sai">Quantas vezes por semana alguém sai para buscar peça?</label><output id="sai-o" for="sai">3 vezes</output></div>
+          <input id="sai" type="range" min="1" max="15" step="1" value="3">
+        </div>
+        <div class="field">
+          <div class="row"><label for="min">Quanto tempo se perde em cada saída?</label><output id="min-o" for="min">60 min</output></div>
+          <input id="min" type="range" min="15" max="120" step="15" value="60">
+        </div>
+        <div class="field" role="radiogroup" aria-labelledby="kit-lbl">
+          <span class="lbl" id="kit-lbl">Qual kit você quer comparar?</span>
+          <div class="seg">
+            <input type="radio" name="ckit" id="ck6" value="k6"><label for="ck6">6mm<small>R$ 257,30</small></label>
+            <input type="radio" name="ckit" id="ckc" value="kc" checked><label for="ckc">Completo<small>R$ 622,39</small></label>
+            <input type="radio" name="ckit" id="ck8" value="k8"><label for="ck8">8mm<small>R$ 365,09</small></label>
+          </div>
+        </div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div class="big"><small>Você perde por mês, só esperando peça</small><b id="r-mes">R$ 0</b><span id="r-ano"></span></div>
+        <div class="mini">
+          <div><small>Sua hora vale</small><b id="r-hora">R$ 0</b></div>
+          <div><small>Cada saída custa</small><b id="r-saida">R$ 0</b></div>
+        </div>
+        <p class="pago" id="r-pago"></p>
+        <a class="btn btn-o btn-full" id="r-btn" href="#produto" data-track="calc_comprar"></a>
+      </div>
+    </div>
+
     <div class="pgrid">
-      <div class="pcard ruim">
-        <h3><i class="fa-solid fa-triangle-exclamation"></i> Rotina sem o kit</h3>
+      <div class="pcard ruim rv">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> Sem o kit</h3>
         <ul>
           <li><i class="fa-solid fa-triangle-exclamation"></i> Falta 1 parafuso ou porca travante no meio da montagem</li>
-          <li><i class="fa-solid fa-person-walking-arrow-right"></i> O mecânico para o serviço e vai até a autopeças</li>
-          <li><i class="fa-solid fa-circle-xmark"></i> <strong>Resultado:</strong> 1 hora perdida = R$ 180,00 de prejuízo</li>
+          <li><i class="fa-solid fa-person-walking-arrow-right"></i> O mecânico para e vai até a autopeças</li>
           <li><i class="fa-solid fa-car-burst"></i> Carro ocupando o pátio e cliente esperando além do prazo</li>
         </ul>
       </div>
-      <div class="pcard bom">
-        <h3><i class="fa-solid fa-circle-check"></i> Rotina com o Kit S.O.S.</h3>
+      <div class="pcard bom rv">
+        <h3><i class="fa-solid fa-circle-check"></i> Com o Kit S.O.S.</h3>
         <ul>
-          <li><i class="fa-solid fa-wrench"></i> Falta o parafuso na hora do aperto final</li>
-          <li><i class="fa-solid fa-box-open"></i> Você abre a maleta e pega a peça exata em 10 segundos</li>
-          <li><i class="fa-solid fa-circle-check"></i> <strong>Resultado:</strong> serviço sem interrupção = R$ 180 poupados</li>
-          <li><i class="fa-solid fa-gauge-high"></i> Giro rápido de veículos e cliente satisfeito com a agilidade</li>
+          <li><i class="fa-solid fa-box-open"></i> Abre a maleta e pega a peça exata em 10 segundos</li>
+          <li><i class="fa-solid fa-circle-check"></i> Serviço sem interrupção, sem sair da oficina</li>
+          <li><i class="fa-solid fa-gauge-high"></i> Giro rápido de veículos e cliente satisfeito</li>
         </ul>
       </div>
     </div>
-    <p class="conclusao"><i class="fa-solid fa-calculator"></i> <strong>Matemática simples:</strong> nesse exemplo, se o kit evitar que você saia da oficina apenas 5 vezes, ele já se pagou. Daí em diante, é tempo e lucro a mais na bancada.</p>
   </div>
 </section>
 
+<!-- 5 + 11. QUIZ E COMPRA -->
+<section id="produto" style="background:var(--gelo)">
+  <div class="wrap">
+    <h2 class="center">Escolha o kit da sua oficina</h2>
+    <p class="sub center">Não sabe qual levar? Responda 3 perguntas e a gente indica. Se preferir, é só rolar e comprar.</p>
+
+    <div class="quiz" id="quiz">
+      <h3><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--laranja)"></i> Descubra seu kit em 30 segundos</h3>
+      <p class="qsub">São só 3 perguntas, sem cadastro.</p>
+      <div class="qprog" aria-hidden="true"><i id="qbar"></i></div>
+      <div id="qbody"></div>
+    </div>
+
+    <div class="pgrid3">
+      <div class="buycard rv" data-kit="k6">
+        <div>
+          <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
+          <h4>Kit S.O.S. Mecânica 6mm</h4>
+          <p class="desc">Ideal para reparos leves e fixações gerais M6 (chave 10mm). Contém 174 peças.</p>
+          <div class="preco">
+            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M6</span>
+            <b>R$ 257,30</b>
+            <span class="pix">À VISTA NO PIX</span>
+            <p class="parc">ou 6x de R$ 48,73 no cartão (total R$ 292,39)</p>
+          </div>
+        </div>
+        <div>
+          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full" data-track="comprar_6mm"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 6mm – R$ 257,30</a>
+          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Dúvidas no WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="buycard dest rv" data-kit="kc">
+        <span class="tagdest">Mais vendido</span>
+        <div>
+          <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" style="margin-top:8px" loading="lazy" decoding="async">
+          <h4>Kit S.O.S. Mecânica COMPLETO</h4>
+          <p class="desc">Solução total 6mm + 8mm (chaves 10mm e 13mm). Contém 340 peças e 2 maletas.</p>
+          <div class="preco">
+            <span class="tag"><i class="fa-solid fa-fire"></i> 6mm + 8mm EM UM SÓ PEDIDO</span>
+            <b>R$ 622,39</b>
+            <span class="pix">À VISTA NO PIX</span>
+            <p class="parc">ou 6x de R$ 117,88 no cartão (total R$ 707,26)</p>
+          </div>
+        </div>
+        <div>
+          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full" data-track="comprar_completo"><i class="fa-solid fa-cart-shopping"></i> Quero o Completo – R$ 622,39</a>
+          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="buycard rv" data-kit="k8">
+        <div>
+          <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
+          <h4>Kit S.O.S. Mecânica 8mm</h4>
+          <p class="desc">Indicado para fixações reforçadas e estrutura M8 (chave 13mm). Contém 166 peças.</p>
+          <div class="preco">
+            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M8</span>
+            <b>R$ 365,09</b>
+            <span class="pix">À VISTA NO PIX</span>
+            <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
+          </div>
+        </div>
+        <div>
+          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full" data-track="comprar_8mm"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 8mm – R$ 365,09</a>
+          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="seguranca">
+      <span><i class="fa-solid fa-lock" style="color:var(--verde)"></i> Compra 100% segura</span>
+      <span><i class="fa-solid fa-shield-halved" style="color:var(--laranja)"></i> 7 dias para desistir (CDC)</span>
+      <span><i class="fa-solid fa-file-invoice-dollar" style="color:var(--laranja)"></i> Enviamos nota fiscal</span>
+      <span><i class="fa-brands fa-whatsapp" style="color:var(--verde)"></i> Atendimento direto pelo WhatsApp</span>
+    </div>
+
+    <div class="frete">
+      <label for="cep-input"><i class="fa-solid fa-truck" style="color:var(--laranja)"></i> Calcular frete e prazo de entrega</label>
+      <div class="frete-row">
+        <input id="cep-input" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9">
+        <button class="btn btn-o" type="button" onclick="calcularFrete()">Calcular</button>
+      </div>
+      <div id="shipping-result" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos" class="aval">
+  <div class="wrap">
+    <h2>O que dizem os donos de oficina</h2>
+    <p class="sub">Feedback de clientes que já usam o Kit S.O.S. no dia a dia</p>
+    <div class="revgrid">
+      <article class="rev rv">
+        <div class="head"><span class="av">C</span><b>Carlos R. — Oficina Multimarcas</b></div>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p>Esse kit salvou o serviço. Antes, qualquer parafuso que quebrava na desmontagem fazia o mecânico sumir por 40 minutos para ir comprar na rua. Agora o parafuso tá na bancada.</p>
+      </article>
+      <article class="rev rv">
+        <div class="head"><span class="av">M</span><b>Marcos A. — Centro Automotivo</b></div>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p>O jogo de porcas travantes e arruelas resolve quase tudo de imprevisto na hora de montar suspensão. O investimento se pagou logo nas duas primeiras semanas.</p>
+      </article>
+    </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-o" href="#produto" data-track="aval_comprar"><i class="fa-solid fa-toolbox"></i> Quero o meu kit</a></div>
+  </div>
+</section>
+
+<!-- 10. DETALHES EM ACORDEÃO -->
 <section id="conteudo">
   <div class="wrap">
-    <h2 class="center">Conheça os 3 kits S.O.S. disponíveis</h2>
-    <p class="sub center">Passe o mouse sobre a maleta para ver os detalhes de perto (ou toque para ampliar). Depois escolha o ideal para o seu trabalho.</p>
+    <h2 class="center">O que vem em cada kit</h2>
+    <p class="sub center">Toque no kit para ver a lista completa. Nas imagens, passe o mouse ou toque para ampliar.</p>
 
-    <div class="kitblock destaque">
-      <h3><i class="fa-solid fa-boxes-packing"></i> 1. Kit S.O.S. Mecânica COMPLETO — 340 peças (6mm e 8mm)</h3>
+    <details class="acc destaque">
+      <summary><i class="fa-solid fa-boxes-packing" style="color:var(--laranja)"></i><span>Kit COMPLETO — 340 peças (6mm e 8mm)<small>2 maletas organizadoras, 2 chaves biela, 2 soquetes e 2 lubrificantes</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
       <div class="kgrid">
         <div class="klista">
           <div class="klinha"><span>Parafusos flangeados M6 e M8</span><span>88 un. (M6: 16–35mm | M8: 20–50mm)</span></div>
@@ -271,15 +520,15 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
           <div class="klinha"><span>Maletas organizadoras</span><span>2 maletas com 14 divisórias cada</span></div>
         </div>
         <div class="kfoco">
-          <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy">
+          <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
           <h4><i class="fa-solid fa-certificate" style="color:var(--laranja)"></i> Solução total para a bancada</h4>
           <p>Cobre as necessidades do dia a dia em M6 e M8, com tudo organizado e sem perder tempo procurando peça.</p>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div class="kitblock">
-      <h3><i class="fa-solid fa-box"></i> 2. Kit S.O.S. Mecânica 6mm — 174 peças</h3>
+    <details class="acc">
+      <summary><i class="fa-solid fa-box" style="color:var(--azul)"></i><span>Kit 6mm — 174 peças<small>Foco em M6 e chave 10mm</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
       <div class="kgrid">
         <div class="klista">
           <div class="klinha"><span>Parafusos flangeados M6</span><span>50 un. (M6x16, 20, 25, 30, 35)</span></div>
@@ -290,15 +539,15 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
           <div class="klinha"><span>Lubrificante + maleta</span><span>1 spray 300ml + maleta (14 divisórias)</span></div>
         </div>
         <div class="kfoco">
-          <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy">
+          <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
           <h4><i class="fa-solid fa-wrench" style="color:var(--laranja)"></i> Foco em M6 / chave 10mm</h4>
           <p>Ideal para lataria, paralamas, tampas, suportes e acabamentos mecânicos gerais.</p>
         </div>
       </div>
-    </div>
+    </details>
 
-    <div class="kitblock">
-      <h3><i class="fa-solid fa-box"></i> 3. Kit S.O.S. Mecânica 8mm — 166 peças</h3>
+    <details class="acc">
+      <summary><i class="fa-solid fa-box" style="color:var(--azul)"></i><span>Kit 8mm — 166 peças<small>Foco em M8 e chave 13mm</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
       <div class="kgrid">
         <div class="klista">
           <div class="klinha"><span>Parafusos flangeados M8</span><span>38 un. (M8x20, 25, 30, 40, 50)</span></div>
@@ -309,110 +558,14 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
           <div class="klinha"><span>Lubrificante + maleta</span><span>1 spray 300ml + maleta (14 divisórias)</span></div>
         </div>
         <div class="kfoco">
-          <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy">
+          <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
           <h4><i class="fa-solid fa-gears" style="color:var(--verde)"></i> Foco em M8 / chave 13mm</h4>
           <p>Perfeito para fixação pesada, suportes de motor, suspensão, coletores e agregados.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </details>
 
-<section id="produto" style="background:var(--gelo)">
-  <div class="wrap">
-    <h2 class="center">Escolha a opção ideal para sua oficina</h2>
-    <p class="sub center">Escolha o kit do tamanho do seu trabalho ou leve o Completo, com 6mm e 8mm e duas maletas, para não faltar peça nunca.</p>
-
-    <div class="pgrid3">
-      <div class="buycard">
-        <div>
-          <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy">
-          <h4>Kit S.O.S. Mecânica 6mm</h4>
-          <p class="desc">Ideal para reparos leves e fixações gerais M6 (chave 10mm). Contém 174 peças.</p>
-          <div class="preco">
-            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M6</span>
-            <b>R$ 257,30</b>
-            <span class="pix">À VISTA NO PIX</span>
-            <p class="parc">ou 6x de R$ 48,73 no cartão (total R$ 292,39)</p>
-          </div>
-        </div>
-        <div>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 6mm</a>
-          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Dúvidas no WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="buycard dest">
-        <span class="tagdest">Mais vendido</span>
-        <div>
-          <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" style="margin-top:8px" loading="lazy">
-          <h4>Kit S.O.S. Mecânica COMPLETO</h4>
-          <p class="desc">Solução total 6mm + 8mm (chaves 10mm e 13mm). Contém 340 peças e 2 maletas.</p>
-          <div class="preco">
-            <span class="tag"><i class="fa-solid fa-fire"></i> 6mm + 8mm EM UM SÓ PEDIDO</span>
-            <b>R$ 622,39</b>
-            <span class="pix">À VISTA NO PIX</span>
-            <p class="parc">ou 6x de R$ 117,88 no cartão (total R$ 707,26)</p>
-          </div>
-        </div>
-        <div>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit Completo</a>
-          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="buycard">
-        <div>
-          <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy">
-          <h4>Kit S.O.S. Mecânica 8mm</h4>
-          <p class="desc">Indicado para fixações reforçadas e estrutura M8 (chave 13mm). Contém 166 peças.</p>
-          <div class="preco">
-            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA M8</span>
-            <b>R$ 365,09</b>
-            <span class="pix">À VISTA NO PIX</span>
-            <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
-          </div>
-        </div>
-        <div>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full"><i class="fa-solid fa-cart-shopping"></i> Comprar Kit 8mm</a>
-          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="frete">
-      <label for="cep-input"><i class="fa-solid fa-truck" style="color:var(--laranja)"></i> Calcular frete e prazo de entrega</label>
-      <div class="frete-row">
-        <input id="cep-input" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" maxlength="9">
-        <button class="btn btn-o" type="button" onclick="calcularFrete()">Calcular</button>
-      </div>
-      <div id="shipping-result" role="status" aria-live="polite"></div>
-    </div>
-
-    <div class="seguranca">
-      <span><i class="fa-solid fa-lock" style="color:var(--verde)"></i> Compra 100% segura</span>
-      <span><i class="fa-solid fa-file-invoice-dollar" style="color:var(--laranja)"></i> Enviamos nota fiscal</span>
-      <span><i class="fa-brands fa-whatsapp" style="color:var(--verde)"></i> Atendimento direto pelo WhatsApp</span>
-    </div>
-  </div>
-</section>
-
-<section id="depoimentos" class="aval">
-  <div class="wrap">
-    <h2>O que dizem os donos de oficina</h2>
-    <p class="sub">Feedback de clientes que já usam o Kit S.O.S. no dia a dia</p>
-    <div class="revgrid">
-      <article class="rev">
-        <div class="head"><span class="av">C</span><b>Carlos R. — Oficina Multimarcas</b></div>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p>Esse kit salvou o serviço. Antes, qualquer parafuso que quebrava na desmontagem fazia o mecânico sumir por 40 minutos para ir comprar na rua. Agora o parafuso tá na bancada.</p>
-      </article>
-      <article class="rev">
-        <div class="head"><span class="av">M</span><b>Marcos A. — Centro Automotivo</b></div>
-        <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p>O jogo de porcas travantes e arruelas resolve quase tudo de imprevisto na hora de montar suspensão. O investimento se pagou logo nas duas primeiras semanas.</p>
-      </article>
-    </div>
+    <div class="center" style="margin-top:26px"><a class="btn btn-o" href="#produto" data-track="conteudo_comprar"><i class="fa-solid fa-cart-shopping"></i> Escolher meu kit</a></div>
   </div>
 </section>
 
@@ -442,7 +595,7 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Qual kit é o certo para mim?</h4>
-        <p>Se você mexe mais com lataria, tampas e acabamentos, o 6mm resolve. Para suspensão, motor e fixações pesadas, o 8mm. Se não quer correr risco de faltar peça, o Completo traz os dois. Em dúvida, chame no WhatsApp que ajudamos a escolher.</p>
+        <p>Se você mexe mais com lataria, tampas e acabamentos, o 6mm resolve. Para suspensão, motor e fixações pesadas, o 8mm. Se não quer correr risco de faltar peça, o Completo traz os dois. <a href="#quiz" style="color:var(--laranja-esc);font-weight:700">Faça o teste de 30 segundos</a> ou chame no WhatsApp.</p>
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Como funciona a entrega gratuita?</h4>
@@ -477,7 +630,7 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
     </div>
     <div class="clogo">
       <div>
-        <img src="CDP-LOGO.png" alt="A Casa do Parafuso" loading="lazy">
+        <img src="CDP-LOGO.png" alt="A Casa do Parafuso" loading="lazy" decoding="async">
         <p>Parafusos e ferramentas de qualidade</p>
       </div>
     </div>
@@ -488,15 +641,27 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 
 <footer>
   <div class="wrap">
-    <img src="CDP-LOGO-BRANCA.png" alt="A Casa do Parafuso" loading="lazy">
+    <img src="CDP-LOGO-BRANCA.png" alt="A Casa do Parafuso" loading="lazy" decoding="async">
     <p>© 2026 A Casa do Parafuso. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<div class="mbar">
-  <span>A partir de<b>R$ 257,30</b>no Pix</span>
-  <a class="btn btn-o" href="#produto"><i class="fa-solid fa-toolbox"></i> Escolher kit</a>
+<!-- 11. BARRA DE COMPRA FIXA (celular e computador) -->
+<div class="sbar" id="sbar">
+  <span class="sinfo">Kit S.O.S. a partir de <b>R$ 257,30</b> no Pix <span class="hide-m">· frete grátis até 30 km</span></span>
+  <a class="btn btn-o" href="#produto" data-track="barra_fixa"><i class="fa-solid fa-toolbox"></i> Escolher meu kit</a>
 </div>
+
+<!-- 13. AJUDA ANTES DE SAIR -->
+<aside class="ajuda" id="ajuda" role="dialog" aria-labelledby="ajuda-t">
+  <button class="x" type="button" id="ajuda-x" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+  <h4 id="ajuda-t">Em dúvida entre o 6mm e o 8mm?</h4>
+  <p>Responda 3 perguntas rápidas ou fale com a gente. A mensagem já vai pronta no WhatsApp.</p>
+  <div class="acts">
+    <a class="btn btn-o" href="#quiz" id="ajuda-quiz" data-track="ajuda_quiz"><i class="fa-solid fa-wand-magic-sparkles"></i> Descobrir meu kit</a>
+    <a class="btn btn-v" id="ajuda-zap" target="_blank" rel="noopener" data-track="ajuda_whatsapp" href="https://wa.me/5541988725687?text=Oi!%20Estou%20em%20d%C3%BAvida%20entre%20o%20Kit%20S.O.S%206mm%20e%20o%208mm.%20Pode%20me%20ajudar%20a%20escolher%3F"><i class="fa-brands fa-whatsapp"></i> Tirar dúvida no WhatsApp</a>
+  </div>
+</aside>
 
 <div class="kit-lightbox" id="kit-lightbox" aria-hidden="true">
   <div class="kit-lightbox-inner" role="dialog" aria-modal="true" aria-label="Visualização ampliada do kit">
@@ -513,13 +678,195 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
 <a class="zap" href="https://wa.me/5541988725687" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
 <script>
+/* ===== DADOS DOS KITS (altere preços e links só aqui) ===== */
+const KITS = {
+  k6: { nome: "Kit S.O.S. Mecânica 6mm",     curto: "Kit 6mm",     pix: 257.30, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" },
+  kc: { nome: "Kit S.O.S. Mecânica COMPLETO", curto: "Completo",    pix: 622.39, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" },
+  k8: { nome: "Kit S.O.S. Mecânica 8mm",     curto: "Kit 8mm",     pix: 365.09, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" }
+};
+const brl  = (n, d = 0) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: d, maximumFractionDigits: d });
+const track = n => { try { if (typeof clarity === "function") clarity("event", n); } catch (e) {} };
+
+/* Eventos no Clarity para saber o que o cliente clica */
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-track]");
+  if (a) track(a.dataset.track);
+});
+
+/* MENU */
 const menuBtn = document.querySelector(".menu-btn"), menu = document.getElementById("menu");
 menuBtn.onclick = () => menuBtn.setAttribute("aria-expanded", menu.classList.toggle("aberto"));
 menu.addEventListener("click", e => {
   if (e.target.closest("a")) { menu.classList.remove("aberto"); menuBtn.setAttribute("aria-expanded", "false"); }
 });
 
-/* FRETE */
+/* ===== CALCULADORA ===== */
+(function () {
+  const $ = id => document.getElementById(id);
+  const fat = $("fat"), sai = $("sai"), min = $("min");
+  let atual = { mes: 0 }, anim;
+
+  function contar(el, de, para) {
+    cancelAnimationFrame(anim);
+    if (matchMedia("(prefers-reduced-motion:reduce)").matches) { el.textContent = brl(para); return; }
+    const t0 = performance.now(), dur = 350;
+    const passo = t => {
+      const p = Math.min(1, (t - t0) / dur);
+      el.textContent = brl(de + (para - de) * p);
+      if (p < 1) anim = requestAnimationFrame(passo);
+    };
+    anim = requestAnimationFrame(passo);
+  }
+
+  function calcular() {
+    const f = +fat.value, s = +sai.value, m = +min.value;
+    const kit = KITS[document.querySelector("input[name=ckit]:checked").value];
+    const hora = f / 220;
+    const saida = hora * (m / 60);
+    const mes = saida * s * 4.33;
+    const saidasParaPagar = Math.max(1, Math.ceil(kit.pix / saida));
+    const semanas = saidasParaPagar / s;
+
+    $("fat-o").textContent = brl(f);
+    $("sai-o").textContent = s + (s === 1 ? " vez" : " vezes");
+    $("min-o").textContent = m + " min";
+    $("r-hora").textContent = brl(hora);
+    $("r-saida").textContent = brl(saida);
+    $("r-ano").textContent = "Isso dá cerca de " + brl(mes * 12) + " por ano.";
+    contar($("r-mes"), atual.mes, mes);
+    atual.mes = mes;
+
+    const tempo = semanas <= 1 ? "em menos de 1 semana" : "em cerca de " + semanas.toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " semanas";
+    $("r-pago").innerHTML = "O <strong>" + kit.nome + "</strong> se paga ao evitar <strong>" + saidasParaPagar + (saidasParaPagar === 1 ? " saída" : " saídas") + "</strong>, " + tempo + " no seu ritmo.";
+    const btn = $("r-btn");
+    btn.href = kit.link;
+    btn.innerHTML = '<i class="fa-solid fa-cart-shopping"></i> Quero o ' + kit.curto + " – " + brl(kit.pix, 2);
+  }
+  [fat, sai, min].forEach(i => i.addEventListener("input", calcular));
+  document.querySelectorAll("input[name=ckit]").forEach(i => i.addEventListener("change", () => { calcular(); track("calc_kit_" + i.value); }));
+  let tocou = false;
+  [fat, sai, min].forEach(i => i.addEventListener("input", () => { if (!tocou) { tocou = true; track("calc_interagiu"); } }, { once: false }));
+  calcular();
+})();
+
+/* ===== QUIZ: QUAL KIT É O MEU ===== */
+(function () {
+  const body = document.getElementById("qbody"), bar = document.getElementById("qbar");
+  const perguntas = [
+    { q: "O que você mais faz no dia a dia?", o: [
+      ["fa-car-side", "Lataria, tampas e acabamentos", "6"],
+      ["fa-gears", "Suspensão, motor e fixação pesada", "8"],
+      ["fa-screwdriver-wrench", "De tudo um pouco", "c"] ] },
+    { q: "Qual chave você mais usa?", o: [
+      ["fa-wrench", "10mm", "6"],
+      ["fa-wrench", "13mm", "8"],
+      ["fa-wrench", "As duas", "c"] ] },
+    { q: "Quantos mecânicos trabalham na oficina?", o: [
+      ["fa-user", "1 ou 2", "p"],
+      ["fa-user-group", "3 a 5", "g"],
+      ["fa-users", "6 ou mais", "g"] ] }
+  ];
+  let passo = 0, resp = [];
+
+  function render() {
+    if (passo >= perguntas.length) return resultado();
+    const p = perguntas[passo];
+    bar.style.width = (passo / perguntas.length * 100) + "%";
+    body.innerHTML = '<div class="qq">' + (passo + 1) + " de " + perguntas.length + ". " + p.q + '</div><div class="qopts">' +
+      p.o.map((o, i) => '<button type="button" class="qopt" data-i="' + i + '"><i class="fa-solid ' + o[0] + '"></i>' + o[1] + "</button>").join("") + "</div>" +
+      (passo > 0 ? '<button type="button" class="qback" id="qvoltar">Voltar</button>' : "");
+    body.querySelectorAll(".qopt").forEach(b => b.onclick = () => { resp[passo] = p.o[+b.dataset.i][2]; passo++; render(); });
+    const v = document.getElementById("qvoltar");
+    if (v) v.onclick = () => { passo--; render(); };
+  }
+
+  function resultado() {
+    bar.style.width = "100%";
+    const [a, b, eq] = resp;
+    let k, motivo;
+    if (eq === "g") { k = "kc"; motivo = "Com vários mecânicos trabalhando ao mesmo tempo, o Completo evita que um espere o outro e que falte peça em qualquer chave."; }
+    else if (a === b && (a === "6" || a === "8")) { k = a === "6" ? "k6" : "k8"; motivo = a === "6" ? "Você trabalha com M6 e chave 10mm, então este kit cobre o seu dia a dia sem pagar por peça que não usa." : "Você trabalha com M8 e chave 13mm, então este kit cobre fixação pesada sem pagar por peça que não usa."; }
+    else { k = "kc"; motivo = "Você usa os dois tamanhos, então o Completo traz M6 e M8 com duas maletas e não deixa faltar peça."; }
+    const kit = KITS[k];
+    body.innerHTML = '<div class="qres"><span class="ok"><i class="fa-solid fa-circle-check"></i> Seu kit ideal</span><h4>' + kit.nome + '</h4><p>' + motivo + '</p>' +
+      '<span class="qprice">' + brl(kit.pix, 2) + '</span><small>no Pix, ou parcelado em até 6x no cartão</small>' +
+      '<div class="qacts"><a class="btn btn-o btn-full" href="' + kit.link + '" data-track="quiz_comprar_' + k + '"><i class="fa-solid fa-cart-shopping"></i> Quero o ' + kit.curto + '</a>' +
+      '<a class="btn btn-out btn-full" href="#produto-cards" id="qver">Ver os 3 kits lado a lado</a></div>' +
+      '<button type="button" class="qback" id="qrefazer">Refazer o teste</button></div>';
+    document.getElementById("qrefazer").onclick = () => { passo = 0; resp = []; limpar(); render(); };
+    document.getElementById("qver").onclick = e => {
+      e.preventDefault();
+      const c = document.querySelector('.buycard[data-kit="' + k + '"]');
+      c.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block: "center" });
+    };
+    limpar();
+    const card = document.querySelector('.buycard[data-kit="' + k + '"]');
+    if (card) card.classList.add("rec");
+    track("quiz_resultado_" + k);
+  }
+  function limpar() { document.querySelectorAll(".buycard.rec").forEach(c => c.classList.remove("rec")); }
+  render();
+  document.getElementById("quiz").addEventListener("click", function once(e) { if (e.target.closest(".qopt")) { track("quiz_iniciou"); this.removeEventListener("click", once); } });
+})();
+
+/* ===== BARRA FIXA: aparece depois do topo e some quando os kits estão na tela ===== */
+(function () {
+  const sbar = document.getElementById("sbar");
+  const hero = document.getElementById("inicio"), prod = document.getElementById("produto");
+  let vHero = true, vProd = false;
+  const set = () => {
+    const on = !vHero && !vProd;
+    sbar.classList.toggle("on", on);
+    document.documentElement.style.setProperty("--sbar-h", on ? sbar.offsetHeight + "px" : "0px");
+  };
+  if (!("IntersectionObserver" in window)) return;
+  new IntersectionObserver(es => { vHero = es[0].isIntersecting; set(); }).observe(hero);
+  new IntersectionObserver(es => { vProd = es[0].isIntersecting; set(); }, { rootMargin: "-25% 0px -25% 0px" }).observe(prod);
+  addEventListener("resize", set);
+})();
+
+/* ===== AJUDA: depois de 20 s ou quando o mouse sobe para sair ===== */
+(function () {
+  const box = document.getElementById("ajuda");
+  let ok = false;
+  try { ok = sessionStorage.getItem("ajudaVisto") === "1"; } catch (e) {}
+  if (ok) return;
+  let quizNaTela = false;
+  const q = document.getElementById("quiz");
+  if ("IntersectionObserver" in window) new IntersectionObserver(es => { quizNaTela = es[0].isIntersecting; }).observe(q);
+
+  function mostrar() {
+    if (box.classList.contains("on")) return true;
+    if (quizNaTela || document.body.classList.contains("lightbox-aberto")) return false;
+    box.classList.add("on");
+    track("ajuda_exibida");
+    try { sessionStorage.setItem("ajudaVisto", "1"); } catch (e) {}
+    clearInterval(timer);
+    return true;
+  }
+  function fechar() { box.classList.remove("on"); }
+  const inicio = Date.now();
+  const timer = setInterval(() => { if (Date.now() - inicio >= 20000) mostrar(); }, 2000);
+  document.addEventListener("mouseout", e => { if (!e.relatedTarget && e.clientY <= 0 && Date.now() - inicio > 8000) mostrar(); });
+  document.getElementById("ajuda-x").onclick = fechar;
+  document.getElementById("ajuda-quiz").addEventListener("click", fechar);
+  document.getElementById("ajuda-zap").addEventListener("click", fechar);
+  document.addEventListener("keydown", e => { if (e.key === "Escape") fechar(); });
+})();
+
+/* ===== ENTRADA SUAVE DOS CARDS ===== */
+(function () {
+  const els = document.querySelectorAll(".rv");
+  if (!("IntersectionObserver" in window)) { els.forEach(e => e.classList.add("in")); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+  els.forEach(e => io.observe(e));
+})();
+
+/* ===== FRETE ===== */
+document.getElementById("cep-input").addEventListener("input", e => {
+  const v = e.target.value.replace(/\D/g, "").slice(0, 8);
+  e.target.value = v.length > 5 ? v.slice(0, 5) + "-" + v.slice(5) : v;
+});
 async function calcularFrete() {
   const cep = document.getElementById("cep-input").value.replace(/\D/g, "");
   const out = document.getElementById("shipping-result");
@@ -540,7 +887,7 @@ async function calcularFrete() {
   }
 }
 
-/* IMAGENS: LIGHTBOX + LUPA + ZOOM POR PINÇA */
+/* ===== IMAGENS: LIGHTBOX + LUPA + ZOOM POR PINÇA ===== */
 (function () {
   const lb = document.getElementById("kit-lightbox");
   const stage = document.getElementById("kit-stage");
@@ -555,25 +902,15 @@ async function calcularFrete() {
   let pinchStartDistance = 0;
   let pinchStartScale = 1;
 
-  const draw = () => {
-    im.style.transform = `translate(${x}px, ${y}px) scale(${esc})`;
-  };
-
-  const zoom = n => {
-    esc = Math.max(1, Math.min(4, n));
-    if (esc === 1) x = y = 0;
-    draw();
-  };
-
+  const draw = () => { im.style.transform = `translate(${x}px, ${y}px) scale(${esc})`; };
+  const zoom = n => { esc = Math.max(1, Math.min(4, n)); if (esc === 1) x = y = 0; draw(); };
   const distance = (a, b) => Math.hypot(b.x - a.x, b.y - a.y);
 
   const abrir = i => {
     imagemAnterior = i;
     im.src = i.currentSrc || i.src;
     im.alt = i.alt;
-    esc = 1;
-    x = y = 0;
-    drag = false;
+    esc = 1; x = y = 0; drag = false;
     pointers.clear();
     draw();
     lb.classList.add("aberto");
@@ -583,10 +920,7 @@ async function calcularFrete() {
   };
 
   const fechar = () => {
-    // Move o foco para fora da lightbox antes de escondê-la para evitar o aviso aria-hidden.
-    if (imagemAnterior && typeof imagemAnterior.focus === "function") {
-      imagemAnterior.focus({ preventScroll: true });
-    }
+    if (imagemAnterior && typeof imagemAnterior.focus === "function") imagemAnterior.focus({ preventScroll: true });
     lb.classList.remove("aberto");
     lb.setAttribute("aria-hidden", "true");
     document.body.classList.remove("lightbox-aberto");
@@ -600,44 +934,30 @@ async function calcularFrete() {
     i.setAttribute("aria-haspopup", "dialog");
     i.addEventListener("click", () => abrir(i));
     i.addEventListener("keydown", e => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        abrir(i);
-      }
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); abrir(i); }
     });
   });
 
   closeBtn.onclick = fechar;
-  lb.addEventListener("click", e => {
-    if (e.target === lb || e.target === stage) fechar();
-  });
-
+  lb.addEventListener("click", e => { if (e.target === lb || e.target === stage) fechar(); });
   document.getElementById("kit-in").onclick = () => zoom(esc + .25);
   document.getElementById("kit-out").onclick = () => zoom(esc - .25);
   document.getElementById("kit-reset").onclick = () => zoom(1);
 
-  // Zoom com roda do mouse/trackpad.
-  stage.addEventListener("wheel", e => {
-    e.preventDefault();
-    zoom(esc + (e.deltaY < 0 ? .25 : -.25));
-  }, { passive: false });
+  stage.addEventListener("wheel", e => { e.preventDefault(); zoom(esc + (e.deltaY < 0 ? .25 : -.25)); }, { passive: false });
 
-  // Pointer Events funcionam com mouse, caneta e toque; dois dedos fazem pinça.
   stage.addEventListener("pointerdown", e => {
     if (e.pointerType === "mouse" && e.button !== 0) return;
     e.preventDefault();
     stage.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-
     if (pointers.size === 2) {
       const pts = [...pointers.values()];
       pinchStartDistance = Math.max(1, distance(pts[0], pts[1]));
       pinchStartScale = esc;
       drag = false;
     } else if (pointers.size === 1 && esc > 1) {
-      drag = true;
-      ix = e.clientX - x;
-      iy = e.clientY - y;
+      drag = true; ix = e.clientX - x; iy = e.clientY - y;
     }
   });
 
@@ -645,7 +965,6 @@ async function calcularFrete() {
     if (!pointers.has(e.pointerId)) return;
     e.preventDefault();
     pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-
     if (pointers.size >= 2) {
       const pts = [...pointers.values()];
       const currentDistance = Math.max(1, distance(pts[0], pts[1]));
@@ -653,9 +972,7 @@ async function calcularFrete() {
       if (esc === 1) x = y = 0;
       draw();
     } else if (drag && esc > 1) {
-      x = e.clientX - ix;
-      y = e.clientY - iy;
-      draw();
+      x = e.clientX - ix; y = e.clientY - iy; draw();
     }
   });
 
@@ -665,9 +982,7 @@ async function calcularFrete() {
       drag = false;
       if (pointers.size === 1 && esc > 1) {
         const p = [...pointers.values()][0];
-        ix = p.x - x;
-        iy = p.y - y;
-        drag = true;
+        ix = p.x - x; iy = p.y - y; drag = true;
       }
     }
   };
