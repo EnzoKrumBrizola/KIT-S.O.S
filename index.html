@@ -336,8 +336,7 @@ section{padding:48px 0}
 <section id="calculo" class="prejuizo">
   <div class="wrap">
     <h2>Quanto a sua oficina perde esperando peça?</h2>
-    <p class="sub">Mexa nos controles com a sua realidade e veja a conta fechar.</p>
-
+    <p class="sub">Arraste as barras e veja quanto você perde!</p>
     <div class="calc">
       <div>
         <div class="field">
@@ -1026,6 +1025,96 @@ async function calcularFrete() {
     i.addEventListener("click", hide);
   });
   addEventListener("scroll", hide, { passive: true });
+})();
+
+/* ===== ANIMAÇÃO DAS BARRAS DA CALCULADORA ===== */
+(function () {
+  const secao = document.getElementById("calculo");
+  const barras = [
+    document.getElementById("fat"),
+    document.getElementById("sai"),
+    document.getElementById("min")
+  ];
+
+  if (!secao || barras.some(barra => !barra)) return;
+
+  // Respeita quem prefere movimentos reduzidos
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  let animacaoIniciada = false;
+  let quadros = [];
+
+  function animarBarras() {
+    if (animacaoIniciada) return;
+    animacaoIniciada = true;
+
+    const originais = barras.map(barra => Number(barra.value));
+    const inicio = performance.now();
+    const duracaoTrecho = 650;
+    const ciclos = 2;
+    const duracaoTotal = duracaoTrecho * 2 * ciclos;
+
+    function suavizar(t) {
+      return t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function atualizar(agora) {
+      const progresso = Math.min((agora - inicio) / duracaoTotal, 1);
+
+      barras.forEach((barra, i) => {
+        const ciclo = Math.min(Math.floor(progresso * ciclos), ciclos - 1);
+        const trecho = progresso >= 1
+          ? 1
+          : (progresso * ciclos) - ciclo;
+
+        // Vai ao máximo e volta ao mínimo em cada ciclo
+        const idaEVolta = trecho <= 0.5
+          ? suavizar(trecho * 2)
+          : 1 - suavizar((trecho - 0.5) * 2);
+
+        const valor = Number(barra.min) +
+          (Number(barra.max) - Number(barra.min)) * idaEVolta;
+
+        barra.value = Math.round(
+          valor / Number(barra.step)
+        ) * Number(barra.step);
+
+        if (progresso >= 1) {
+          barra.value = originais[i];
+        }
+      });
+
+      if (progresso < 1) {
+        quadros.push(requestAnimationFrame(atualizar));
+      }
+    }
+
+    quadros.push(requestAnimationFrame(atualizar));
+  }
+
+  // Começa quando a calculadora aparece na tela
+  if ("IntersectionObserver" in window) {
+    const observador = new IntersectionObserver(entradas => {
+      if (entradas.some(entrada => entrada.isIntersecting)) {
+        animarBarras();
+        observador.disconnect();
+      }
+    }, { threshold: 0.2 });
+
+    observador.observe(secao);
+  } else {
+    animarBarras();
+  }
+
+  // Se o cliente começar a mexer, interrompe a animação
+  barras.forEach(barra => {
+    barra.addEventListener("input", () => {
+      quadros.forEach(cancelAnimationFrame);
+      quadros = [];
+    }, { once: true });
+  });
 })();
 </script>
 </body>
