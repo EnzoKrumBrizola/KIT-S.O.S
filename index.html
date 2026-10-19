@@ -103,6 +103,24 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .pcard ul{list-style:none;padding:0;display:grid;gap:9px;font-size:15px}
 .pcard li i{width:22px;color:var(--laranja);margin-right:6px}
 
+.oque{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto 44px}
+.oitem{display:flex;flex-direction:column;gap:2px;align-items:flex-start;background:var(--gelo);border:1px solid #dbe3f1;border-left:5px solid var(--laranja);border-radius:var(--raio);padding:16px}
+.oitem i{color:var(--laranja);font-size:20px;margin-bottom:4px}
+.oitem b{color:var(--azul-esc);font-size:15.5px;line-height:1.3}
+.oitem small{color:#475569;font-size:13.5px}
+.kinfo{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:20px;display:flex;flex-direction:column;gap:6px}
+.kinfo.dest{border:2px solid var(--laranja);box-shadow:0 12px 30px rgba(232,133,12,.18)}
+.kinfo img{width:100%;height:150px;object-fit:contain;background:var(--azul);border-radius:10px;padding:10px;margin-bottom:6px}
+.kinfo h4{font-size:22px}
+.kinfo .med{font-weight:700;color:var(--laranja-esc)}
+.kinfo p{font-size:14.5px;color:#334155}
+.kinfo .pcs{font-weight:700;color:var(--azul-esc)}
+.vermais{color:var(--laranja-esc);font-weight:700;font-size:14px;text-decoration:underline;cursor:pointer}
+.inclui{font-size:13.5px;color:#475569;margin-top:6px}
+.qimg{height:150px;width:auto;max-width:100%;margin:6px auto 12px;background:var(--azul);border-radius:10px;padding:10px;object-fit:contain}
+.qlista{list-style:none;padding:0;display:grid;gap:6px;max-width:420px;margin:8px auto 16px;text-align:left;font-size:15px}
+.qlista i{color:var(--verde);margin-right:8px}
+
 /* QUIZ */
 .quiz{background:#fff;border:2px solid var(--azul);border-radius:var(--raio);padding:26px;max-width:760px;margin:0 auto;box-shadow:0 12px 30px rgba(14,58,130,.12)}
 .qprog{height:8px;background:#e3e9f5;border-radius:99px;overflow:hidden;margin-bottom:18px}
@@ -258,8 +276,9 @@ section{padding:48px 0}
 .calc{padding:20px 16px}
 .klinha{flex-direction:column;gap:2px}
 .klinha span:last-child{text-align:left}
+.oque{grid-template-columns:1fr 1fr}
 }
-@media (max-width:420px){.confianca .wrap{gap:12px}.conf{font-size:13px}.conf i{width:36px;height:36px;font-size:15px}}
+@media (max-width:420px){.oque{grid-template-columns:1fr}.confianca .wrap{gap:12px}.conf{font-size:13px}.conf i{width:36px;height:36px;font-size:15px}}
 @media (hover:none),(pointer:coarse){.kit-lupa{display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.kit-lupa,.js .rv,.sbar,.zap,.qprog i{transition:none}.ajuda.on{animation:none}.js .rv{opacity:1;transform:none}}
 </style>
@@ -281,10 +300,10 @@ section{padding:48px 0}
     <a class="logo" href="#topo"><img src="CDP-LOGO2.png" alt="A Casa do Parafuso"></a>
     <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <nav id="menu">
+      <a href="#o-kit">O que é o kit?</a>
       <a href="#quiz-sec">Qual é o meu kit?</a>
       <a href="#calculo">Quanto eu perco</a>
       <a href="#produto">Kits e preços</a>
-      <a href="#conteudo">O que vem no kit</a>
       <a href="#depoimentos">Quem usa</a>
       <a href="#faq">Dúvidas</a>
       <a class="btn btn-o" href="#produto"><i class="fa-solid fa-toolbox"></i> Garantir meu kit</a>
@@ -300,7 +319,7 @@ section{padding:48px 0}
     <div>
       <span class="badge-top"><i class="fa-solid fa-fire"></i> O socorro definitivo da sua oficina</span>
       <h1>Pare de perder <span>R$ 180 por hora</span> por falta de parafuso</h1>
-      <p class="lead">Carro no elevador, falta uma peça e o mecânico sai correndo atrás dela. Numa oficina que fatura R$ 40 mil por mês, cada hora parada custa cerca de R$ 180. Com o Kit S.O.S., a peça certa está na bancada em 10 segundos.</p>
+      <p class="lead">Carro no elevador, falta uma peça e o mecânico sai correndo atrás dela. Numa oficina que fatura R$ 40 mil por mês, cada hora parada custa cerca de R$ 180. Com o Kit S.O.S., a peça certa está na bancada em 10 segundos. O Kit S.O.S. é uma maleta com parafusos, porcas, arruelas e ferramentas, tudo separado em divisórias.</p>
       <div class="hero-preco">
         <span>A partir de</span> <b>R$ 257,30</b> <em>no Pix, ou 6x no cartão</em>
       </div>
@@ -328,11 +347,56 @@ section{padding:48px 0}
   </div>
 </div>
 
+<!-- 2.1 O QUE É O KIT (para quem chegou agora) -->
+<section id="o-kit">
+  <div class="wrap">
+    <h2 class="center">O que é o Kit S.O.S. Mecânica?</h2>
+    <p class="sub center">É uma maleta organizada com os parafusos, porcas e arruelas que mais faltam no meio do serviço, mais as ferramentas para apertar. Você abre, pega a peça e continua o trabalho. Todos os kits trazem:</p>
+    <div class="oque">
+      <div class="oitem"><i class="fa-solid fa-screwdriver-wrench"></i><b>Parafusos flangeados</b><small>Em vários comprimentos</small></div>
+      <div class="oitem"><i class="fa-solid fa-gear"></i><b>Porcas comuns e travantes</b><small>Para fixar e travar</small></div>
+      <div class="oitem"><i class="fa-solid fa-circle-notch"></i><b>Arruelas</b><small>Lisas, de pressão e largas</small></div>
+      <div class="oitem"><i class="fa-solid fa-wrench"></i><b>Chave biela e soquete magnético</b><small>Para apertar na hora</small></div>
+      <div class="oitem"><i class="fa-solid fa-spray-can"></i><b>Spray lubrificante</b><small>300ml</small></div>
+      <div class="oitem"><i class="fa-solid fa-box-open"></i><b>Maleta com divisórias</b><small>Cada peça no seu lugar</small></div>
+    </div>
+    <h3 class="center" style="font-size:clamp(24px,3.4vw,32px);margin-bottom:8px">São 3 opções. A diferença é a grossura do parafuso.</h3>
+    <p class="sub center">6mm e 8mm é a medida do parafuso. A chave 10 aperta o de 6mm e a chave 13 aperta o de 8mm.</p>
+    <div class="pgrid3">
+      <div class="kinfo rv">
+        <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit 6mm</h4>
+        <span class="med">Parafuso 6mm · chave 10</span>
+        <p>Para lataria, para-lama, tampas, painéis e acabamentos.</p>
+        <span class="pcs">174 peças · 1 maleta</span>
+        <a class="vermais" href="#det-k6" data-abrir="k6">Ver tudo o que vem neste kit</a>
+      </div>
+      <div class="kinfo dest rv">
+        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit Completo</h4>
+        <span class="med">Parafusos 6mm e 8mm · chaves 10 e 13</span>
+        <p>Para quem faz de tudo um pouco ou tem mais de um mecânico na oficina.</p>
+        <span class="pcs">340 peças · 2 maletas</span>
+        <a class="vermais" href="#det-kc" data-abrir="kc">Ver tudo o que vem neste kit</a>
+      </div>
+      <div class="kinfo rv">
+        <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit 8mm</h4>
+        <span class="med">Parafuso 8mm · chave 13</span>
+        <p>Para motor, suspensão, escapamento e fixações pesadas.</p>
+        <span class="pcs">166 peças · 1 maleta</span>
+        <a class="vermais" href="#det-k8" data-abrir="k8">Ver tudo o que vem neste kit</a>
+      </div>
+    </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-o" href="#quiz-sec" data-track="okit_quiz"><i class="fa-solid fa-circle-question"></i> Qual é o meu? Responda 3 perguntas</a></div>
+  </div>
+</section>
+
 <!-- 3. QUIZ (vem antes da calculadora: é ele que escolhe o kit) -->
 <section id="quiz-sec" style="background:var(--gelo)">
   <div class="wrap">
     <h2 class="center">Descubra seu kit em 30 segundos</h2>
-    <p class="sub center">São só 3 perguntas, sem cadastro.</p>
+    <p class="sub center">São só 3 perguntas, sem cadastro. No final, você vê o kit indicado e tudo o que vem nele.</p>
     <div class="quiz" id="quiz">
       <div class="qprog" aria-hidden="true"><i id="qbar"></i></div>
       <div id="qbody"></div>
@@ -405,6 +469,7 @@ section{padding:48px 0}
           <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
           <h4>Kit S.O.S. Mecânica 6mm</h4>
           <p class="desc">Ideal para reparos leves e fixações gerais de 6mm (chave 10mm). Contém 174 peças.</p>
+          <p class="inclui">Vem com: 50 parafusos, 40 porcas, 60 arruelas, chave biela, soquete magnético, lubrificante e maleta. <a class="vermais" href="#det-k6" data-abrir="k6">Ver lista completa</a></p>
           <div class="preco">
             <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 6mm</span>
             <b>R$ 257,30</b>
@@ -424,6 +489,7 @@ section{padding:48px 0}
           <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" style="margin-top:8px" loading="lazy" decoding="async">
           <h4>Kit S.O.S. Mecânica COMPLETO</h4>
           <p class="desc">Kit completo 6mm + 8mm (chaves 10mm e 13mm). Contém 340 peças e 2 maletas.</p>
+          <p class="inclui">Vem com: 88 parafusos, 80 porcas, 103 arruelas, 2 chaves biela, 2 soquetes magnéticos, 2 lubrificantes e 2 maletas. <a class="vermais" href="#det-kc" data-abrir="kc">Ver lista completa</a></p>
           <div class="preco">
             <span class="tag"><i class="fa-solid fa-fire"></i> 6mm + 8mm EM UM SÓ PEDIDO</span>
             <b>R$ 622,39</b>
@@ -442,6 +508,7 @@ section{padding:48px 0}
           <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
           <h4>Kit S.O.S. Mecânica 8mm</h4>
           <p class="desc">Indicado para fixações reforçadas e estrutura com parafuso 8mm (chave 13mm). Contém 166 peças.</p>
+          <p class="inclui">Vem com: 38 parafusos, 40 porcas, 58 arruelas, chave biela, soquete magnético, lubrificante e maleta. <a class="vermais" href="#det-k8" data-abrir="k8">Ver lista completa</a></p>
           <div class="preco">
             <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 8mm</span>
             <b>R$ 365,09</b>
@@ -500,7 +567,7 @@ section{padding:48px 0}
     <h2 class="center">O que vem em cada kit</h2>
     <p class="sub center">Toque no kit para ver a lista completa. Nas imagens, passe o mouse ou toque para ampliar.</p>
 
-    <details class="acc destaque">
+    <details class="acc destaque" id="det-kc">
       <summary><i class="fa-solid fa-boxes-packing" style="color:var(--laranja)"></i><span>Kit COMPLETO — 340 peças (6mm e 8mm)<small>2 maletas organizadoras, 2 chaves biela, 2 soquetes e 2 lubrificantes</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
       <div class="kgrid">
         <div class="klista">
@@ -520,7 +587,7 @@ section{padding:48px 0}
       </div>
     </details>
 
-    <details class="acc">
+    <details class="acc" id="det-k6">
       <summary><i class="fa-solid fa-box" style="color:var(--azul)"></i><span>Kit 6mm — 174 peças<small>Foco em 6mm e chave 10mm</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
       <div class="kgrid">
         <div class="klista">
@@ -539,7 +606,7 @@ section{padding:48px 0}
       </div>
     </details>
 
-    <details class="acc">
+    <details class="acc" id="det-k8">
       <summary><i class="fa-solid fa-box" style="color:var(--azul)"></i><span>Kit 8mm — 166 peças<small>Foco em 8mm e chave 13mm</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
       <div class="kgrid">
         <div class="klista">
@@ -582,6 +649,14 @@ section{padding:48px 0}
   <div class="wrap">
     <h2 class="center">Perguntas frequentes</h2>
     <div class="faqgrid">
+      <div class="faqitem">
+        <h4><i class="fa-solid fa-circle-question"></i> O que é o Kit S.O.S. Mecânica?</h4>
+        <p>É uma maleta organizada com os parafusos, porcas e arruelas que mais faltam no meio do serviço, mais chave biela, soquete magnético e lubrificante. Você abre, pega a peça certa e continua o serviço.</p>
+      </div>
+      <div class="faqitem">
+        <h4><i class="fa-solid fa-circle-question"></i> O que significa 6mm e 8mm?</h4>
+        <p>É a medida do parafuso. O de 6mm é apertado com a chave 10 e o de 8mm com a chave 13. O kit Completo traz os dois.</p>
+      </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> O que vem exatamente no kit?</h4>
         <p>Você escolhe o Kit 6mm (chave 10mm), o Kit 8mm (chave 13mm) ou o Completo com os dois. Todos trazem parafusos flangeados, porcas normais, porcas travantes, arruelas, chave biela, soquete magnético e lubrificante, tudo na maleta organizadora.</p>
@@ -673,9 +748,9 @@ section{padding:48px 0}
 <script>
 /* ===== DADOS DOS KITS (altere preços e links só aqui) ===== */
 const KITS = {
-  k6: { nome: "Kit S.O.S. Mecânica 6mm",     curto: "Kit 6mm",     pix: 257.30, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" },
-  kc: { nome: "Kit S.O.S. Mecânica COMPLETO", curto: "Completo",    pix: 622.39, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" },
-  k8: { nome: "Kit S.O.S. Mecânica 8mm",     curto: "Kit 8mm",     pix: 365.09, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" }
+  k6: { img: "KIT-MALETA-V.png", resumo: "6mm, chave 10 · 174 peças", itens: ["50 parafusos flangeados 6mm", "40 porcas (flangeadas e travantes)", "60 arruelas", "1 chave biela 10mm", "1 soquete magnético 10mm", "1 spray lubrificante de 300ml", "1 maleta com 14 divisórias"], nome: "Kit S.O.S. Mecânica 6mm",     curto: "Kit 6mm",     pix: 257.30, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" },
+  kc: { img: "KIT-COMPLETO.png", resumo: "6mm + 8mm · 340 peças", itens: ["88 parafusos flangeados 6mm e 8mm", "80 porcas (flangeadas e travantes)", "103 arruelas", "2 chaves biela (10mm e 13mm)", "2 soquetes magnéticos (10mm e 13mm)", "2 sprays lubrificantes de 300ml", "2 maletas com 14 divisórias cada"], nome: "Kit S.O.S. Mecânica COMPLETO", curto: "Completo",    pix: 622.39, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" },
+  k8: { img: "KIT-MALETA-A.png", resumo: "8mm, chave 13 · 166 peças", itens: ["38 parafusos flangeados 8mm", "40 porcas (flangeadas e travantes)", "58 arruelas", "1 chave biela 13mm", "1 soquete magnético 13mm", "1 spray lubrificante de 300ml", "1 maleta com 14 divisórias"], nome: "Kit S.O.S. Mecânica 8mm",     curto: "Kit 8mm",     pix: 365.09, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" }
 };
 const brl  = (n, d = 0) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: d, maximumFractionDigits: d });
 const track = n => { try { if (typeof clarity === "function") clarity("event", n); } catch (e) {} };
@@ -684,6 +759,17 @@ const track = n => { try { if (typeof clarity === "function") clarity("event", n
 document.addEventListener("click", e => {
   const a = e.target.closest("[data-track]");
   if (a) track(a.dataset.track);
+});
+
+/* Abre a lista completa do kit (botões "Ver lista completa") */
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-abrir]");
+  if (!a) return;
+  e.preventDefault();
+  const d = document.getElementById("det-" + a.dataset.abrir);
+  if (!d) return;
+  d.open = true;
+  d.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block: "start" });
 });
 
 /* MENU */
@@ -731,8 +817,8 @@ menu.addEventListener("click", e => {
     atual.mes = mes;
 
     $("kit-atual").innerHTML = quizFeito
-      ? 'Seu kit: <strong>' + kit.curto + '</strong> · <a href="#quiz-sec">refazer o teste</a>'
-      : 'Mostrando o <strong>Completo</strong>. <a href="#quiz-sec">Faça o teste</a> para ver o do seu caso.';
+      ? 'Seu kit: <strong>' + kit.curto + '</strong> (' + kit.resumo + ') · <a href="#quiz-sec">refazer o teste</a>'
+      : 'Mostrando o <strong>Completo</strong> (' + kit.resumo + '). <a href="#quiz-sec">Faça o teste</a> para ver o do seu caso.';
 
     const tempo = semanas <= 1 ? "em menos de 1 semana" : "em cerca de " + semanas.toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " semanas";
     $("r-pago").innerHTML = "O <strong>" + kit.nome + "</strong> se paga ao evitar <strong>" + saidasParaPagar + (saidasParaPagar === 1 ? " saída" : " saídas") + "</strong>, " + tempo + " no seu ritmo.";
@@ -751,7 +837,7 @@ menu.addEventListener("click", e => {
   calcular();
 })();
 
-/* ===== QUIZ: QUAL KIT É O MEU (2 perguntas) ===== */
+/* ===== QUIZ: QUAL KIT É O MEU (3 perguntas) ===== */
 (function () {
   const body = document.getElementById("qbody"), bar = document.getElementById("qbar");
   const perguntas = [
@@ -791,8 +877,12 @@ menu.addEventListener("click", e => {
     else { k = "kc"; motivo = "Você usa os dois tamanhos, então o Completo traz 6mm e 8mm com duas maletas e não deixa faltar peça."; }
     const kit = KITS[k];
     body.innerHTML = '<div class="qres"><span class="ok"><i class="fa-solid fa-circle-check"></i> Seu kit ideal</span><h4>' + kit.nome + '</h4><p>' + motivo + '</p>' +
+      '<img class="qimg" src="' + kit.img + '" alt="' + kit.nome + '">' +
+      '<p style="margin:0;font-weight:700;color:var(--azul-esc)">O que vem neste kit:</p>' +
+      '<ul class="qlista">' + kit.itens.map(t => '<li><i class="fa-solid fa-check"></i>' + t + '</li>').join("") + '</ul>' +
       '<span class="qprice">' + brl(kit.pix, 2) + '</span><small>no Pix, ou parcelado em até 6x no cartão</small>' +
       '<div class="qacts"><a class="btn btn-o btn-full" href="' + kit.link + '" data-track="quiz_comprar_' + k + '"><i class="fa-solid fa-cart-shopping"></i> Quero o ' + kit.curto + '</a>' +
+      '<a class="btn btn-out btn-full" href="#det-' + k + '" data-abrir="' + k + '" data-track="quiz_ver_lista_' + k + '">Ver a lista completa deste kit</a>' +
       '<a class="btn btn-out btn-full" href="#produto" id="qver">Ver os 3 kits lado a lado</a></div>' +
       '<button type="button" class="qback" id="qrefazer">Refazer o teste</button></div>';
     document.getElementById("qrefazer").onclick = () => {
