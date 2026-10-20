@@ -32,21 +32,22 @@ h2{font-size:clamp(30px,4.6vw,44px);margin-bottom:12px}
 .sub{max-width:62ch;margin:0 auto 36px;color:#334155}
 .center{text-align:center}
 :focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:16px;cursor:pointer;font-family:inherit;line-height:1.25;text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:16px;cursor:pointer;font-family:inherit;line-height:1.25;text-align:center;min-height:48px}
 .btn-o{background:var(--laranja);color:#fff}.btn-o:hover{background:var(--laranja-esc)}
 .btn-v{background:var(--verde);color:#fff}.btn-v:hover{background:#178a42}
 .btn-l{border-color:#fff;color:#fff;background:transparent}.btn-l:hover{background:#fff;color:var(--azul)}
 .btn-out{border-color:var(--azul);color:var(--azul);background:transparent;padding:11px 22px}.btn-out:hover{background:var(--azul);color:#fff}
 .btn-full{width:100%}
+.btn-sm{padding:9px 16px;font-size:14px;min-height:44px}
 .topbar{background:var(--azul-esc);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:9px 14px}
 .topbar i{color:var(--laranja);margin-right:6px}
 header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:4px solid var(--laranja);box-shadow:0 2px 14px rgba(8,34,79,.12)}
 .bar{display:flex;align-items:center;gap:20px;height:76px}
 .bar .logo img{height:50px;width:auto}
 nav{margin-left:auto;display:flex;gap:24px;align-items:center}
-nav a:not(.btn){text-decoration:none;font-weight:600;color:var(--azul);font-size:15px}
+nav a:not(.btn){text-decoration:none;font-weight:600;color:var(--azul);font-size:15px;padding:10px 4px}
 nav a:not(.btn):hover{color:var(--laranja)}
-.menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--azul);cursor:pointer;margin-left:auto}
+.menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--azul);cursor:pointer;margin-left:auto;padding:10px}
 
 /* HERO */
 .hero{background:linear-gradient(105deg,var(--azul-esc) 35%,var(--azul));color:#fff;padding:64px 0 76px}
@@ -69,7 +70,7 @@ nav a:not(.btn):hover{color:var(--laranja)}
 /* CONFIANÇA */
 .confianca{background:var(--gelo);padding:20px 0;border-bottom:1px solid #dbe3f1}
 .confianca .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.conf{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--azul-esc);font-size:14.5px;line-height:1.3}
+.conf{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--azul-esc);font-size:14.5px;line-height:1.3;cursor:default}
 .conf i{flex:none;width:42px;height:42px;border-radius:50%;background:var(--laranja);color:#fff;display:grid;place-items:center;font-size:17px}
 .conf small{display:block;font-weight:500;color:#475569;font-size:13px}
 
@@ -84,6 +85,8 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .field output{font:800 24px "Barlow Condensed",sans-serif;color:var(--laranja-esc);white-space:nowrap}
 .field input[type=range]{width:100%;accent-color:var(--laranja);height:28px;cursor:pointer}
 .kitatual a{color:var(--laranja-esc);font-weight:700}
+.kitatual a.btn{color:var(--azul)}
+.kitatual a.btn:hover{color:#fff}
 .calc-out{background:var(--azul-esc);color:#fff;border-radius:12px;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:16px}
 .calc-out .big small{display:block;color:#cfdcf5;font-weight:600}
 .calc-out .big b{display:block;font:800 clamp(44px,7vw,60px)/1 "Barlow Condensed",sans-serif;color:#ffcf94}
@@ -96,7 +99,7 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .pago strong{color:#ffcf94}
 .kitatual strong{color:var(--azul)}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
-.pcard{background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px 24px;border-top:6px solid}
+.pcard{background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px 24px;border-top:6px solid;cursor:default}
 .pcard.ruim{border-color:#D64545}.pcard.bom{border-color:var(--verde)}
 .pcard h3{font-size:22px;margin-bottom:12px}
 .pcard.ruim h3{color:#D64545}.pcard.bom h3{color:var(--verde)}
@@ -104,19 +107,28 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .pcard li i{width:22px;color:var(--laranja);margin-right:6px}
 
 .oque{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto 44px}
-.oitem{display:flex;flex-direction:column;gap:2px;align-items:flex-start;background:var(--gelo);border:1px solid #dbe3f1;border-left:5px solid var(--laranja);border-radius:var(--raio);padding:16px}
+.oitem{display:flex;flex-direction:column;gap:2px;align-items:flex-start;background:var(--gelo);border:1px solid #dbe3f1;border-left:5px solid var(--laranja);border-radius:var(--raio);padding:16px;cursor:default}
 .oitem i{color:var(--laranja);font-size:20px;margin-bottom:4px}
 .oitem b{color:var(--azul-esc);font-size:15.5px;line-height:1.3}
 .oitem small{color:#475569;font-size:13.5px}
-.kinfo{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:20px;display:flex;flex-direction:column;gap:6px}
+.kinfo{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:20px;display:flex;flex-direction:column;gap:6px;position:relative;transition:.2s}
+.kinfo:hover{border-color:var(--laranja)}
 .kinfo.dest{border:2px solid var(--laranja);box-shadow:0 12px 30px rgba(232,133,12,.18)}
-.kinfo img{width:100%;height:150px;object-fit:contain;background:var(--azul);border-radius:10px;padding:10px;margin-bottom:6px}
+.kinfo img{width:100%;height:150px;object-fit:contain;background:var(--azul);border-radius:10px;padding:10px;margin-bottom:6px;position:relative;z-index:2}
 .kinfo h4{font-size:22px}
 .kinfo .med{font-weight:700;color:var(--laranja-esc)}
 .kinfo p{font-size:14.5px;color:#334155}
 .kinfo .pcs{font-weight:700;color:var(--azul-esc)}
-.vermais{color:var(--laranja-esc);font-weight:700;font-size:14px;text-decoration:underline;cursor:pointer}
+.kinfo .vermais{align-self:stretch;margin-top:8px}
+/* o card inteiro leva ao botão (a foto continua ampliando) */
+.kinfo .vermais::before{content:"";position:absolute;inset:0;border-radius:var(--raio)}
+
+/* "Ver lista completa" como botão de verdade */
+.vermais{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border:2px solid var(--laranja);border-radius:999px;background:#fff;color:var(--laranja-esc);font-weight:700;font-size:14.5px;line-height:1.2;text-decoration:none;cursor:pointer;transition:.2s}
+.vermais:hover{background:var(--laranja);color:#fff}
+.vermais::after{content:"\f061";font-family:"Font Awesome 6 Free";font-weight:900;font-size:12px}
 .inclui{font-size:13.5px;color:#475569;margin-top:6px}
+.inclui .vermais{display:flex;margin-top:10px}
 .qimg{height:150px;width:auto;max-width:100%;margin:6px auto 12px;background:var(--azul);border-radius:10px;padding:10px;object-fit:contain}
 .qlista{list-style:none;padding:0;display:grid;gap:6px;max-width:420px;margin:8px auto 16px;text-align:left;font-size:15px}
 .qlista i{color:var(--verde);margin-right:8px}
@@ -127,7 +139,7 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .qprog i{display:block;height:100%;width:0;background:var(--laranja);transition:width .3s}
 .qq{font:700 24px "Barlow Condensed",sans-serif;color:var(--azul-esc);margin-bottom:12px}
 .qopts{display:grid;gap:10px}
-.qopt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;background:var(--gelo);border:2px solid #cfd9ec;border-radius:12px;padding:14px 16px;font:600 16px Barlow,sans-serif;color:var(--azul-esc);cursor:pointer;transition:.15s}
+.qopt{display:flex;align-items:center;gap:12px;text-align:left;width:100%;background:var(--gelo);border:2px solid #cfd9ec;border-radius:12px;padding:14px 16px;font:600 16px Barlow,sans-serif;color:var(--azul-esc);cursor:pointer;transition:.15s;min-height:56px}
 .qopt i{color:var(--laranja);width:22px;text-align:center}
 .qopt:hover{border-color:var(--laranja);background:#fff4e5;transform:translateX(3px)}
 .qres{text-align:center}
@@ -136,7 +148,8 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .qres p{color:#334155;max-width:52ch;margin:0 auto 14px}
 .qres .qprice{font:800 40px "Barlow Condensed",sans-serif;color:var(--laranja);display:block}
 .qres .qacts{display:grid;gap:10px;max-width:420px;margin:14px auto 0}
-.qback{background:none;border:0;color:#475569;text-decoration:underline;cursor:pointer;margin-top:10px;font:inherit;font-size:14px}
+.qback{background:#fff;border:2px solid #cfd9ec;border-radius:999px;color:var(--azul);cursor:pointer;margin-top:14px;font:inherit;font-size:14px;font-weight:700;padding:12px 20px;min-height:44px}
+.qback:hover{border-color:var(--laranja);color:var(--laranja-esc)}
 
 /* COMPRA */
 .buycard{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
@@ -220,11 +233,11 @@ footer img{height:44px;width:auto;margin:0 auto 10px}
 .sbar .btn{padding:11px 22px;font-size:15px;white-space:nowrap}
 .ajuda{position:fixed;left:18px;bottom:calc(18px + var(--sbar-h) + env(safe-area-inset-bottom,0px));z-index:65;width:min(360px,calc(100vw - 36px));background:#fff;border-radius:var(--raio);border-top:6px solid var(--laranja);padding:20px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.35);display:none}
 .ajuda.on{display:block;animation:sobe .35s ease-out}
-.ajuda h4{font-size:24px;margin-bottom:4px;padding-right:28px}
+.ajuda h4{font-size:24px;margin-bottom:4px;padding-right:44px}
 .ajuda p{font-size:14.5px;color:#334155;margin-bottom:12px}
 .ajuda .acts{display:grid;gap:8px}
 .ajuda .btn{padding:11px 16px;font-size:15px}
-.ajuda .x{position:absolute;top:8px;right:8px;width:34px;height:34px;border:0;background:none;font-size:18px;color:#64748b;cursor:pointer;border-radius:50%}
+.ajuda .x{position:absolute;top:4px;right:4px;width:44px;height:44px;border:0;background:none;font-size:18px;color:#64748b;cursor:pointer;border-radius:50%}
 .ajuda .x:hover{background:var(--gelo)}
 @keyframes sobe{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
 
@@ -371,14 +384,6 @@ section{padding:48px 0}
         <span class="pcs">174 peças · 1 maleta</span>
         <a class="vermais" href="#det-k6" data-abrir="k6">Ver tudo o que vem neste kit</a>
       </div>
-      <div class="kinfo dest rv">
-        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
-        <h4>Kit Completo</h4>
-        <span class="med">Parafusos 6mm e 8mm · chaves 10 e 13</span>
-        <p>Para quem faz de tudo um pouco ou tem mais de um mecânico na oficina.</p>
-        <span class="pcs">340 peças · 2 maletas</span>
-        <a class="vermais" href="#det-kc" data-abrir="kc">Ver tudo o que vem neste kit</a>
-      </div>
       <div class="kinfo rv">
         <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
         <h4>Kit 8mm</h4>
@@ -386,6 +391,14 @@ section{padding:48px 0}
         <p>Para motor, suspensão, escapamento e fixações pesadas.</p>
         <span class="pcs">166 peças · 1 maleta</span>
         <a class="vermais" href="#det-k8" data-abrir="k8">Ver tudo o que vem neste kit</a>
+      </div>
+      <div class="kinfo dest rv">
+        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit Completo</h4>
+        <span class="med">Parafusos 6mm e 8mm · chaves 10 e 13</span>
+        <p>Para quem faz de tudo um pouco ou tem mais de um mecânico na oficina.</p>
+        <span class="pcs">340 peças · 2 maletas</span>
+        <a class="vermais" href="#det-kc" data-abrir="kc">Ver tudo o que vem neste kit</a>
       </div>
     </div>
     <div class="center" style="margin-top:28px"><a class="btn btn-o" href="#quiz-sec" data-track="okit_quiz"><i class="fa-solid fa-circle-question"></i> Qual é o meu? Responda 3 perguntas</a></div>
@@ -461,7 +474,8 @@ section{padding:48px 0}
 <section id="produto" style="background:var(--gelo)">
   <div class="wrap">
     <h2 class="center">Escolha o kit da sua oficina</h2>
-    <p class="sub center">Não sabe qual levar? <a href="#quiz-sec" style="color:var(--laranja-esc);font-weight:700">Responda 3 perguntas</a> e a gente indica. Se preferir, é só rolar e comprar.</p>
+    <p class="sub center">Não sabe qual levar? Responda 3 perguntas e a gente indica. Se preferir, é só escolher abaixo.</p>
+    <div class="center" style="margin:-16px 0 28px"><a class="btn btn-out" href="#quiz-sec" data-track="produto_quiz"><i class="fa-solid fa-circle-question"></i> Descobrir meu kit</a></div>
 
     <div class="pgrid3">
       <div class="buycard rv" data-kit="k6">
@@ -483,6 +497,25 @@ section{padding:48px 0}
         </div>
       </div>
 
+      <div class="buycard rv" data-kit="k8">
+        <div>
+          <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
+          <h4>Kit S.O.S. Mecânica 8mm</h4>
+          <p class="desc">Indicado para fixações reforçadas e estrutura com parafuso 8mm (chave 13mm). Contém 166 peças.</p>
+          <p class="inclui">Vem com: 38 parafusos, 40 porcas, 58 arruelas, chave biela, soquete magnético, lubrificante e maleta. <a class="vermais" href="#det-k8" data-abrir="k8">Ver lista completa</a></p>
+          <div class="preco">
+            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 8mm</span>
+            <b>R$ 365,09</b>
+            <span class="pix">À VISTA NO PIX</span>
+            <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
+          </div>
+        </div>
+        <div>
+          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full" data-track="comprar_8mm"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 8mm – R$ 365,09</a>
+          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
+        </div>
+      </div>
+
       <div class="buycard dest rv" data-kit="kc">
         <span class="tagdest">Mais vendido</span>
         <div>
@@ -500,25 +533,6 @@ section{padding:48px 0}
         <div>
           <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full" data-track="comprar_completo"><i class="fa-solid fa-cart-shopping"></i> Quero o Completo – R$ 622,39</a>
           <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="buycard rv" data-kit="k8">
-        <div>
-          <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
-          <h4>Kit S.O.S. Mecânica 8mm</h4>
-          <p class="desc">Indicado para fixações reforçadas e estrutura com parafuso 8mm (chave 13mm). Contém 166 peças.</p>
-          <p class="inclui">Vem com: 38 parafusos, 40 porcas, 58 arruelas, chave biela, soquete magnético, lubrificante e maleta. <a class="vermais" href="#det-k8" data-abrir="k8">Ver lista completa</a></p>
-          <div class="preco">
-            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 8mm</span>
-            <b>R$ 365,09</b>
-            <span class="pix">À VISTA NO PIX</span>
-            <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
-          </div>
-        </div>
-        <div>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full" data-track="comprar_8mm"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 8mm – R$ 365,09</a>
-          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
         </div>
       </div>
     </div>
@@ -567,26 +581,6 @@ section{padding:48px 0}
     <h2 class="center">O que vem em cada kit</h2>
     <p class="sub center">Toque no kit para ver a lista completa. Nas imagens, passe o mouse ou toque para ampliar.</p>
 
-    <details class="acc destaque" id="det-kc">
-      <summary><i class="fa-solid fa-boxes-packing" style="color:var(--laranja)"></i><span>Kit COMPLETO — 340 peças (6mm e 8mm)<small>2 maletas organizadoras, 2 chaves biela, 2 soquetes e 2 lubrificantes</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
-      <div class="kgrid">
-        <div class="klista">
-          <div class="klinha"><span>Parafusos flangeados 6mm e 8mm</span><span>88 un. (6mm: 16–35mm | 8mm: 20–50mm)</span></div>
-          <div class="klinha"><span>Porcas 6mm e 8mm variadas</span><span>80 un. (flangeadas chave 10/13 e travantes de nylon)</span></div>
-          <div class="klinha"><span>Arruelas 6mm e 8mm</span><span>103 un. (lisas, de pressão, largas)</span></div>
-          <div class="klinha"><span>Chaves biela vazadas</span><span>2 un. (10mm e 13mm)</span></div>
-          <div class="klinha"><span>Soquetes magnéticos de impacto</span><span>2 un. de fixação rápida (10mm e 13mm)</span></div>
-          <div class="klinha"><span>Lubrificante</span><span>2 sprays de 300ml</span></div>
-          <div class="klinha"><span>Maletas organizadoras</span><span>2 maletas com 14 divisórias cada</span></div>
-        </div>
-        <div class="kfoco">
-          <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
-          <h4><i class="fa-solid fa-certificate" style="color:var(--laranja)"></i> Tudo pronto para a bancada</h4>
-          <p>Cobre as necessidades do dia a dia em 6mm e 8mm, com tudo organizado e sem perder tempo procurando peça.</p>
-        </div>
-      </div>
-    </details>
-
     <details class="acc" id="det-k6">
       <summary><i class="fa-solid fa-box" style="color:var(--azul)"></i><span>Kit 6mm — 174 peças<small>Foco em 6mm e chave 10mm</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
       <div class="kgrid">
@@ -621,6 +615,26 @@ section{padding:48px 0}
           <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
           <h4><i class="fa-solid fa-gears" style="color:var(--verde)"></i> Foco em 8mm / chave 13mm</h4>
           <p>Perfeito para fixação pesada, suportes de motor, suspensão, coletores e escapamento.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc destaque" id="det-kc">
+      <summary><i class="fa-solid fa-boxes-packing" style="color:var(--laranja)"></i><span>Kit COMPLETO — 340 peças (6mm e 8mm)<small>2 maletas organizadoras, 2 chaves biela, 2 soquetes e 2 lubrificantes</small></span><i class="fa-solid fa-chevron-down chev"></i></summary>
+      <div class="kgrid">
+        <div class="klista">
+          <div class="klinha"><span>Parafusos flangeados 6mm e 8mm</span><span>88 un. (6mm: 16–35mm | 8mm: 20–50mm)</span></div>
+          <div class="klinha"><span>Porcas 6mm e 8mm variadas</span><span>80 un. (flangeadas chave 10/13 e travantes de nylon)</span></div>
+          <div class="klinha"><span>Arruelas 6mm e 8mm</span><span>103 un. (lisas, de pressão, largas)</span></div>
+          <div class="klinha"><span>Chaves biela vazadas</span><span>2 un. (10mm e 13mm)</span></div>
+          <div class="klinha"><span>Soquetes magnéticos de impacto</span><span>2 un. de fixação rápida (10mm e 13mm)</span></div>
+          <div class="klinha"><span>Lubrificante</span><span>2 sprays de 300ml</span></div>
+          <div class="klinha"><span>Maletas organizadoras</span><span>2 maletas com 14 divisórias cada</span></div>
+        </div>
+        <div class="kfoco">
+          <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
+          <h4><i class="fa-solid fa-certificate" style="color:var(--laranja)"></i> Tudo pronto para a bancada</h4>
+          <p>Cobre as necessidades do dia a dia em 6mm e 8mm, com tudo organizado e sem perder tempo procurando peça.</p>
         </div>
       </div>
     </details>
@@ -663,7 +677,8 @@ section{padding:48px 0}
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Qual kit é o certo para mim?</h4>
-        <p>Se você mexe mais com lataria, tampas e acabamentos, o 6mm resolve. Para suspensão, motor e fixações pesadas, o 8mm. Se não quer correr risco de faltar peça, o Completo traz os dois. <a href="#quiz-sec" style="color:var(--laranja-esc);font-weight:700">Faça o teste de 30 segundos</a> ou chame no WhatsApp.</p>
+        <p>Se você mexe mais com lataria, tampas e acabamentos, o 6mm resolve. Para suspensão, motor e fixações pesadas, o 8mm. Se não quer correr risco de faltar peça, o Completo traz os dois. Faça o teste de 30 segundos ou chame no WhatsApp.</p>
+        <a class="btn btn-out btn-sm" href="#quiz-sec" style="margin-top:12px" data-track="faq_quiz"><i class="fa-solid fa-circle-question"></i> Fazer o teste</a>
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Como funciona a entrega gratuita?</h4>
@@ -749,8 +764,8 @@ section{padding:48px 0}
 /* ===== DADOS DOS KITS (altere preços e links só aqui) ===== */
 const KITS = {
   k6: { img: "KIT-MALETA-V.png", resumo: "6mm, chave 10 · 174 peças", itens: ["50 parafusos flangeados 6mm", "40 porcas (flangeadas e travantes)", "60 arruelas", "1 chave biela 10mm", "1 soquete magnético 10mm", "1 spray lubrificante de 300ml", "1 maleta com 14 divisórias"], nome: "Kit S.O.S. Mecânica 6mm",     curto: "Kit 6mm",     pix: 257.30, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" },
-  kc: { img: "KIT-COMPLETO.png", resumo: "6mm + 8mm · 340 peças", itens: ["88 parafusos flangeados 6mm e 8mm", "80 porcas (flangeadas e travantes)", "103 arruelas", "2 chaves biela (10mm e 13mm)", "2 soquetes magnéticos (10mm e 13mm)", "2 sprays lubrificantes de 300ml", "2 maletas com 14 divisórias cada"], nome: "Kit S.O.S. Mecânica COMPLETO", curto: "Completo",    pix: 622.39, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" },
-  k8: { img: "KIT-MALETA-A.png", resumo: "8mm, chave 13 · 166 peças", itens: ["38 parafusos flangeados 8mm", "40 porcas (flangeadas e travantes)", "58 arruelas", "1 chave biela 13mm", "1 soquete magnético 13mm", "1 spray lubrificante de 300ml", "1 maleta com 14 divisórias"], nome: "Kit S.O.S. Mecânica 8mm",     curto: "Kit 8mm",     pix: 365.09, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" }
+  k8: { img: "KIT-MALETA-A.png", resumo: "8mm, chave 13 · 166 peças", itens: ["38 parafusos flangeados 8mm", "40 porcas (flangeadas e travantes)", "58 arruelas", "1 chave biela 13mm", "1 soquete magnético 13mm", "1 spray lubrificante de 300ml", "1 maleta com 14 divisórias"], nome: "Kit S.O.S. Mecânica 8mm",     curto: "Kit 8mm",     pix: 365.09, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" },
+  kc: { img: "KIT-COMPLETO.png", resumo: "6mm + 8mm · 340 peças", itens: ["88 parafusos flangeados 6mm e 8mm", "80 porcas (flangeadas e travantes)", "103 arruelas", "2 chaves biela (10mm e 13mm)", "2 soquetes magnéticos (10mm e 13mm)", "2 sprays lubrificantes de 300ml", "2 maletas com 14 divisórias cada"], nome: "Kit S.O.S. Mecânica COMPLETO", curto: "Completo",    pix: 622.39, link: "https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" }
 };
 const brl  = (n, d = 0) => n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: d, maximumFractionDigits: d });
 const track = n => { try { if (typeof clarity === "function") clarity("event", n); } catch (e) {} };
@@ -817,8 +832,8 @@ menu.addEventListener("click", e => {
     atual.mes = mes;
 
     $("kit-atual").innerHTML = quizFeito
-      ? 'Seu kit: <strong>' + kit.curto + '</strong> (' + kit.resumo + ') · <a href="#quiz-sec">refazer o teste</a>'
-      : 'Mostrando o <strong>Completo</strong> (' + kit.resumo + '). <a href="#quiz-sec">Faça o teste</a> para ver o do seu caso.';
+      ? 'Seu kit: <strong>' + kit.curto + '</strong> (' + kit.resumo + ')<br><a class="btn btn-out btn-sm" href="#quiz-sec" style="margin-top:8px">Refazer o teste</a>'
+      : 'Mostrando o <strong>Completo</strong> (' + kit.resumo + ').<br><a class="btn btn-out btn-sm" href="#quiz-sec" style="margin-top:8px">Fazer o teste e ver o meu kit</a>';
 
     const tempo = semanas <= 1 ? "em menos de 1 semana" : "em cerca de " + semanas.toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " semanas";
     $("r-pago").innerHTML = "O <strong>" + kit.nome + "</strong> se paga ao evitar <strong>" + saidasParaPagar + (saidasParaPagar === 1 ? " saída" : " saídas") + "</strong>, " + tempo + " no seu ritmo.";
