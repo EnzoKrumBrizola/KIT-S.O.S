@@ -161,6 +161,8 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .buycard img{width:100%;height:180px;object-fit:contain;background:var(--azul);border-radius:10px;padding:10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
 .buycard h4{font-size:21px;margin:14px 0 6px}
 .buycard .desc{color:#334155;font-size:14.5px;min-height:42px}
+.buycard .acoes-kit{display:flex;flex-direction:column;gap:0}
+.buycard .preco{margin:14px 0 18px}
 .preco{background:var(--gelo);border-radius:10px;padding:16px;margin:14px 0;text-align:center;border-top:4px solid var(--azul)}
 .buycard.dest .preco{border-color:var(--laranja)}
 .preco .tag{font-size:12px;font-weight:700;color:var(--laranja-esc)}
@@ -543,12 +545,11 @@ section{padding:48px 0}
     <div class="center" style="margin:-16px 0 28px"><a class="btn btn-out" href="#quiz-sec" data-track="produto_quiz"><i class="fa-solid fa-circle-question"></i> Descobrir meu kit</a></div>
 
     <div class="pgrid3">
+      <!-- KIT 6MM -->
       <div class="buycard rv" data-kit="k6">
         <div>
           <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
           <h4>Kit S.O.S. Mecânica 6mm</h4>
-          <p class="desc">Ideal para reparos leves e fixações gerais de 6mm (chave 10mm). Contém 174 peças.</p>
-          <p class="inclui">Vem com: 50 parafusos, 60 porcas, 60 arruelas, chave biela, soquete magnético, lubrificante e maleta. <a class="vermais" href="#det-k6" data-abrir="k6">Ver lista completa</a></p>
           <div class="preco">
             <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 6mm</span>
             <b>R$ 257,30</b>
@@ -556,18 +557,18 @@ section{padding:48px 0}
             <p class="parc">ou 6x de R$ 48,73 no cartão (total R$ 292,39)</p>
           </div>
         </div>
-        <div>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full" data-track="comprar_6mm"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 6mm – R$ 257,30</a>
+        <div class="acoes-kit">
+          <a class="vermais btn-full" href="#det-k6" data-abrir="k6">Ver lista completa</a>
+          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full" data-track="comprar_6mm" style="margin-top:8px"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 6mm – R$ 257,30</a>
           <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Dúvidas no WhatsApp</a>
         </div>
       </div>
 
+      <!-- KIT 8MM -->
       <div class="buycard rv" data-kit="k8">
         <div>
           <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
           <h4>Kit S.O.S. Mecânica 8mm</h4>
-          <p class="desc">Indicado para fixações reforçadas e estrutura com parafuso 8mm (chave 13mm). Contém 166 peças.</p>
-          <p class="inclui">Vem com: 44 parafusos, 60 porcas, 58 arruelas, chave biela, soquete magnético, lubrificante e maleta. <a class="vermais" href="#det-k8" data-abrir="k8">Ver lista completa</a></p>
           <div class="preco">
             <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 8mm</span>
             <b>R$ 365,09</b>
@@ -575,19 +576,19 @@ section{padding:48px 0}
             <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
           </div>
         </div>
-        <div>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full" data-track="comprar_8mm"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 8mm – R$ 365,09</a>
+        <div class="acoes-kit">
+          <a class="vermais btn-full" href="#det-k8" data-abrir="k8">Ver lista completa</a>
+          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full" data-track="comprar_8mm" style="margin-top:8px"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 8mm – R$ 365,09</a>
           <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
         </div>
       </div>
 
+      <!-- KIT COMPLETO -->
       <div class="buycard dest rv" data-kit="kc">
         <span class="tagdest">Mais vendido</span>
         <div>
           <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" style="margin-top:8px" loading="lazy" decoding="async">
           <h4>Kit S.O.S. Mecânica COMPLETO</h4>
-          <p class="desc">Kit completo 6mm + 8mm (chaves 10mm e 13mm). Contém 340 peças e 2 maletas.</p>
-          <p class="inclui">Vem com: 88 parafusos, 80 porcas, 103 arruelas, 2 chaves biela, 2 soquetes magnéticos, 2 lubrificantes e 2 maletas. <a class="vermais" href="#det-kc" data-abrir="kc">Ver lista completa</a></p>
           <div class="preco">
             <span class="tag"><i class="fa-solid fa-fire"></i> 6mm + 8mm EM UM SÓ PEDIDO</span>
             <b>R$ 622,39</b>
@@ -595,8 +596,9 @@ section{padding:48px 0}
             <p class="parc">ou 6x de R$ 117,88 no cartão (total R$ 707,26)</p>
           </div>
         </div>
-        <div>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full" data-track="comprar_completo"><i class="fa-solid fa-cart-shopping"></i> Quero o Completo – R$ 622,39</a>
+        <div class="acoes-kit">
+          <a class="vermais btn-full" href="#det-kc" data-abrir="kc">Ver lista completa</a>
+          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full" data-track="comprar_completo" style="margin-top:8px"><i class="fa-solid fa-cart-shopping"></i> Quero o Completo – R$ 622,39</a>
           <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
         </div>
       </div>
