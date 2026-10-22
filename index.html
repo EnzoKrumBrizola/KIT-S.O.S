@@ -161,8 +161,6 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .buycard img{width:100%;height:180px;object-fit:contain;background:var(--azul);border-radius:10px;padding:10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
 .buycard h4{font-size:21px;margin:14px 0 6px}
 .buycard .desc{color:#334155;font-size:14.5px;min-height:42px}
-.buycard .acoes-kit{display:flex;flex-direction:column;gap:0}
-.buycard .preco{margin:14px 0 18px}
 .preco{background:var(--gelo);border-radius:10px;padding:16px;margin:14px 0;text-align:center;border-top:4px solid var(--azul)}
 .buycard.dest .preco{border-color:var(--laranja)}
 .preco .tag{font-size:12px;font-weight:700;color:var(--laranja-esc)}
@@ -308,7 +306,7 @@ section{padding:48px 0}
 </head>
 <body>
 
-<div class="topbar"><i class="fa-solid fa-rocket"></i> PROMOÇÃO DE LANÇAMENTO: FRETE GRÁTIS ATÉ 30 KM DA LOJA PEDRO MORO</div>
+<div class="topbar"><i class="fa-solid fa-rocket"></i> PROMOÇÃO DE LANÇAMENTO: FRETE GRÁTIS PARA REGIÃO DE CURITIBA E SÃO JOSÉ</div>
 
 <header>
   <div class="wrap bar">
@@ -356,7 +354,7 @@ section{padding:48px 0}
 <div class="confianca">
   <div class="wrap">
     <div class="conf"><i class="fa-solid fa-file-invoice-dollar"></i><span>Nota fiscal<small>CPF ou CNPJ</small></span></div>
-    <div class="conf"><i class="fa-solid fa-truck-fast"></i><span>Frete grátis<small>até 30 km da loja</small></span></div>
+    <div class="conf"><i class="fa-solid fa-truck-fast"></i><span>Frete grátis<small>região de Curitiba e São José</small></span></div>
     <div class="conf"><i class="fa-solid fa-credit-card"></i><span>Pix ou 6x<small>no cartão</small></span></div>
     <div class="conf"><i class="fa-brands fa-whatsapp"></i><span>Atendimento<small>direto no WhatsApp</small></span></div>
   </div>
@@ -377,8 +375,109 @@ section{padding:48px 0}
     </div>
     <h3 class="center" style="font-size:clamp(24px,3.4vw,32px);margin-bottom:8px">São 3 opções. A diferença é a grossura do parafuso.</h3>
     <p class="sub center">6mm e 8mm é a medida do parafuso. A chave 10 aperta o de 6mm e a chave 13 aperta o de 8mm.</p>
-   
+    <div class="pgrid3">
+      <div class="kinfo rv">
+        <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit 6mm</h4>
+        <span class="med">Parafuso 6mm · chave 10</span>
+        <p>Para lataria, para-lama, tampas, painéis e acabamentos.</p>
+        <span class="pcs">174 peças · 1 maleta</span>
+        <a class="vermais" href="#det-k6" data-abrir="k6">Ver tudo o que vem neste kit</a>
+      </div>
+      <div class="kinfo rv">
+        <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit 8mm</h4>
+        <span class="med">Parafuso 8mm · chave 13</span>
+        <p>Para motor, suspensão, escapamento e fixações pesadas.</p>
+        <span class="pcs">166 peças · 1 maleta</span>
+        <a class="vermais" href="#det-k8" data-abrir="k8">Ver tudo o que vem neste kit</a>
+      </div>
+      <div class="kinfo dest rv">
+        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit Completo</h4>
+        <span class="med">Parafusos 6mm e 8mm · chaves 10 e 13</span>
+        <p>Para quem faz de tudo um pouco ou tem mais de um mecânico na oficina.</p>
+        <span class="pcs">340 peças · 2 maletas</span>
+        <a class="vermais" href="#det-kc" data-abrir="kc">Ver tudo o que vem neste kit</a>
+      </div>
+    </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-o" href="#quiz-sec" data-track="okit_quiz"><i class="fa-solid fa-circle-question"></i> Qual é o meu? Responda 3 perguntas</a></div>
+  </div>
+</section>
 
+<!-- 3. QUIZ (vem antes da calculadora: é ele que escolhe o kit) -->
+<section id="quiz-sec" style="background:var(--gelo)">
+  <div class="wrap">
+    <h2 class="center">Descubra seu kit em 30 segundos</h2>
+    <p class="sub center">São só 3 perguntas, sem cadastro. No final, você vê o kit indicado e tudo o que vem nele.</p>
+    <div class="quiz" id="quiz">
+      <div class="qprog" aria-hidden="true"><i id="qbar"></i></div>
+      <div id="qbody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CALCULADORA (usa o kit do quiz) -->
+<section id="calculo" class="prejuizo">
+  <div class="wrap">
+    <h2>Quanto a sua oficina perde esperando peça?</h2>
+    <p class="sub">Arraste as barras e veja quanto você perde!</p>
+    <div class="calc">
+      <div>
+        <div class="field">
+          <div class="row"><label for="fat">Quanto a oficina fatura por mês?</label><output id="fat-o" for="fat">R$ 40.000</output></div>
+          <input id="fat" type="range" min="10000" max="200000" step="5000" value="40000">
+        </div>
+        <div class="field">
+          <div class="row"><label for="sai">Quantas vezes por semana alguém sai para buscar peça?</label><output id="sai-o" for="sai">3 vezes</output></div>
+          <input id="sai" type="range" min="1" max="15" step="1" value="3">
+        </div>
+        <div class="field">
+          <div class="row"><label for="min">Quanto tempo se perde em cada saída?</label><output id="min-o" for="min">60 min</output></div>
+          <input id="min" type="range" min="15" max="120" step="15" value="60">
+        </div>
+        <p class="pago kitatual" id="kit-atual"></p>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div class="big"><small>Você perde por mês, só esperando peça</small><b id="r-mes">R$ 0</b><span id="r-ano"></span></div>
+        <div class="mini">
+          <div><small>Sua hora vale</small><b id="r-hora">R$ 0</b></div>
+          <div><small>Cada saída custa</small><b id="r-saida">R$ 0</b></div>
+        </div>
+        <p class="pago" id="r-pago"></p>
+        <a class="btn btn-o btn-full" id="r-btn" href="#produto" data-track="calc_comprar"></a>
+      </div>
+    </div>
+
+    <div class="pgrid">
+      <div class="pcard ruim rv">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> Sem o kit</h3>
+        <ul>
+          <li><i class="fa-solid fa-triangle-exclamation"></i> Falta 1 parafuso ou porca travante no meio da montagem</li>
+          <li><i class="fa-solid fa-person-walking-arrow-right"></i> O mecânico para e vai até a autopeças</li>
+          <li><i class="fa-solid fa-car-burst"></i> Carro ocupando o pátio e cliente esperando além do prazo</li>
+        </ul>
+      </div>
+      <div class="pcard bom rv">
+        <h3><i class="fa-solid fa-circle-check"></i> Com o Kit S.O.S.</h3>
+        <ul>
+          <li><i class="fa-solid fa-box-open"></i> Abre a maleta e pega a peça exata em 10 segundos</li>
+          <li><i class="fa-solid fa-circle-check"></i> Serviço sem interrupção, sem sair da oficina</li>
+          <li><i class="fa-solid fa-gauge-high"></i> Carros saindo mais rápido e cliente satisfeito</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. COMPRA -->
+<section id="produto" style="background:var(--gelo)">
+  <div class="wrap">
+    <h2 class="center">Escolha o kit da sua oficina</h2>
+    <p class="sub center">Não sabe qual levar? Responda 3 perguntas e a gente indica. Se preferir, é só escolher abaixo.</p>
+    <div class="center" style="margin:-16px 0 28px"><a class="btn btn-out" href="#quiz-sec" data-track="produto_quiz"><i class="fa-solid fa-circle-question"></i> Descobrir meu kit</a></div>
+
+    
 <div class="pgrid3">
 
   <!-- KIT 6MM -->
@@ -469,140 +568,6 @@ section{padding:48px 0}
 
 </div>
 
-
-</section>
-
-<!-- 3. QUIZ (vem antes da calculadora: é ele que escolhe o kit) -->
-<section id="quiz-sec" style="background:var(--gelo)">
-  <div class="wrap">
-    <h2 class="center">Descubra seu kit em 30 segundos</h2>
-    <p class="sub center">São só 3 perguntas, sem cadastro. No final, você vê o kit indicado e tudo o que vem nele.</p>
-    <div class="quiz" id="quiz">
-      <div class="qprog" aria-hidden="true"><i id="qbar"></i></div>
-      <div id="qbody"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. CALCULADORA (usa o kit do quiz) -->
-<section id="calculo" class="prejuizo">
-  <div class="wrap">
-    <h2>Quanto a sua oficina perde esperando peça?</h2>
-    <p class="sub">Arraste as barras e veja quanto você perde!</p>
-    <div class="calc">
-      <div>
-        <div class="field">
-          <div class="row"><label for="fat">Quanto a oficina fatura por mês?</label><output id="fat-o" for="fat">R$ 40.000</output></div>
-          <input id="fat" type="range" min="10000" max="200000" step="5000" value="40000">
-        </div>
-        <div class="field">
-          <div class="row"><label for="sai">Quantas vezes por semana alguém sai para buscar peça?</label><output id="sai-o" for="sai">3 vezes</output></div>
-          <input id="sai" type="range" min="1" max="15" step="1" value="3">
-        </div>
-        <div class="field">
-          <div class="row"><label for="min">Quanto tempo se perde em cada saída?</label><output id="min-o" for="min">60 min</output></div>
-          <input id="min" type="range" min="15" max="120" step="15" value="60">
-        </div>
-        <p class="pago kitatual" id="kit-atual"></p>
-      </div>
-      <div class="calc-out" aria-live="polite">
-        <div class="big"><small>Você perde por mês, só esperando peça</small><b id="r-mes">R$ 0</b><span id="r-ano"></span></div>
-        <div class="mini">
-          <div><small>Sua hora vale</small><b id="r-hora">R$ 0</b></div>
-          <div><small>Cada saída custa</small><b id="r-saida">R$ 0</b></div>
-        </div>
-        <p class="pago" id="r-pago"></p>
-        <a class="btn btn-o btn-full" id="r-btn" href="#produto" data-track="calc_comprar"></a>
-      </div>
-    </div>
-
-    <div class="pgrid">
-      <div class="pcard ruim rv">
-        <h3><i class="fa-solid fa-triangle-exclamation"></i> Sem o kit</h3>
-        <ul>
-          <li><i class="fa-solid fa-triangle-exclamation"></i> Falta 1 parafuso ou porca travante no meio da montagem</li>
-          <li><i class="fa-solid fa-person-walking-arrow-right"></i> O mecânico para e vai até a autopeças</li>
-          <li><i class="fa-solid fa-car-burst"></i> Carro ocupando o pátio e cliente esperando além do prazo</li>
-        </ul>
-      </div>
-      <div class="pcard bom rv">
-        <h3><i class="fa-solid fa-circle-check"></i> Com o Kit S.O.S.</h3>
-        <ul>
-          <li><i class="fa-solid fa-box-open"></i> Abre a maleta e pega a peça exata em 10 segundos</li>
-          <li><i class="fa-solid fa-circle-check"></i> Serviço sem interrupção, sem sair da oficina</li>
-          <li><i class="fa-solid fa-gauge-high"></i> Carros saindo mais rápido e cliente satisfeito</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. COMPRA -->
-<section id="produto" style="background:var(--gelo)">
-  <div class="wrap">
-    <h2 class="center">Escolha o kit da sua oficina</h2>
-    <p class="sub center">Não sabe qual levar? Responda 3 perguntas e a gente indica. Se preferir, é só escolher abaixo.</p>
-    <div class="center" style="margin:-16px 0 28px"><a class="btn btn-out" href="#quiz-sec" data-track="produto_quiz"><i class="fa-solid fa-circle-question"></i> Descobrir meu kit</a></div>
-
-    <div class="pgrid3">
-      <!-- KIT 6MM -->
-      <div class="buycard rv" data-kit="k6">
-        <div>
-          <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
-          <h4>Kit S.O.S. Mecânica 6mm</h4>
-          <div class="preco">
-            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 6mm</span>
-            <b>R$ 257,30</b>
-            <span class="pix">À VISTA NO PIX</span>
-            <p class="parc">ou 6x de R$ 48,73 no cartão (total R$ 292,39)</p>
-          </div>
-        </div>
-        <div class="acoes-kit">
-          <a class="vermais btn-full" href="#det-k6" data-abrir="k6">Ver lista completa</a>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full" data-track="comprar_6mm" style="margin-top:8px"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 6mm – R$ 257,30</a>
-          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%206mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Dúvidas no WhatsApp</a>
-        </div>
-      </div>
-
-      <!-- KIT 8MM -->
-      <div class="buycard rv" data-kit="k8">
-        <div>
-          <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
-          <h4>Kit S.O.S. Mecânica 8mm</h4>
-          <div class="preco">
-            <span class="tag"><i class="fa-solid fa-bolt"></i> OFERTA 8mm</span>
-            <b>R$ 365,09</b>
-            <span class="pix">À VISTA NO PIX</span>
-            <p class="parc">ou 6x de R$ 69,14 no cartão (total R$ 414,87)</p>
-          </div>
-        </div>
-        <div class="acoes-kit">
-          <a class="vermais btn-full" href="#det-k8" data-abrir="k8">Ver lista completa</a>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full" data-track="comprar_8mm" style="margin-top:8px"><i class="fa-solid fa-cart-shopping"></i> Quero o Kit 8mm – R$ 365,09</a>
-          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%208mm" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-        </div>
-      </div>
-
-      <!-- KIT COMPLETO -->
-      <div class="buycard dest rv" data-kit="kc">
-        <span class="tagdest">Mais vendido</span>
-        <div>
-          <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" style="margin-top:8px" loading="lazy" decoding="async">
-          <h4>Kit S.O.S. Mecânica COMPLETO</h4>
-          <div class="preco">
-            <span class="tag"><i class="fa-solid fa-fire"></i> 6mm + 8mm EM UM SÓ PEDIDO</span>
-            <b>R$ 622,39</b>
-            <span class="pix">À VISTA NO PIX</span>
-            <p class="parc">ou 6x de R$ 117,88 no cartão (total R$ 707,26)</p>
-          </div>
-        </div>
-        <div class="acoes-kit">
-          <a class="vermais btn-full" href="#det-kc" data-abrir="kc">Ver lista completa</a>
-          <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full" data-track="comprar_completo" style="margin-top:8px"><i class="fa-solid fa-cart-shopping"></i> Quero o Completo – R$ 622,39</a>
-          <a href="https://wa.me/5541988725687?text=Quero%20comprar%20o%20Kit%20S.O.S%20Mecanica%20Completo" target="_blank" rel="noopener" class="btn btn-out btn-full" style="margin-top:8px"><i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp</a>
-        </div>
-      </div>
-    </div>
 
     <div class="seguranca">
       <span><i class="fa-solid fa-lock" style="color:var(--verde)"></i> Compra 100% segura</span>
@@ -754,7 +719,7 @@ section{padding:48px 0}
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Como funciona a entrega gratuita?</h4>
-        <p>Para oficinas até 30 km da nossa loja no Pedro Moro, a entrega é grátis. Mais longe que isso, enviamos por motoboy ou transportadora, e o valor aparece na tela de pagamento.</p>
+        <p>Para oficinas na região de Curitiba e São José, a entrega é grátis. Mais longe que isso, enviamos por motoboy ou transportadora, e o valor aparece na tela de pagamento.</p>
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Vocês emitem nota fiscal para CNPJ de oficina?</h4>
@@ -803,7 +768,7 @@ section{padding:48px 0}
 
 <!-- BARRA DE COMPRA FIXA -->
 <div class="sbar" id="sbar">
-  <span class="sinfo">Kit S.O.S. a partir de <b>R$ 257,30</b> no Pix <span class="hide-m">· frete grátis até 30 km</span></span>
+  <span class="sinfo">Kit S.O.S. a partir de <b>R$ 257,30</b> no Pix <span class="hide-m">· frete grátis na região de Curitiba e São José</span></span>
   <a class="btn btn-o" href="#produto" data-track="barra_fixa"><i class="fa-solid fa-toolbox"></i> Escolher meu kit</a>
 </div>
 
@@ -1061,7 +1026,7 @@ async function calcularFrete() {
     if (d.erro) { out.innerHTML = "<span style='color:#D64545'>CEP não encontrado. Verifique os números.</span>"; return; }
     const cidade = d.localidade.toLowerCase();
     if (cidade === "são josé dos pinhais" || cidade === "curitiba") {
-      out.innerHTML = `<span style="color:var(--verde);font-weight:700"><i class="fa-solid fa-circle-check"></i> Sua região pode ter frete grátis!</span><br><span>A entrega é grátis até 30 km da loja Pedro Moro. Confirmamos a distância e combinamos o horário direto no WhatsApp.</span>`;
+      out.innerHTML = `<span style="color:var(--verde);font-weight:700"><i class="fa-solid fa-circle-check"></i> Sua região pode ter frete grátis!</span><br><span>A entrega é grátis na região de Curitiba e São josé. Confirmamos a distância e combinamos o horário direto no WhatsApp.</span>`;
     } else {
       out.innerHTML = `<i class="fa-solid fa-truck-ramp-box" style="color:var(--laranja)"></i> <strong>Envio via transportadora:</strong><br><span>Entregamos em ${d.localidade} - ${d.uf}. O valor do frete e o prazo aparecem na tela final de pagamento.</span>`;
     }
