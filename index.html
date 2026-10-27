@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kit S.O.S. Mecânica | A Casa do Parafuso</title>
-<meta name="description" content="Kit S.O.S. Mecânica da Casa do Parafuso: o parafuso certo na bancada em 10 segundos. Kits 6mm, 8mm e Completo, com nota fiscal.">
+<meta name="description" content="Kit S.O.S. Mecânica da Casa do Parafuso: o parafuso certo na bancada em 10 segundos. Kits 6mm, 8mm e Completo, com refil e nota fiscal.">
 <meta property="og:type" content="product">
 <meta property="og:title" content="Kit S.O.S. Mecânica | A Casa do Parafuso">
-<meta property="og:description" content="Pare de perder horas de trabalho por falta de parafusos. Kits 6mm, 8mm e Completo em maleta organizadora.">
+<meta property="og:description" content="Pare de perder horas de trabalho por falta de parafusos. Kits 6mm, 8mm e Completo em maleta organizadora, com refil.">
 <meta property="og:image" content="https://acasadoparafuso.com.br/KIT-S.O.S/KIT-COMPLETO.png">
 <meta property="og:locale" content="pt_BR">
 <meta name="theme-color" content="#08224F">
@@ -66,11 +66,12 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .hero-img{box-shadow:0 18px 40px rgba(0,0,0,.3),inset 0 0 0 1px rgba(255,255,255,.14);position:relative}
 .hero-img img{width:100%;aspect-ratio:1/1;object-fit:contain}
 .chip{position:absolute;left:14px;bottom:14px;background:var(--laranja);color:#fff;font-weight:800;border-radius:999px;padding:7px 14px;font-size:14px;box-shadow:0 6px 16px rgba(0,0,0,.3)}
-
 .chip2{position:absolute;right:14px;top:14px;background:#fff;color:var(--azul-esc);font-weight:800;border-radius:999px;padding:7px 14px;font-size:14px;box-shadow:0 6px 16px rgba(0,0,0,.3)}
 .chip2 i{color:var(--laranja);margin-right:6px}
 .hero-refil{display:flex;gap:10px;align-items:flex-start;background:rgba(232,133,12,.18);border:1px solid var(--laranja);border-radius:12px;padding:12px 14px;margin-bottom:22px;color:#fff;font-size:15.5px;max-width:54ch;line-height:1.4}
 .hero-refil i{color:var(--laranja);margin-top:3px}
+
+/* REFIL */
 .refil{background:var(--azul-esc);color:#fff}
 .refil h2{color:#fff;text-align:center}
 .refil h2 span{color:var(--laranja)}
@@ -85,22 +86,6 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .qrefil{font-size:14px;font-weight:700;color:var(--azul-esc);background:#fff4e5;border:1px dashed var(--laranja);border-radius:10px;padding:8px 12px;max-width:420px;margin:12px auto 0}
 
 /* CONFIANÇA */
-.chip2{position:absolute;right:14px;top:14px;background:#fff;color:var(--azul-esc);font-weight:800;border-radius:999px;padding:7px 14px;font-size:14px;box-shadow:0 6px 16px rgba(0,0,0,.3)}
-.chip2 i{color:var(--laranja);margin-right:6px}
-.hero-refil{display:flex;gap:10px;align-items:flex-start;background:rgba(232,133,12,.18);border:1px solid var(--laranja);border-radius:12px;padding:12px 14px;margin-bottom:22px;color:#fff;font-size:15.5px;max-width:54ch;line-height:1.4}
-.hero-refil i{color:var(--laranja);margin-top:3px}
-.refil{background:var(--azul-esc);color:#fff}
-.refil h2{color:#fff;text-align:center}
-.refil h2 span{color:var(--laranja)}
-.refil .sub{color:#cfdcf5;text-align:center}
-.rpassos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto 30px}
-.rpasso{background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px;border-top:6px solid var(--laranja);text-align:center}
-.rpasso .n{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--laranja);color:#fff;font:800 24px "Barlow Condensed",sans-serif;margin-bottom:8px}
-.rpasso h3{font-size:22px;margin-bottom:6px}
-.rpasso p{font-size:15px;color:#334155}
-.refilnote{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;color:var(--azul-esc);background:#fff4e5;border:1px dashed var(--laranja);border-radius:10px;padding:8px 10px;margin-bottom:8px}
-.refilnote i{color:var(--laranja)}
-.qrefil{font-size:14px;font-weight:700;color:var(--azul-esc);background:#fff4e5;border:1px dashed var(--laranja);border-radius:10px;padding:8px 12px;max-width:420px;margin:12px auto 0}
 .confianca{background:var(--gelo);padding:20px 0;border-bottom:1px solid #dbe3f1}
 .confianca .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .conf{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--azul-esc);font-size:14.5px;line-height:1.3;cursor:default}
@@ -301,13 +286,11 @@ nav.aberto{display:flex}
 .hero .wrap,.pgrid,.kgrid,.contato,.calc{grid-template-columns:1fr}
 .confianca .wrap{grid-template-columns:1fr 1fr}
 section{padding:48px 0}
-/* MOBILE: o título vem primeiro e a imagem fica depois do botão */
-.hero{padding:34px 0 44px}
-.hero .wrap{gap:26px}
+/* MOBILE: a imagem do kit vem primeiro, logo abaixo do cabeçalho, e o título aparece em seguida */
+.hero{padding:20px 0 44px}
+.hero .wrap{gap:20px}
 .hero-img{order:-1;padding:10px}
 .hero-img img{aspect-ratio:auto;max-height:190px}
-.rpassos{grid-template-columns:1fr}
-.chip,.chip2{font-size:12px;padding:5px 10px}
 .hero h1{max-width:none}
 .hero p.lead{font-size:16.5px;margin:14px 0 16px}
 .hero-preco b{font-size:42px}
@@ -325,6 +308,8 @@ section{padding:48px 0}
 .klinha{flex-direction:column;gap:2px}
 .klinha span:last-child{text-align:left}
 .oque{grid-template-columns:1fr 1fr}
+.rpassos{grid-template-columns:1fr}
+.chip,.chip2{font-size:12px;padding:5px 10px}
 }
 @media (max-width:420px){.oque{grid-template-columns:1fr}.confianca .wrap{gap:12px}.conf{font-size:13px}.conf i{width:36px;height:36px;font-size:15px}}
 @media (hover:none),(pointer:coarse){.kit-lupa{display:none}}
@@ -383,8 +368,7 @@ section{padding:48px 0}
     <div class="hero-img">
       <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" fetchpriority="high" decoding="async">
       <span class="chip2"><i class="fa-solid fa-rotate"></i> Com refil</span>
-      <span class="chip2"><i class="fa-solid fa-rotate"></i> Com refil</span>
-<span class="chip"><i class="fa-solid fa-stopwatch"></i> Peça na mão em 10 s</span>
+      <span class="chip"><i class="fa-solid fa-stopwatch"></i> Peça na mão em 10 s</span>
     </div>
   </div>
 </section>
@@ -399,6 +383,7 @@ section{padding:48px 0}
   </div>
 </div>
 
+<!-- 2.05 REFIL -->
 <section id="refil" class="refil">
   <div class="wrap">
     <h2>Não é kit de usar e jogar fora. <span>É kit com refil.</span></h2>
@@ -756,6 +741,10 @@ section{padding:48px 0}
     <h2 class="center">Perguntas frequentes</h2>
     <div class="faqgrid">
       <div class="faqitem">
+        <h4><i class="fa-solid fa-circle-question"></i> O kit tem refil? Como funciona?</h4>
+        <p>Tem. A maleta é sua para sempre: quando um tamanho de parafuso, porca ou arruela acabar, é só mandar mensagem no nosso WhatsApp que repomos, e ela volta a ficar cheia. Você não precisa comprar um kit novo.</p>
+      </div>
+      <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> O que é o Kit S.O.S. Mecânica?</h4>
         <p>É uma maleta organizada com os parafusos, porcas e arruelas que mais faltam no meio do serviço, mais chave biela, soquete magnético e lubrificante. Você abre, pega a peça certa e continua o serviço.</p>
       </div>
@@ -779,10 +768,6 @@ section{padding:48px 0}
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Vocês emitem nota fiscal para CNPJ de oficina?</h4>
         <p>Sim. Todas as vendas acompanham nota fiscal, no seu nome (CPF) ou no nome da oficina (CNPJ).</p>
-      </div>
-      <div class="faqitem">
-        <h4><i class="fa-solid fa-circle-question"></i> O kit tem refil? Como funciona?</h4>
-        <p>Tem. A maleta é sua para sempre: quando um tamanho de parafuso, porca ou arruela acabar, é só mandar mensagem no nosso WhatsApp que repomos, e ela volta a ficar cheia. Você não precisa comprar um kit novo.</p>
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Quais as formas de pagamento?</h4>
