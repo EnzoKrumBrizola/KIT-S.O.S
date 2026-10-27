@@ -67,6 +67,23 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .hero-img img{width:100%;aspect-ratio:1/1;object-fit:contain}
 .chip{position:absolute;left:14px;bottom:14px;background:var(--laranja);color:#fff;font-weight:800;border-radius:999px;padding:7px 14px;font-size:14px;box-shadow:0 6px 16px rgba(0,0,0,.3)}
 
+.chip2{position:absolute;right:14px;top:14px;background:#fff;color:var(--azul-esc);font-weight:800;border-radius:999px;padding:7px 14px;font-size:14px;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+.chip2 i{color:var(--laranja);margin-right:6px}
+.hero-refil{display:flex;gap:10px;align-items:flex-start;background:rgba(232,133,12,.18);border:1px solid var(--laranja);border-radius:12px;padding:12px 14px;margin-bottom:22px;color:#fff;font-size:15.5px;max-width:54ch;line-height:1.4}
+.hero-refil i{color:var(--laranja);margin-top:3px}
+.refil{background:var(--azul-esc);color:#fff}
+.refil h2{color:#fff;text-align:center}
+.refil h2 span{color:var(--laranja)}
+.refil .sub{color:#cfdcf5;text-align:center}
+.rpassos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:980px;margin:0 auto 30px}
+.rpasso{background:#fff;color:var(--texto);border-radius:var(--raio);padding:22px;border-top:6px solid var(--laranja);text-align:center}
+.rpasso .n{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--laranja);color:#fff;font:800 24px "Barlow Condensed",sans-serif;margin-bottom:8px}
+.rpasso h3{font-size:22px;margin-bottom:6px}
+.rpasso p{font-size:15px;color:#334155}
+.refilnote{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;color:var(--azul-esc);background:#fff4e5;border:1px dashed var(--laranja);border-radius:10px;padding:8px 10px;margin-bottom:8px}
+.refilnote i{color:var(--laranja)}
+.qrefil{font-size:14px;font-weight:700;color:var(--azul-esc);background:#fff4e5;border:1px dashed var(--laranja);border-radius:10px;padding:8px 12px;max-width:420px;margin:12px auto 0}
+
 /* CONFIANÇA */
 .confianca{background:var(--gelo);padding:20px 0;border-bottom:1px solid #dbe3f1}
 .confianca .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -271,8 +288,10 @@ section{padding:48px 0}
 /* MOBILE: o título vem primeiro e a imagem fica depois do botão */
 .hero{padding:34px 0 44px}
 .hero .wrap{gap:26px}
-.hero-img{order:0;padding:12px}
-.hero-img img{aspect-ratio:auto;max-height:230px}
+.hero-img{order:-1;padding:10px}
+.hero-img img{aspect-ratio:auto;max-height:190px}
+.rpassos{grid-template-columns:1fr}
+.chip,.chip2{font-size:12px;padding:5px 10px}
 .hero h1{max-width:none}
 .hero p.lead{font-size:16.5px;margin:14px 0 16px}
 .hero-preco b{font-size:42px}
@@ -314,6 +333,7 @@ section{padding:48px 0}
     <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <nav id="menu">
       <a href="#o-kit">O que é o kit?</a>
+      <a href="#refil">Refil</a>
       <a href="#quiz-sec">Qual é o meu kit?</a>
       <a href="#calculo">Quanto eu perco</a>
       <a href="#produto">Kits e preços</a>
@@ -336,6 +356,7 @@ section{padding:48px 0}
       <div class="hero-preco">
         <span>A partir de</span> <b>R$ 257,30</b> <em>no Pix, ou 6x no cartão</em>
       </div>
+      <p class="hero-refil"><i class="fa-solid fa-rotate"></i><span><b>Kit com refil:</b> acabou um tamanho de parafuso? É só chamar no WhatsApp e repomos. Você compra a maleta uma vez e ela não fica vazia.</span></p>
       <div class="cta">
         <a class="btn btn-o" href="#produto" data-track="hero_ver_kits"><i class="fa-solid fa-cart-shopping"></i> Ver kits e preços</a>
         <a class="btn btn-l" href="#quiz-sec" data-track="hero_quiz"><i class="fa-solid fa-circle-question"></i> Qual kit é o meu? (30 segundos)</a>
@@ -345,6 +366,7 @@ section{padding:48px 0}
     </div>
     <div class="hero-img">
       <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" fetchpriority="high" decoding="async">
+      <span class="chip2"><i class="fa-solid fa-rotate"></i> Com refil</span>
       <span class="chip"><i class="fa-solid fa-stopwatch"></i> Peça na mão em 10 s</span>
     </div>
   </div>
@@ -359,6 +381,19 @@ section{padding:48px 0}
     <div class="conf"><i class="fa-brands fa-whatsapp"></i><span>Atendimento<small>direto no WhatsApp</small></span></div>
   </div>
 </div>
+
+<section id="refil" class="refil">
+  <div class="wrap">
+    <h2>Não é kit de usar e jogar fora. <span>É kit com refil.</span></h2>
+    <p class="sub">Kit comum acaba e você volta à estaca zero. Aqui a maleta continua sendo sua: quando um tamanho acabar, a gente repõe e ela volta cheia.</p>
+    <div class="rpassos">
+      <div class="rpasso rv"><span class="n">1</span><h3>Use à vontade</h3><p>Cada peça tem o seu lugar na divisória. Abriu, pegou, continuou o serviço.</p></div>
+      <div class="rpasso rv"><span class="n">2</span><h3>Acabou um tamanho?</h3><p>Mande mensagem no WhatsApp dizendo qual parafuso, porca ou arruela acabou.</p></div>
+      <div class="rpasso rv"><span class="n">3</span><h3>A gente repõe</h3><p>Você recebe a reposição e deixa a maleta completa de novo, sem comprar outro kit.</p></div>
+    </div>
+    <div class="center"><a class="btn btn-v" href="https://wa.me/5541988725687?text=Quero%20saber%20sobre%20o%20refil%20do%20Kit%20S.O.S" target="_blank" rel="noopener" data-track="refil_whatsapp"><i class="fa-brands fa-whatsapp"></i> Falar sobre refil no WhatsApp</a></div>
+  </div>
+</section>
 
 <!-- 2.1 O QUE É O KIT (para quem chegou agora) -->
 <section id="o-kit">
@@ -496,6 +531,7 @@ section{padding:48px 0}
     </div>
 
     <div>
+      <p class="refilnote"><i class="fa-solid fa-rotate"></i> Com refil: repomos o que acabar</p>
       <a class="vermais btn-full" href="#det-k6" data-abrir="k6">Ver lista completa</a>
 
       <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" class="btn btn-v btn-full" data-track="comprar_6mm" style="margin-top:8px">
@@ -524,6 +560,7 @@ section{padding:48px 0}
     </div>
 
     <div>
+      <p class="refilnote"><i class="fa-solid fa-rotate"></i> Com refil: repomos o que acabar</p>
       <a class="vermais btn-full" href="#det-k8" data-abrir="k8">Ver lista completa</a>
 
       <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" class="btn btn-v btn-full" data-track="comprar_8mm" style="margin-top:8px">
@@ -554,6 +591,7 @@ section{padding:48px 0}
     </div>
 
     <div>
+      <p class="refilnote"><i class="fa-solid fa-rotate"></i> Com refil: repomos o que acabar</p>
       <a class="vermais btn-full" href="#det-kc" data-abrir="kc">Ver lista completa</a>
 
       <a href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" class="btn btn-o btn-full" data-track="comprar_completo" style="margin-top:8px">
@@ -726,8 +764,8 @@ section{padding:48px 0}
         <p>Sim. Todas as vendas acompanham nota fiscal, no seu nome (CPF) ou no nome da oficina (CNPJ).</p>
       </div>
       <div class="faqitem">
-        <h4><i class="fa-solid fa-circle-question"></i> Posso comprar reposição quando acabar?</h4>
-        <p>Pode. Quando um tamanho de parafuso ou porca acabar, é só mandar mensagem no nosso WhatsApp que vendemos a reposição para deixar a maleta cheia de novo.</p>
+        <h4><i class="fa-solid fa-circle-question"></i> O kit tem refil? Como funciona?</h4>
+        <p>Tem. A maleta é sua para sempre: quando um tamanho de parafuso, porca ou arruela acabar, é só mandar mensagem no nosso WhatsApp que repomos, e ela volta a ficar cheia. Você não precisa comprar um kit novo.</p>
       </div>
       <div class="faqitem">
         <h4><i class="fa-solid fa-circle-question"></i> Quais as formas de pagamento?</h4>
@@ -932,7 +970,7 @@ menu.addEventListener("click", e => {
       '<img class="qimg" src="' + kit.img + '" alt="' + kit.nome + '">' +
       '<p style="margin:0;font-weight:700;color:var(--azul-esc)">O que vem neste kit:</p>' +
       '<ul class="qlista">' + kit.itens.map(t => '<li><i class="fa-solid fa-check"></i>' + t + '</li>').join("") + '</ul>' +
-      '<span class="qprice">' + brl(kit.pix, 2) + '</span><small>no Pix, ou parcelado em até 6x no cartão</small>' +
+      '<span class="qprice">' + brl(kit.pix, 2) + '</span><small>no Pix, ou parcelado em até 6x no cartão</small><p class="qrefil"><i class="fa-solid fa-rotate"></i> Acabou peça? Repomos o refil pelo WhatsApp.</p>' +
       '<div class="qacts"><a class="btn btn-o btn-full" href="' + kit.link + '" data-track="quiz_comprar_' + k + '"><i class="fa-solid fa-cart-shopping"></i> Quero o ' + kit.curto + '</a>' +
       '<a class="btn btn-out btn-full" href="#det-' + k + '" data-abrir="' + k + '" data-track="quiz_ver_lista_' + k + '">Ver a lista completa deste kit</a>' +
       '<a class="btn btn-out btn-full" href="#produto" id="qver">Ver os 3 kits lado a lado</a></div>' +
