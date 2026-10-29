@@ -17,7 +17,7 @@
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=Saira+Stencil+One&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 :root{--azul:#0E3A82;--azul-esc:#08224F;--laranja:#E8850C;--laranja-esc:#C96F00;--gelo:#F3F6FB;--texto:#1E2B45;--raio:14px;--verde:#1DA34E;--sbar-h:0px}
@@ -49,8 +49,15 @@ nav a:not(.btn){text-decoration:none;font-weight:600;color:var(--azul);font-size
 nav a:not(.btn):hover{color:var(--laranja)}
 .menu-btn{display:none;background:none;border:0;font-size:26px;color:var(--azul);cursor:pointer;margin-left:auto;padding:10px}
 
-/* HERO */
-.hero{background:linear-gradient(105deg,var(--azul-esc) 35%,var(--azul));color:#fff;padding:64px 0 76px}
+/* ===== VISUAL DE OFICINA (novo) ===== */
+/* faixa de zebra, igual a sinalização de oficina */
+.hazard{height:14px;background:repeating-linear-gradient(-45deg,var(--laranja) 0 18px,var(--azul-esc) 18px 36px)}
+/* textura de chapa xadrez nas seções escuras */
+.chapa{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 14px),repeating-linear-gradient(-45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 14px)}
+.stencil{font-family:"Saira Stencil One","Barlow Condensed",sans-serif;font-weight:400;letter-spacing:.02em}
+
+/* HERO (com foto da loja ao fundo; troque CDP-FACHADA.jpg pela sua foto) */
+.hero{background:linear-gradient(105deg,rgba(8,34,79,.93) 30%,rgba(14,58,130,.74)),url("CDP-FACHADA.jpg") center/cover no-repeat,var(--azul-esc);color:#fff;padding:64px 0 76px;position:relative}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .badge-top{display:inline-flex;align-items:center;gap:8px;background:rgba(232,133,12,.18);border:1px solid var(--laranja);color:#ffcf94;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:18px}
 .hero h1{color:#fff;font-size:clamp(40px,6vw,64px);font-weight:800;max-width:15ch}
@@ -70,6 +77,29 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .chip2 i{color:var(--laranja);margin-right:6px}
 .hero-refil{display:flex;gap:10px;align-items:flex-start;background:rgba(232,133,12,.18);border:1px solid var(--laranja);border-radius:12px;padding:12px 14px;margin-bottom:22px;color:#fff;font-size:15.5px;max-width:54ch;line-height:1.4}
 .hero-refil i{color:var(--laranja);margin-top:3px}
+.hero-loja{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:14px;font-weight:600;color:#cfdcf5}
+.hero-loja i{color:var(--laranja)}
+
+/* COMPRA RÁPIDA NO HERO (novo): 1 clique até o checkout */
+.qbuy{background:#fff;color:var(--texto);border-radius:var(--raio);border-top:6px solid var(--laranja);padding:16px 16px 12px;margin:0 0 18px;max-width:560px;box-shadow:0 14px 34px rgba(0,0,0,.28)}
+.qbuy h3{font-size:22px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.qbuy h3 i{color:var(--laranja)}
+.qrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed #d0d7de}
+.qrow:last-of-type{border-bottom:0}
+.qrow .qn{flex:1;min-width:0;line-height:1.25}
+.qrow .qn b{display:block;font:800 20px "Barlow Condensed",sans-serif;color:var(--azul)}
+.qrow .qn small{color:#475569;font-size:13px}
+.qrow .qp{font:800 24px "Barlow Condensed",sans-serif;color:var(--azul-esc);white-space:nowrap}
+.qrow .btn{padding:10px 16px;font-size:15px;min-height:44px;white-space:nowrap}
+.qrow.top{background:#fff4e5;margin:0 -8px;padding:10px 8px;border-radius:10px;border-bottom:0}
+.qrow.top .qn b::after{content:"MAIS VENDIDO";margin-left:8px;font:800 11px Barlow,sans-serif;background:var(--laranja);color:#fff;padding:2px 8px;border-radius:999px;vertical-align:middle}
+.qbuy .qnote{font-size:13px;color:#475569;margin-top:8px}
+.qbuy .qnote i{color:var(--verde);margin-right:4px}
+
+/* SELO DA LOJA FÍSICA (novo) */
+.lojafaixa{background:var(--laranja);color:#fff;text-align:center;font-weight:700;font-size:15px;padding:10px 14px}
+.lojafaixa i{margin-right:6px}
+.lojafaixa a{color:#fff;text-decoration:underline}
 
 /* REFIL */
 .refil{background:var(--azul-esc);color:#fff}
@@ -84,6 +114,10 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .refilnote{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13.5px;font-weight:700;color:var(--azul-esc);background:#fff4e5;border:1px dashed var(--laranja);border-radius:10px;padding:8px 10px;margin-bottom:8px}
 .refilnote i{color:var(--laranja)}
 .qrefil{font-size:14px;font-weight:700;color:var(--azul-esc);background:#fff4e5;border:1px dashed var(--laranja);border-radius:10px;padding:8px 12px;max-width:420px;margin:12px auto 0}
+/* aviso de que a loja tem mais coisa (novo, indireto) */
+.lojanota{max-width:760px;margin:26px auto 0;display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:var(--raio);padding:16px 18px;color:#e5edfb;font-size:15.5px;line-height:1.45}
+.lojanota>i{font-size:30px;color:var(--laranja);flex:none}
+.lojanota b{color:#fff}
 
 /* CONFIANÇA */
 .confianca{background:var(--gelo);padding:20px 0;border-bottom:1px solid #dbe3f1}
@@ -93,7 +127,7 @@ nav a:not(.btn):hover{color:var(--laranja)}
 .conf small{display:block;font-weight:500;color:#475569;font-size:13px}
 
 /* PREJUÍZO + CALCULADORA */
-.prejuizo{background:var(--azul-esc);color:#fff}
+.prejuizo{background:linear-gradient(rgba(8,34,79,.93),rgba(8,34,79,.93)),url("BG-OFICINA.jpg") center/cover fixed,var(--azul-esc);color:#fff}
 .prejuizo h2{color:#fff;text-align:center}
 .prejuizo .sub{color:#cfdcf5;text-align:center}
 .calc{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;background:#fff;color:var(--texto);border-radius:var(--raio);padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
@@ -194,6 +228,27 @@ nav a:not(.btn):hover{color:var(--laranja)}
 #shipping-result{margin-top:12px;font-size:14.5px;display:none}
 .seguranca{margin-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;font-size:14.5px;font-weight:600}
 .seguranca i{margin-right:6px}
+/* bloco "quem vende" colado nos cards de compra (novo) */
+.quemvende{display:flex;gap:16px;align-items:center;max-width:820px;margin:34px auto 0;background:#fff;border:1px solid #dbe3f1;border-left:6px solid var(--azul);border-radius:var(--raio);padding:16px 20px;font-size:15px;color:#334155}
+.quemvende>i{font-size:30px;color:var(--azul);flex:none}
+.quemvende b{color:var(--azul-esc)}
+.quemvende a{color:var(--laranja-esc);font-weight:700}
+
+/* SOBRE / HISTÓRIA DA LOJA (novo) */
+.sobre{background:var(--azul-esc);color:#fff}
+.sobre h2{color:#fff}
+.sobre .lead2{color:#dbe6fa;max-width:58ch;margin-bottom:14px;font-size:17px}
+.sobre .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.fotos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:12px}
+.foto{border-radius:var(--raio);background-color:var(--azul);background-size:cover;background-position:center;position:relative;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.35);border:3px solid rgba(255,255,255,.14)}
+.foto.g{grid-row:span 2}
+.foto span{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;background:linear-gradient(transparent,rgba(5,14,31,.88));font-size:13px;font-weight:700;color:#fff}
+.sfatos{list-style:none;padding:0;display:grid;gap:10px;margin:18px 0 24px}
+.sfatos li{display:flex;gap:12px;align-items:flex-start;color:#e5edfb;font-size:15.5px;line-height:1.45}
+.sfatos i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--laranja);color:#fff;display:grid;place-items:center;font-size:14px}
+.sfatos b{color:#fff}
+.lojachips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.lojachips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600;color:#fff}
 
 /* DETALHES (ACORDEÃO) */
 .acc{background:#fff;border:1px solid #dbe3f1;border-radius:var(--raio);margin-bottom:14px;border-left:6px solid var(--azul);overflow:hidden}
@@ -283,7 +338,7 @@ body.lightbox-aberto{overflow:hidden}
 .menu-btn{display:block}
 nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px;gap:16px;border-bottom:4px solid var(--laranja)}
 nav.aberto{display:flex}
-.hero .wrap,.pgrid,.kgrid,.contato,.calc{grid-template-columns:1fr}
+.hero .wrap,.pgrid,.kgrid,.contato,.calc,.sobre .grid2{grid-template-columns:1fr}
 .confianca .wrap{grid-template-columns:1fr 1fr}
 section{padding:48px 0}
 /* MOBILE: a imagem do kit vem primeiro, logo abaixo do cabeçalho, e o título aparece em seguida */
@@ -310,6 +365,15 @@ section{padding:48px 0}
 .oque{grid-template-columns:1fr 1fr}
 .rpassos{grid-template-columns:1fr}
 .chip,.chip2{font-size:12px;padding:5px 10px}
+/* novos blocos no mobile */
+.qbuy{padding:14px 12px 10px}
+.qrow{flex-wrap:wrap;gap:6px 10px}
+.qrow .qn{flex:1 1 100%}
+.qrow .qp{flex:1}
+.qrow .btn{flex:1 1 auto}
+.quemvende,.lojanota{flex-direction:column;text-align:center}
+.fotos{grid-template-rows:150px 150px}
+.prejuizo{background-attachment:scroll}
 }
 @media (max-width:420px){.oque{grid-template-columns:1fr}.confianca .wrap{gap:12px}.conf{font-size:13px}.conf i{width:36px;height:36px;font-size:15px}}
 @media (hover:none),(pointer:coarse){.kit-lupa{display:none}}
@@ -339,6 +403,7 @@ section{padding:48px 0}
       <a href="#calculo">Quanto eu perco</a>
       <a href="#produto">Kits e preços</a>
       <a href="#depoimentos">Quem usa</a>
+      <a href="#sobre">Quem somos</a>
       <a href="#faq">Dúvidas</a>
       <a class="btn btn-o" href="#produto"><i class="fa-solid fa-toolbox"></i> Garantir meu kit</a>
     </nav>
@@ -347,7 +412,7 @@ section{padding:48px 0}
 
 <main id="topo">
 
-<!-- 1. HERO -->
+<!-- 1. HERO (foto de fundo: CDP-FACHADA.jpg) -->
 <section id="inicio" class="hero">
   <div class="wrap">
     <div>
@@ -357,6 +422,28 @@ section{padding:48px 0}
       <div class="hero-preco">
         <span>A partir de</span> <b>R$ 257,30</b> <em>no Pix, ou 6x no cartão</em>
       </div>
+
+      <!-- NOVO: compra rápida, 1 clique até o checkout -->
+      <div class="qbuy" id="compra-rapida">
+        <h3><i class="fa-solid fa-bolt"></i> Compre agora, direto no checkout</h3>
+        <div class="qrow">
+          <div class="qn"><b>Kit 6mm · chave 10</b><small>174 peças · lataria, tampas, painéis</small></div>
+          <span class="qp">R$ 257,30</span>
+          <a class="btn btn-v" href="https://casa-do-parafuso4.pay.yampi.com.br/r/NW1XDI882B" data-track="rapido_6mm"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+        </div>
+        <div class="qrow">
+          <div class="qn"><b>Kit 8mm · chave 13</b><small>166 peças · motor, suspensão, escapamento</small></div>
+          <span class="qp">R$ 365,09</span>
+          <a class="btn btn-v" href="https://casa-do-parafuso4.pay.yampi.com.br/r/EXDHJG25ZQ" data-track="rapido_8mm"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+        </div>
+        <div class="qrow top">
+          <div class="qn"><b>Kit Completo</b><small>340 peças · 6mm + 8mm · 2 maletas</small></div>
+          <span class="qp">R$ 622,39</span>
+          <a class="btn btn-o" href="https://casa-do-parafuso4.pay.yampi.com.br/r/OCC0ACSQY6" data-track="rapido_completo"><i class="fa-solid fa-cart-shopping"></i> Comprar</a>
+        </div>
+        <p class="qnote"><i class="fa-solid fa-lock"></i> Preço no Pix · 6x no cartão · nota fiscal · 7 dias para desistir</p>
+      </div>
+
       <p class="hero-refil"><i class="fa-solid fa-rotate"></i><span><b>Kit com refil:</b> acabou um tamanho de parafuso? É só chamar no WhatsApp e repomos. Você compra a maleta uma vez e ela não fica vazia.</span></p>
       <div class="cta">
         <a class="btn btn-o" href="#produto" data-track="hero_ver_kits"><i class="fa-solid fa-cart-shopping"></i> Ver kits e preços</a>
@@ -364,6 +451,7 @@ section{padding:48px 0}
       </div>
       <!-- Quando tiver fotos reais de oficinas ou prints de clientes, coloque aqui, ao lado da frase abaixo. -->
       <p class="hero-quote"><span class="stars" aria-label="5 estrelas">★★★★★</span>"Agora o parafuso tá na bancada." <br><strong>Carlos R., Oficina Multimarcas</strong></p>
+      <p class="hero-loja"><i class="fa-solid fa-store"></i> Loja física em São José dos Pinhais · você pode passar aqui e ver o kit de perto</p>
     </div>
     <div class="hero-img">
       <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" fetchpriority="high" decoding="async">
@@ -372,6 +460,7 @@ section{padding:48px 0}
     </div>
   </div>
 </section>
+<div class="hazard" aria-hidden="true"></div>
 
 <!-- 2. FAIXA DE CONFIANÇA -->
 <div class="confianca">
@@ -383,131 +472,7 @@ section{padding:48px 0}
   </div>
 </div>
 
-<!-- 2.05 REFIL -->
-<section id="refil" class="refil">
-  <div class="wrap">
-    <h2>O refil que mantém sua oficina <span>em movimento!</span></h2>
-    <p class="sub">O Kit S.O.S. é um investimento para evitar prejuízos com serviços parados. Quando alguma peça acabar, você pode comprar a reposição pelo valor de cada peça e manter sua maleta pronta para o próximo serviço.</p>
-    <div class="rpassos">
-      <div class="rpasso rv"><span class="n">1</span><h3>Use o kit no dia a dia</h3><p>Encontre a peça certa na bancada e continue o serviço sem precisar sair da oficina.</p></div>
-      <div class="rpasso rv"><span class="n">2</span><h3>Precisou repor?</h3><p>Chame a Casa do Parafuso pelo WhatsApp e informe quais peças acabaram.</p></div>
-      <div class="rpasso rv"><span class="n">3</span><h3>Reponha pelo valor de cada peça</h3><p>Você paga pelas peças que solicitar, conforme seus respectivos preços. Assim, mantém sua maleta abastecida sem precisar comprar outro kit completo.</p></div>
-    </div>
-    <div class="center"><a class="btn btn-v" href="https://wa.me/5541988725687?text=Quero%20saber%20sobre%20o%20refil%20do%20Kit%20S.O.S" target="_blank" rel="noopener" data-track="refil_whatsapp"><i class="fa-brands fa-whatsapp"></i> Falar sobre refil no WhatsApp</a></div>
-  </div>
-</section>
-
-<!-- 2.1 O QUE É O KIT (para quem chegou agora) -->
-<section id="o-kit">
-  <div class="wrap">
-    <h2 class="center">O que é o Kit S.O.S. Mecânica?</h2>
-    <p class="sub center">É uma maleta organizada com os parafusos, porcas e arruelas que mais faltam no meio do serviço, mais as ferramentas para apertar. Você abre, pega a peça e continua o trabalho. Todos os kits trazem:</p>
-    <div class="oque">
-      <div class="oitem"><i class="fa-solid fa-screwdriver-wrench"></i><b>Parafusos flangeados</b><small>Em vários comprimentos</small></div>
-      <div class="oitem"><i class="fa-solid fa-gear"></i><b>Porcas comuns e travantes</b><small>Para fixar e travar</small></div>
-      <div class="oitem"><i class="fa-solid fa-circle-notch"></i><b>Arruelas</b><small>Lisas, de pressão e largas</small></div>
-      <div class="oitem"><i class="fa-solid fa-wrench"></i><b>Chave biela e soquete magnético</b><small>Para apertar na hora</small></div>
-      <div class="oitem"><i class="fa-solid fa-spray-can"></i><b>Spray lubrificante</b><small>300ml</small></div>
-      <div class="oitem"><i class="fa-solid fa-box-open"></i><b>Maleta com divisórias</b><small>Cada peça no seu lugar</small></div>
-    </div>
-    <h3 class="center" style="font-size:clamp(24px,3.4vw,32px);margin-bottom:8px">São 3 opções. A diferença é a grossura do parafuso.</h3>
-    <p class="sub center">6mm e 8mm é a medida do parafuso. A chave 10 aperta o de 6mm e a chave 13 aperta o de 8mm.</p>
-    <div class="pgrid3">
-      <div class="kinfo rv">
-        <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
-        <h4>Kit 6mm</h4>
-        <span class="med">Parafuso 6mm · chave 10</span>
-        <p>Para lataria, para-lama, tampas, painéis e acabamentos.</p>
-        <span class="pcs">174 peças · 1 maleta</span>
-        <a class="vermais" href="#det-k6" data-abrir="k6">Ver tudo o que vem neste kit</a>
-      </div>
-      <div class="kinfo rv">
-        <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
-        <h4>Kit 8mm</h4>
-        <span class="med">Parafuso 8mm · chave 13</span>
-        <p>Para motor, suspensão, escapamento e fixações pesadas.</p>
-        <span class="pcs">166 peças · 1 maleta</span>
-        <a class="vermais" href="#det-k8" data-abrir="k8">Ver tudo o que vem neste kit</a>
-      </div>
-      <div class="kinfo dest rv">
-        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
-        <h4>Kit Completo</h4>
-        <span class="med">Parafusos 6mm e 8mm · chaves 10 e 13</span>
-        <p>Para quem faz de tudo um pouco ou tem mais de um mecânico na oficina.</p>
-        <span class="pcs">340 peças · 2 maletas</span>
-        <a class="vermais" href="#det-kc" data-abrir="kc">Ver tudo o que vem neste kit</a>
-      </div>
-    </div>
-    <div class="center" style="margin-top:28px"><a class="btn btn-o" href="#quiz-sec" data-track="okit_quiz"><i class="fa-solid fa-circle-question"></i> Qual é o meu? Responda 3 perguntas</a></div>
-  </div>
-</section>
-
-<!-- 3. QUIZ (vem antes da calculadora: é ele que escolhe o kit) -->
-<section id="quiz-sec" style="background:var(--gelo)">
-  <div class="wrap">
-    <h2 class="center">Descubra seu kit em 30 segundos</h2>
-    <p class="sub center">São só 3 perguntas, sem cadastro. No final, você vê o kit indicado e tudo o que vem nele.</p>
-    <div class="quiz" id="quiz">
-      <div class="qprog" aria-hidden="true"><i id="qbar"></i></div>
-      <div id="qbody"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. CALCULADORA (usa o kit do quiz) -->
-<section id="calculo" class="prejuizo">
-  <div class="wrap">
-    <h2>Quanto a sua oficina perde esperando peça?</h2>
-    <p class="sub">Arraste as barras e veja quanto você perde!</p>
-    <div class="calc">
-      <div>
-        <div class="field">
-          <div class="row"><label for="fat">Quanto a oficina fatura por mês?</label><output id="fat-o" for="fat">R$ 40.000</output></div>
-          <input id="fat" type="range" min="10000" max="200000" step="5000" value="40000">
-        </div>
-        <div class="field">
-          <div class="row"><label for="sai">Quantas vezes por semana alguém sai para buscar peça?</label><output id="sai-o" for="sai">3 vezes</output></div>
-          <input id="sai" type="range" min="1" max="15" step="1" value="3">
-        </div>
-        <div class="field">
-          <div class="row"><label for="min">Quanto tempo se perde em cada saída?</label><output id="min-o" for="min">60 min</output></div>
-          <input id="min" type="range" min="15" max="120" step="15" value="60">
-        </div>
-        <p class="pago kitatual" id="kit-atual"></p>
-      </div>
-      <div class="calc-out" aria-live="polite">
-        <div class="big"><small>Você perde por mês, só esperando peça</small><b id="r-mes">R$ 0</b><span id="r-ano"></span></div>
-        <div class="mini">
-          <div><small>Sua hora vale</small><b id="r-hora">R$ 0</b></div>
-          <div><small>Cada saída custa</small><b id="r-saida">R$ 0</b></div>
-        </div>
-        <p class="pago" id="r-pago"></p>
-        <a class="btn btn-o btn-full" id="r-btn" href="#produto" data-track="calc_comprar"></a>
-      </div>
-    </div>
-
-    <div class="pgrid">
-      <div class="pcard ruim rv">
-        <h3><i class="fa-solid fa-triangle-exclamation"></i> Sem o kit</h3>
-        <ul>
-          <li><i class="fa-solid fa-triangle-exclamation"></i> Falta 1 parafuso ou porca travante no meio da montagem</li>
-          <li><i class="fa-solid fa-person-walking-arrow-right"></i> O mecânico para e vai até a autopeças</li>
-          <li><i class="fa-solid fa-car-burst"></i> Carro ocupando o pátio e cliente esperando além do prazo</li>
-        </ul>
-      </div>
-      <div class="pcard bom rv">
-        <h3><i class="fa-solid fa-circle-check"></i> Com o Kit S.O.S.</h3>
-        <ul>
-          <li><i class="fa-solid fa-box-open"></i> Abre a maleta e pega a peça exata em 10 segundos</li>
-          <li><i class="fa-solid fa-circle-check"></i> Serviço sem interrupção, sem sair da oficina</li>
-          <li><i class="fa-solid fa-gauge-high"></i> Carros saindo mais rápido e cliente satisfeito</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. COMPRA -->
+<!-- 5. COMPRA (movida para cima: o cliente chega nos preços logo depois do topo) -->
 <section id="produto" style="background:var(--gelo)">
   <div class="wrap">
     <h2 class="center">Escolha o kit da sua oficina</h2>
@@ -616,6 +581,12 @@ section{padding:48px 0}
       <span><i class="fa-brands fa-whatsapp" style="color:var(--verde)"></i> Atendimento direto pelo WhatsApp</span>
     </div>
 
+    <!-- NOVO: quem está vendendo (segurança) -->
+    <div class="quemvende">
+      <i class="fa-solid fa-store"></i>
+      <p><b>Quem vende é a Casa do Parafuso, loja física em São José dos Pinhais.</b> Rua Joinville, 2508, Bairro São Pedro · CNPJ 43.707.158/0002-90. Se quiser, passe na loja, ou fale com a gente no <a href="https://wa.me/5541988725687" target="_blank" rel="noopener">WhatsApp</a> antes de comprar. <a href="#sobre">Conheça a loja</a>.</p>
+    </div>
+
     <div class="frete">
       <label for="cep-input"><i class="fa-solid fa-truck" style="color:var(--laranja)"></i> Calcular frete e prazo de entrega</label>
       <div class="frete-row">
@@ -626,6 +597,137 @@ section{padding:48px 0}
     </div>
   </div>
 </section>
+<div class="hazard" aria-hidden="true"></div>
+
+<!-- 2.05 REFIL -->
+<section id="refil" class="refil chapa">
+  <div class="wrap">
+    <h2>O refil que mantém sua oficina <span>em movimento!</span></h2>
+    <p class="sub">O Kit S.O.S. é um investimento para evitar prejuízos com serviços parados. Quando alguma peça acabar, você pode comprar a reposição pelo valor de cada peça e manter sua maleta pronta para o próximo serviço.</p>
+    <div class="rpassos">
+      <div class="rpasso rv"><span class="n">1</span><h3>Use o kit no dia a dia</h3><p>Encontre a peça certa na bancada e continue o serviço sem precisar sair da oficina.</p></div>
+      <div class="rpasso rv"><span class="n">2</span><h3>Precisou repor?</h3><p>Chame a Casa do Parafuso pelo WhatsApp e informe quais peças acabaram.</p></div>
+      <div class="rpasso rv"><span class="n">3</span><h3>Reponha pelo valor de cada peça</h3><p>Você paga pelas peças que solicitar, conforme seus respectivos preços. Assim, mantém sua maleta abastecida sem precisar comprar outro kit completo.</p></div>
+    </div>
+    <div class="center"><a class="btn btn-v" href="https://wa.me/5541988725687?text=Quero%20saber%20sobre%20o%20refil%20do%20Kit%20S.O.S" target="_blank" rel="noopener" data-track="refil_whatsapp"><i class="fa-brands fa-whatsapp"></i> Falar sobre refil no WhatsApp</a></div>
+    <!-- NOVO: lembrete indireto de que a loja tem mais -->
+    <div class="lojanota">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      <p>Precisou de uma medida que não vem na maleta? <b>Peça junto com a reposição.</b> A Casa do Parafuso tem um setor completo de parafusos e ferramentas, e o mesmo WhatsApp resolve tudo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2.1 O QUE É O KIT (para quem chegou agora) -->
+<section id="o-kit">
+  <div class="wrap">
+    <h2 class="center">O que é o Kit S.O.S. Mecânica?</h2>
+    <p class="sub center">É uma maleta organizada com os parafusos, porcas e arruelas que mais faltam no meio do serviço, mais as ferramentas para apertar. Você abre, pega a peça e continua o trabalho. Todos os kits trazem:</p>
+    <div class="oque">
+      <div class="oitem"><i class="fa-solid fa-screwdriver-wrench"></i><b>Parafusos flangeados</b><small>Em vários comprimentos</small></div>
+      <div class="oitem"><i class="fa-solid fa-gear"></i><b>Porcas comuns e travantes</b><small>Para fixar e travar</small></div>
+      <div class="oitem"><i class="fa-solid fa-circle-notch"></i><b>Arruelas</b><small>Lisas, de pressão e largas</small></div>
+      <div class="oitem"><i class="fa-solid fa-wrench"></i><b>Chave biela e soquete magnético</b><small>Para apertar na hora</small></div>
+      <div class="oitem"><i class="fa-solid fa-spray-can"></i><b>Spray lubrificante</b><small>300ml</small></div>
+      <div class="oitem"><i class="fa-solid fa-box-open"></i><b>Maleta com divisórias</b><small>Cada peça no seu lugar</small></div>
+    </div>
+    <h3 class="center" style="font-size:clamp(24px,3.4vw,32px);margin-bottom:8px">São 3 opções. A diferença é a grossura do parafuso.</h3>
+    <p class="sub center">6mm e 8mm é a medida do parafuso. A chave 10 aperta o de 6mm e a chave 13 aperta o de 8mm.</p>
+    <div class="pgrid3">
+      <div class="kinfo rv">
+        <img src="KIT-MALETA-V.png" alt="Kit S.O.S. Mecânica 6mm" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit 6mm</h4>
+        <span class="med">Parafuso 6mm · chave 10</span>
+        <p>Para lataria, para-lama, tampas, painéis e acabamentos.</p>
+        <span class="pcs">174 peças · 1 maleta</span>
+        <a class="vermais" href="#det-k6" data-abrir="k6">Ver tudo o que vem neste kit</a>
+      </div>
+      <div class="kinfo rv">
+        <img src="KIT-MALETA-A.png" alt="Kit S.O.S. Mecânica 8mm" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit 8mm</h4>
+        <span class="med">Parafuso 8mm · chave 13</span>
+        <p>Para motor, suspensão, escapamento e fixações pesadas.</p>
+        <span class="pcs">166 peças · 1 maleta</span>
+        <a class="vermais" href="#det-k8" data-abrir="k8">Ver tudo o que vem neste kit</a>
+      </div>
+      <div class="kinfo dest rv">
+        <img src="KIT-COMPLETO.png" alt="Kit S.O.S. Mecânica Completo" class="kit-zoomable" loading="lazy" decoding="async">
+        <h4>Kit Completo</h4>
+        <span class="med">Parafusos 6mm e 8mm · chaves 10 e 13</span>
+        <p>Para quem faz de tudo um pouco ou tem mais de um mecânico na oficina.</p>
+        <span class="pcs">340 peças · 2 maletas</span>
+        <a class="vermais" href="#det-kc" data-abrir="kc">Ver tudo o que vem neste kit</a>
+      </div>
+    </div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-o" href="#quiz-sec" data-track="okit_quiz"><i class="fa-solid fa-circle-question"></i> Qual é o meu? Responda 3 perguntas</a></div>
+  </div>
+</section>
+
+<!-- 3. QUIZ (vem antes da calculadora: é ele que escolhe o kit) -->
+<section id="quiz-sec" style="background:var(--gelo)">
+  <div class="wrap">
+    <h2 class="center">Descubra seu kit em 30 segundos</h2>
+    <p class="sub center">São só 3 perguntas, sem cadastro. No final, você vê o kit indicado e tudo o que vem nele.</p>
+    <div class="quiz" id="quiz">
+      <div class="qprog" aria-hidden="true"><i id="qbar"></i></div>
+      <div id="qbody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CALCULADORA (usa o kit do quiz) — fundo: BG-OFICINA.jpg -->
+<section id="calculo" class="prejuizo chapa">
+  <div class="wrap">
+    <h2>Quanto a sua oficina perde esperando peça?</h2>
+    <p class="sub">Arraste as barras e veja quanto você perde!</p>
+    <div class="calc">
+      <div>
+        <div class="field">
+          <div class="row"><label for="fat">Quanto a oficina fatura por mês?</label><output id="fat-o" for="fat">R$ 40.000</output></div>
+          <input id="fat" type="range" min="10000" max="200000" step="5000" value="40000">
+        </div>
+        <div class="field">
+          <div class="row"><label for="sai">Quantas vezes por semana alguém sai para buscar peça?</label><output id="sai-o" for="sai">3 vezes</output></div>
+          <input id="sai" type="range" min="1" max="15" step="1" value="3">
+        </div>
+        <div class="field">
+          <div class="row"><label for="min">Quanto tempo se perde em cada saída?</label><output id="min-o" for="min">60 min</output></div>
+          <input id="min" type="range" min="15" max="120" step="15" value="60">
+        </div>
+        <p class="pago kitatual" id="kit-atual"></p>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div class="big"><small>Você perde por mês, só esperando peça</small><b id="r-mes">R$ 0</b><span id="r-ano"></span></div>
+        <div class="mini">
+          <div><small>Sua hora vale</small><b id="r-hora">R$ 0</b></div>
+          <div><small>Cada saída custa</small><b id="r-saida">R$ 0</b></div>
+        </div>
+        <p class="pago" id="r-pago"></p>
+        <a class="btn btn-o btn-full" id="r-btn" href="#produto" data-track="calc_comprar"></a>
+      </div>
+    </div>
+
+    <div class="pgrid">
+      <div class="pcard ruim rv">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> Sem o kit</h3>
+        <ul>
+          <li><i class="fa-solid fa-triangle-exclamation"></i> Falta 1 parafuso ou porca travante no meio da montagem</li>
+          <li><i class="fa-solid fa-person-walking-arrow-right"></i> O mecânico para e vai até a autopeças</li>
+          <li><i class="fa-solid fa-car-burst"></i> Carro ocupando o pátio e cliente esperando além do prazo</li>
+        </ul>
+      </div>
+      <div class="pcard bom rv">
+        <h3><i class="fa-solid fa-circle-check"></i> Com o Kit S.O.S.</h3>
+        <ul>
+          <li><i class="fa-solid fa-box-open"></i> Abre a maleta e pega a peça exata em 10 segundos</li>
+          <li><i class="fa-solid fa-circle-check"></i> Serviço sem interrupção, sem sair da oficina</li>
+          <li><i class="fa-solid fa-gauge-high"></i> Carros saindo mais rápido e cliente satisfeito</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hazard" aria-hidden="true"></div>
 
 <section id="depoimentos" class="aval">
   <div class="wrap">
@@ -644,6 +746,38 @@ section{padding:48px 0}
       </article>
     </div>
     <div class="center" style="margin-top:28px"><a class="btn btn-o" href="#produto" data-track="aval_comprar"><i class="fa-solid fa-toolbox"></i> Quero o meu kit</a></div>
+  </div>
+</section>
+
+<!-- NOVO: QUEM SOMOS / HISTÓRIA DA LOJA
+     Fotos (fundo das caixas): CDP-LOJA-SETOR.jpg, CDP-BALCAO.jpg, CDP-ENTREGA.jpg
+     Troque os textos abaixo pela história real da loja (ano, fundador, curiosidades). -->
+<section id="sobre" class="sobre chapa">
+  <div class="wrap grid2">
+    <div>
+      <h2 class="stencil">Parafuso é com a gente desde o balcão</h2>
+      <p class="lead2">A Casa do Parafuso é uma loja de verdade, em São José dos Pinhais, com balcão, estoque e gente que conhece cada medida. O Kit S.O.S. foi montado a partir do que o mecânico mais pede quando o serviço trava.</p>
+      <p class="lead2">Quem compra o kit compra de uma loja que tem endereço, CNPJ e WhatsApp, e que continua do outro lado quando a peça acaba.</p>
+      <ul class="sfatos">
+        <li><i class="fa-solid fa-location-dot"></i><span><b>Endereço conhecido:</b> Rua Joinville, 2508, Bairro São Pedro, São José dos Pinhais/PR. Pode passar aqui.</span></li>
+        <li><i class="fa-solid fa-file-invoice"></i><span><b>Tudo com nota fiscal</b> e CNPJ 43.707.158/0002-90.</span></li>
+        <li><i class="fa-solid fa-headset"></i><span><b>Atendimento de balcão no WhatsApp:</b> quem responde conhece o produto.</span></li>
+        <li><i class="fa-solid fa-rotate"></i><span><b>Pós-venda:</b> refil e reposição pelo mesmo canal.</span></li>
+      </ul>
+      <div class="lojachips">
+        <span>Parafusos</span><span>Porcas</span><span>Arruelas</span><span>Ferramentas</span><span>Setor completo de parafusos</span>
+      </div>
+      <div class="cta">
+        <a class="btn btn-v" href="https://wa.me/5541988725687?text=Oi!%20Vi%20o%20Kit%20S.O.S%20e%20queria%20falar%20com%20a%20loja." target="_blank" rel="noopener" data-track="sobre_whatsapp"><i class="fa-brands fa-whatsapp"></i> Falar com a loja</a>
+        <a class="btn btn-l" href="https://www.google.com/maps/search/?api=1&query=Rua+Joinville+2508+S%C3%A3o+Pedro+S%C3%A3o+Jos%C3%A9+dos+Pinhais+PR" target="_blank" rel="noopener" data-track="sobre_mapa"><i class="fa-solid fa-map-location-dot"></i> Ver no mapa</a>
+        <a class="btn btn-o" href="#produto" data-track="sobre_comprar"><i class="fa-solid fa-toolbox"></i> Escolher meu kit</a>
+      </div>
+    </div>
+    <div class="fotos">
+      <div class="foto g" style="background-image:url('CDP-LOJA-SETOR.jpg')" role="img" aria-label="Setor de parafusos da Casa do Parafuso"><span>Nosso setor de parafusos</span></div>
+      <div class="foto" style="background-image:url('CDP-BALCAO.jpg')" role="img" aria-label="Balcão de atendimento da Casa do Parafuso"><span>Balcão de atendimento</span></div>
+      <div class="foto" style="background-image:url('CDP-ENTREGA.jpg')" role="img" aria-label="Entrega de kits pela Casa do Parafuso"><span>Entrega na sua oficina</span></div>
+    </div>
   </div>
 </section>
 
@@ -773,6 +907,15 @@ section{padding:48px 0}
         <h4><i class="fa-solid fa-circle-question"></i> Quais as formas de pagamento?</h4>
         <p>Pix à vista, com o melhor preço, ou cartão de crédito em até 6x. O pagamento é seguro.</p>
       </div>
+      <!-- NOVAS PERGUNTAS -->
+      <div class="faqitem">
+        <h4><i class="fa-solid fa-circle-question"></i> A Casa do Parafuso é loja física? Posso ir aí?</h4>
+        <p>É, sim. Ficamos na Rua Joinville, 2508, Bairro São Pedro, em São José dos Pinhais. Se preferir ver o kit de perto antes de comprar, é só passar na loja ou chamar no WhatsApp.</p>
+      </div>
+      <div class="faqitem">
+        <h4><i class="fa-solid fa-circle-question"></i> Dá para pedir outros parafusos e ferramentas junto com o kit?</h4>
+        <p>Dá. A loja tem um setor completo de parafusos e ferramentas. Mande no WhatsApp o que você precisa, junto com o pedido do kit ou na hora do refil, e a gente separa tudo.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -799,6 +942,7 @@ section{padding:48px 0}
 
 </main>
 
+<div class="hazard" aria-hidden="true"></div>
 <footer>
   <div class="wrap">
     <img src="CDP-LOGO-BRANCA.png" alt="A Casa do Parafuso" loading="lazy" decoding="async">
@@ -1066,7 +1210,7 @@ async function calcularFrete() {
     if (d.erro) { out.innerHTML = "<span style='color:#D64545'>CEP não encontrado. Verifique os números.</span>"; return; }
     const cidade = d.localidade.toLowerCase();
     if (cidade === "são josé dos pinhais" || cidade === "curitiba") {
-      out.innerHTML = `<span style="color:var(--verde);font-weight:700"><i class="fa-solid fa-circle-check"></i> Sua região pode ter frete grátis!</span><br><span>A entrega é grátis na região de Curitiba e São josé. Confirmamos a distância e combinamos o horário direto no WhatsApp.</span>`;
+      out.innerHTML = `<span style="color:var(--verde);font-weight:700"><i class="fa-solid fa-circle-check"></i> Sua região pode ter frete grátis!</span><br><span>A entrega é grátis na região de Curitiba e São José. Confirmamos a distância e combinamos o horário direto no WhatsApp.</span>`;
     } else {
       out.innerHTML = `<i class="fa-solid fa-truck-ramp-box" style="color:var(--laranja)"></i> <strong>Envio via transportadora:</strong><br><span>Entregamos em ${d.localidade} - ${d.uf}. O valor do frete e o prazo aparecem na tela final de pagamento.</span>`;
     }
